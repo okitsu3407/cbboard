@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Timetables</h1>
+<h1>連絡黒板</h1>
 
 <table>
   <thead>
@@ -32,9 +32,9 @@
         <td><%= timetable.need %></td>
         <td><%= timetable.classroom %></td>
         <td><%= timetable.teacher %></td>
-        <td><%= link_to 'Show', timetable %></td>
-        <td><%= link_to 'Edit', edit_timetable_path(timetable) %></td>
-        <td><%= link_to 'Destroy', timetable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '表示', timetable %></td>
+        <td><%= link_to '編集', edit_timetable_path(timetable) %></td>
+        <td><%= link_to '削除', timetable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -42,4 +42,4 @@
 
 <br>
 
-<%= link_to 'New Timetable', new_timetable_path %>
+<%= link_to '新規作成', new_timetable_path %>
