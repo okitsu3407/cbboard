@@ -1,0 +1,67 @@
+<%= form_with(model: timetable, local: true) do |form| %>
+  <% if timetable.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(timetable.errors.count, "error") %> prohibited this timetable from being saved:</h2>
+
+      <ul>
+      <% timetable.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :grade_id %>
+    <%= form.number_field :grade_id, id: :timetable_grade_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gclass_id %>
+    <%= form.number_field :gclass_id, id: :timetable_gclass_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hiduke %>
+    <%= form.date_select :hiduke, id: :timetable_hiduke %>
+  </div>
+
+  <div class="field">
+    <%= form.label :timed %>
+    <%= form.number_field :timed, id: :timetable_timed %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :timetable_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content, id: :timetable_content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :task %>
+    <%= form.text_area :task, id: :timetable_task %>
+  </div>
+
+  <div class="field">
+    <%= form.label :need %>
+    <%= form.text_area :need, id: :timetable_need %>
+  </div>
+
+  <div class="field">
+    <%= form.label :classroom %>
+    <%= form.text_field :classroom, id: :timetable_classroom %>
+  </div>
+
+  <div class="field">
+    <%= form.label :teacher %>
+    <%= form.text_field :teacher, id: :timetable_teacher %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
