@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>組一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>組</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gclasses.each do |gclass| %>
+      <tr>
+        <td><%= gclass.kumi %></td>
+        <td><%= link_to '表示', gclass %></td>
+        <td><%= link_to '編集', edit_gclass_path(gclass) %></td>
+        <td><%= link_to '削除', gclass, method: :delete, data: { confirm: '本当によろしいですか?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新規作成', new_gclass_path %>

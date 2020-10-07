@@ -1,0 +1,22 @@
+<%= form_with(model: gclass, local: true) do |form| %>
+  <% if gclass.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gclass.errors.count, "error") %> prohibited this gclass from being saved:</h2>
+
+      <ul>
+      <% gclass.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :組 %>
+    <%= form.text_field :kumi, id: :gclass_kumi %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
