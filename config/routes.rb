@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home/top'
+
   resources :grates
   resources :users
   resources :timetables
