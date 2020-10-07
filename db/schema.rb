@@ -10,19 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20201005032323) do
+ActiveRecord::Schema.define(version: 20201005032607) do
+
+  create_table "grates", force: :cascade do |t|
+    t.string "gakunen"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "subjects", force: :cascade do |t|
     t.string "title"
     t.string "classroom"
     t.string "teacher"
-=======
-ActiveRecord::Schema.define(version: 20201005032607) do
-
-  create_table "grates", force: :cascade do |t|
-    t.string "gakunen"
->>>>>>> 8d84405d76e2c6ba36ccb067b004fd6a84c971af
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
