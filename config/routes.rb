@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :gclasses
   resources :subjects
   resources :grates
   resources :users
