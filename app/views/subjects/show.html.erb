@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>教科名:</strong>
+  <%= @subject.title %>
+</p>
+
+<p>
+  <strong>場所:</strong>
+  <%= @subject.classroom %>
+</p>
+
+<p>
+  <strong>教師名:</strong>
+  <%= @subject.teacher %>
+</p>
+
+<%= link_to '変更', edit_subject_path(@subject) %> |
+<%= link_to '戻る', subjects_path %>

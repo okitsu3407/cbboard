@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>教科</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>教科名</th>
+      <th>場所</th>
+      <th>教師名</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @subjects.each do |subject| %>
+      <tr>
+        <td><%= subject.title %></td>
+        <td><%= subject.classroom %></td>
+        <td><%= subject.teacher %></td>
+        <td><%= link_to '見る', subject %></td>
+        <td><%= link_to '変更', edit_subject_path(subject) %></td>
+        <td><%= link_to '削除', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新規登録', new_subject_path %>
