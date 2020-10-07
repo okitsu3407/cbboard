@@ -1,0 +1,2 @@
+class Grate < ApplicationRecord
+end
