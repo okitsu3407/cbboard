@@ -99,8 +99,9 @@ Teacher.create(sensei: "佐藤真志")
 Teacher.create(sensei: "田中大介")
 Teacher.create(sensei: "野々村聖")
 
-
-
+Classroom.delete_all
+Classroom.connection.execute("delete from sqlite_sequence where name='classrooms'")
+Classroom.create(kyousitsu: "")
 
 Grate.delete_all
 Grate.connection.execute("delete from sqlite_sequence where name='grates'")
