@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :学年 %>
-    <%= form.number_field :grade_id, id: :timetable_grade_id %>
+    <%= form.select :grate_id, Grate.all.map { |b| [b.gakunen,b.id] } %>
   </div>
 
   <div class="field">
     <%= form.label :クラス %>
-    <%= form.number_field :gclass_id, id: :timetable_gclass_id %>
+    <%= form.select :gclass_id, Gclass.all.map { |b| [b.kumi,b.id] } %>
   </div>
 
   <div class="field">
@@ -28,12 +28,12 @@
 
   <div class="field">
     <%= form.label :時限 %>
-    <%= form.number_field :timed, id: :timetable_timed %>
+    <%= form.select :clock_id, Clock.all.map { |b| [b.zigen,b.id] } %>
   </div>
 
   <div class="field">
     <%= form.label :教科 %>
-    <%= form.text_field :title, id: :timetable_title %>
+    <%= form.select :title_id, Title.all.map { |b| [b.kyouka,b.id] } %>
   </div>
 
   <div class="field">
@@ -53,12 +53,12 @@
 
   <div class="field">
     <%= form.label :教室 %>
-    <%= form.text_field :classroom, id: :timetable_classroom %>
+    <%= form.select :classroom_id, Classroom.all.map { |b| [b.kyousitsu,b.id] } %>
   </div>
 
   <div class="field">
     <%= form.label :先生 %>
-    <%= form.text_field :teacher, id: :timetable_teacher %>
+    <%= form.select :teacher_id, Teacher.all.map { |b| [b.sensei,b.id] } %>
   </div>
 
   <div class="actions">

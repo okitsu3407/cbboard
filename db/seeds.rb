@@ -188,3 +188,15 @@ Gclass.create(kumi: "1")
 Gclass.create(kumi: "2")
 Gclass.create(kumi: "3")
 Gclass.create(kumi: "4")
+
+Clock.delete_all
+Clock.connection.execute("delete from sqlite_sequence where name='clocks'")
+Clock.create(zigen: "１限")
+Clock.create(zigen: "２限")
+Clock.create(zigen: "３限")
+Clock.create(zigen: "４限")
+Clock.create(zigen: "５限")
+Clock.create(zigen: "６限")
+Clock.create(zigen: "７限")
+
+
