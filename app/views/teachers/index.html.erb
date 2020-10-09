@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>教師一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>氏名</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teachers.each do |teacher| %>
+      <tr>
+        <td><%= teacher.sensei %></td>
+        <td><%= link_to '詳細', teacher %></td>
+        <td><%= link_to '編集', edit_teacher_path(teacher) %></td>
+        <td><%= link_to '削除', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '新規登録', new_teacher_path %>
