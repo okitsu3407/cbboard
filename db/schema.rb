@@ -12,6 +12,12 @@
 
 ActiveRecord::Schema.define(version: 20201008154811) do
 
+  create_table "classrooms", force: :cascade do |t|
+    t.string "kyousitsu"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "gclasses", force: :cascade do |t|
     t.string "kumi"
     t.datetime "created_at", null: false
@@ -45,6 +51,9 @@ ActiveRecord::Schema.define(version: 20201008154811) do
     t.string "teacher"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "title_id"
+    t.integer "classroom_id"
+    t.integer "teacher_id"
   end
 
   create_table "titles", force: :cascade do |t|
