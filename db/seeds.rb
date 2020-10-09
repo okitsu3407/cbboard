@@ -7,18 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Subject.delete_all
 Subject.connection.execute("delete from sqlite_sequence where name='subjects'")
-Subject.create(title: "")
-Subject.create(title: "")
-Subject.create(title: "")
-Subject.create(title: "")
-Subject.create(title: "")
+Subject.create(title: "",classroom: "",teacher: "")
 
-Age.delete_all
-Age.connection.execute("delete from sqlite_sequence where name='ages'")
-Age.create(name: "18", rank: 18)
-Age.create(name: "19", rank: 19)
+Grate.delete_all
+Grate.connection.execute("delete from sqlite_sequence where name='grates'")
+Grate.create(gakunen: "1")
+Grate.create(gakunen: "1")
+Grate.create(gakunen: "1")
 
-Age.delete_all
-Age.connection.execute("delete from sqlite_sequence where name='ages'")
-Age.create(name: "18", rank: 18)
-Age.create(name: "19", rank: 19)
+
+Gclass.delete_all
+Gclass.connection.execute("delete from sqlite_sequence where name='glasses'")
+Gclass.create(kumi: "1")
+Gclass.create(kumi: "2")
+Gclass.create(kumi: "3")
+Gclass.create(kumi: "4")

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :classrooms
   get 'home/top'
 
   resources :gclasses
