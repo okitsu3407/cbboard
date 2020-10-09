@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201007022926) do
+ActiveRecord::Schema.define(version: 20201008154811) do
 
   create_table "gclasses", force: :cascade do |t|
     t.string "kumi"
@@ -43,6 +43,12 @@ ActiveRecord::Schema.define(version: 20201007022926) do
     t.text "need"
     t.string "classroom"
     t.string "teacher"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "titles", force: :cascade do |t|
+    t.string "kyouka"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
