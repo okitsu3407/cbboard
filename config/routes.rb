@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :teachers
+  resources :titles
   resources :classrooms
   get 'home/top'
 

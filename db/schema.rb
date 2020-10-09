@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20201007035046) do
 ActiveRecord::Schema.define(version: 20201007035035) do
+ActiveRecord::Schema.define(version: 20201008154811) do
 
   create_table "classrooms", force: :cascade do |t|
     t.string "kyousitsu"
@@ -61,6 +62,12 @@ ActiveRecord::Schema.define(version: 20201007035035) do
     t.integer "title_id"
     t.integer "classroom_id"
     t.integer "teacher_id"
+  end
+
+  create_table "titles", force: :cascade do |t|
+    t.string "kyouka"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

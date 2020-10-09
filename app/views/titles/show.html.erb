@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>教科:</strong>
+  <%= @title.kyouka %>
+</p>
+
+<%= link_to '編集', edit_title_path(@title) %> |
+<%= link_to '戻る', titles_path %>
