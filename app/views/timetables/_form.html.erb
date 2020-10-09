@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :時限 %>
-    <%= form.number_field :timed, id: :timetable_timed %>
+    <%= form.select :clock_id, Clock.all.map { |b| [b.zigen,b.id] } %>
   </div>
 
   <div class="field">
