@@ -101,13 +101,34 @@ Teacher.create(sensei: "野々村聖")
 
 Classroom.delete_all
 Classroom.connection.execute("delete from sqlite_sequence where name='classrooms'")
-Classroom.create(kyousitsu: "")
+Classroom.create(kyousitsu: "調理実習室")
+Classroom.create(kyousitsu: "家庭準備室")
+Classroom.create(kyousitsu: "被服実習室")
+Classroom.create(kyousitsu: "家庭経営保育室")
+Classroom.create(kyousitsu: "和室")
+Classroom.create(kyousitsu: "生徒指導室")
+Classroom.create(kyousitsu: "第１演習室")
+Classroom.create(kyousitsu: "第２演習室")
+Classroom.create(kyousitsu: "第３演習室")
+Classroom.create(kyousitsu: "１年１組教室")
+Classroom.create(kyousitsu: "１年２組教室")
+Classroom.create(kyousitsu: "１年３組教室")
+Classroom.create(kyousitsu: "１年４組教室")
+Classroom.create(kyousitsu: "卓球場")
+Classroom.create(kyousitsu: "剣道場")
+Classroom.create(kyousitsu: "会議室")
+Classroom.create(kyousitsu: "保健室")
+Classroom.create(kyousitsu: "事務室")
+Classroom.create(kyousitsu: "応接室")
+Classroom.create(kyousitsu: "校長室")
+Classroom.create(kyousitsu: "職員室")
+Classroom.create(kyousitsu: "昇降所")
 
 Grate.delete_all
 Grate.connection.execute("delete from sqlite_sequence where name='grates'")
 Grate.create(gakunen: "1")
-Grate.create(gakunen: "1")
-Grate.create(gakunen: "1")
+Grate.create(gakunen: "2")
+Grate.create(gakunen: "3")
 
 
 Gclass.delete_all
