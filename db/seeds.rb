@@ -178,8 +178,8 @@ Classroom.create(kyousitsu: "100周年準備室")
 Grate.delete_all
 Grate.connection.execute("delete from sqlite_sequence where name='grates'")
 Grate.create(gakunen: "1")
-Grate.create(gakunen: "1")
-Grate.create(gakunen: "1")
+Grate.create(gakunen: "2")
+Grate.create(gakunen: "3")
 
 
 Gclass.delete_all
