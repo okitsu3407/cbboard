@@ -101,8 +101,6 @@ Teacher.create(sensei: "野々村聖")
 
 Classroom.delete_all
 Classroom.connection.execute("delete from sqlite_sequence where name='classrooms'")
-<<<<<<< HEAD
-<<<<<<< HEAD
 Classroom.create(kyousitsu: "美術教室")
 Classroom.create(kyousitsu: "美術準備室")
 Classroom.create(kyousitsu: "美術資料室")
@@ -133,31 +131,6 @@ Classroom.create(kyousitsu: "書庫")
 Classroom.create(kyousitsu: "体育館")
 Classroom.create(kyousitsu: "更衣室")
 Classroom.create(kyousitsu: "体育準備室（教官室）")
-=======
-=======
-Classroom.create(kyousitsu: "調理実習室")
-Classroom.create(kyousitsu: "家庭準備室")
-Classroom.create(kyousitsu: "被服実習室")
-Classroom.create(kyousitsu: "家庭経営保育室")
-Classroom.create(kyousitsu: "和室")
-Classroom.create(kyousitsu: "生徒指導室")
-Classroom.create(kyousitsu: "第１演習室")
-Classroom.create(kyousitsu: "第２演習室")
-Classroom.create(kyousitsu: "第３演習室")
-Classroom.create(kyousitsu: "１年１組教室")
-Classroom.create(kyousitsu: "１年２組教室")
-Classroom.create(kyousitsu: "１年３組教室")
-Classroom.create(kyousitsu: "１年４組教室")
-Classroom.create(kyousitsu: "卓球場")
-Classroom.create(kyousitsu: "剣道場")
-Classroom.create(kyousitsu: "会議室")
-Classroom.create(kyousitsu: "保健室")
-Classroom.create(kyousitsu: "事務室")
-Classroom.create(kyousitsu: "応接室")
-Classroom.create(kyousitsu: "校長室")
-Classroom.create(kyousitsu: "職員室")
-Classroom.create(kyousitsu: "昇降所")
->>>>>>> bf97355b4aeed509e0fdfc484c87c9539db16d31
 Classroom.create(kyousitsu: "総合実践室")
 Classroom.create(kyousitsu: "第１パソコン実習室")
 Classroom.create(kyousitsu: "第６演習室")
@@ -180,13 +153,12 @@ Classroom.create(kyousitsu: "映写室")
 Classroom.create(kyousitsu: "県高野連事務局")
 Classroom.create(kyousitsu: "視聴質")
 Classroom.create(kyousitsu: "放送室")
->>>>>>> 70d3fa3e3995282210f45bc9c7619a792e66ad3a
 
 Grate.delete_all
 Grate.connection.execute("delete from sqlite_sequence where name='grates'")
 Grate.create(gakunen: "1")
-Grate.create(gakunen: "2")
-Grate.create(gakunen: "3")
+Grate.create(gakunen: "1")
+Grate.create(gakunen: "1")
 
 
 Gclass.delete_all
