@@ -2,20 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1 {
-    color: white;
-    font-size:40px;
-    background-color: crimson;
-    padding:20px;
-    width:243px;
-}
-
-ul{
-    text-align: center;
-    display:
-    color:white;
-    font-size:20px;
-    background-color: crimson;
-    padding:20px;
-    width:180px;
+.home{
+    h1 {
+        color: white;
+        text-align: center;
+        font-size:40px;
+        padding:20px;
+        width:243px;
+    }
+    
+    ul{
+        text-align: center;
+        float: left;
+        color:white;
+        font-size:20px;
+        background-color: crimson;
+        padding:10px;
+        width:130px;
+    }
 }

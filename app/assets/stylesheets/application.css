@@ -15,7 +15,6 @@
  */
 
  html {
-    background-image: url("http://localhost:3000/images/bb.png");
-    height: 800px;
+    background-image: url("/images/bb.png");
     background-size:cover;
 }
