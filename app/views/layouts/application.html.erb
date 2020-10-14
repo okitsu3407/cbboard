@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class = "<%= controller.controller_name %>">
   <head>
     <title>CBboard</title>
     <%= csrf_meta_tags %>
@@ -10,6 +10,5 @@
 
   <body>
     <%= yield %>
-    <p> <%= link_to'トップに戻る', 'home/top' %> </p>
   </body>
 </html>
