@@ -28,9 +28,17 @@
         top:70px;
         left:45px;
     }
-    p {
-        -webkit-writing-mode: vertical-rl;
+    h2 {
+        position: absolute;
+        right: 0;
         -ms-writing-mode: tb-rl;
-            writing-mode: vertical-rl;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
     }
+
+    .text-combine {
+        -webkit-text-combine: horizontal;
+        -ms-text-combine-horizontal: all;
+        text-combine-upright: all;
+      }
 }
