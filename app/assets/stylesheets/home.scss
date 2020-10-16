@@ -1,3 +1,71 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home{
+    body{
+        background-image: url("/images/bb.png");
+        background-size:cover;
+    }
+    
+    h1 {
+        color: white;
+        text-align: center;
+        font-size:40px;
+        padding:20px;
+        width:280px;
+    }
+    
+    .example {
+        position:relative;
+        left:500px;
+    }
+
+    .example p{
+        position: absolute;
+        color:white;
+        font-size:20px;
+        top:70px;
+        left:45px;
+    }
+    .example2 {
+        position: absolute;
+        left:800px;
+    }
+
+    .example2 p{
+        position: absolute;
+        color:black;
+        font-size:20px;
+        top:70px;
+        left:5px;
+    }
+
+    .example3 {
+        position: absolute;
+        left:300px;
+    }
+
+    .example3 p{
+        position: absolute;
+        color:black;
+        font-size:20px;
+        top:70px;
+        left:24px;
+    }
+
+
+    h2 {
+        position: absolute;
+        right: 0;
+        -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+    }
+
+    .text-combine {
+        -webkit-text-combine: horizontal;
+        -ms-text-combine-horizontal: all;
+        text-combine-upright: all;
+      }
+}
