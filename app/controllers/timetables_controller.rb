@@ -24,17 +24,31 @@ class TimetablesController < ApplicationController
   # POST /timetables
   # POST /timetables.json
   def create
-    @timetable = Timetable.new(timetable_params)
+    @fromdate = Date.today
+    @todate = Date.today + 7
+    (@fromdate..@todate).each do |date|
+      @yobi = date.wday
+      <% Temple.grate.gakunen.each do |gakunen| %>@temples.grate.gakunen
+        <% Temple..each do |kumi| %>
+          <% end %>
+      <% end %>
+    <% end %>
 
-    respond_to do |format|
-      if @timetable.save
-        format.html { redirect_to @timetable, notice: 'Timetable was successfully created.' }
-        format.json { render :show, status: :created, location: @timetable }
-      else
-        format.html { render :new }
-        format.json { render json: @timetable.errors, status: :unprocessable_entity }
-      end
-    end
+
+
+    redirect_to timetables_path, notice: 'Timetable was successfully created.'
+
+    #@timetable = Timetable.new(timetable_params)
+
+    #respond_to do |format|
+      #if @timetable.save
+        #format.html { redirect_to @timetable, notice: 'Timetable was successfully created.' }
+        #format.json { render :show, status: :created, location: @timetable }
+      #else
+        #format.html { render :new }
+        #format.json { render json: @timetable.errors, status: :unprocessable_entity }
+      #end
+    #end
   end
 
   # PATCH/PUT /timetables/1
@@ -69,6 +83,6 @@ class TimetablesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def timetable_params
-      params.require(:timetable).permit(:grade_id, :gclass_id, :hiduke, :timed, :title, :content, :task, :need, :classroom, :teacher)
+      params.require(:timetable).permit(:grate_id, :clock_id, :title_id, :gclass_id, :week, :timed, :classroom_id, :teacher_id)
     end
 end

@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<h1>時間割テンプレート</h1>
+
+<h3><%= @temples[0].grate.gakunen %>年<%= @temples[0].gclass.kumi %>組</h3>
+
+<table border = "1">
+<thead>
+
+  <tr>
+      <% Temple.weeks.each do |w| %>
+      <th></th>
+      <td><%= w[0] %></td>
+      <!--<th colspan="3"></th>-->
+      <% end %>
+  </tr>
+       
+</thead>
+
+  <tbody>
+    <% i = 1 %>
+    <% a = 0 %> 
+    <% @temples.each do |temple| %>
+      <% if i == 1 %>
+      <tr>
+      <td><%= temple.clock.zigen %></td>
+      <% if a == 6 %>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <% end %>
+      <% else %>
+      <td></td>
+      <% end %>
+        
+        <td><%= temple.title.kyouka %>
+        <br>
+        <%= link_to '詳細', temple %>
+        <%= link_to '編集', edit_temple_path(temple) %>
+        <%= link_to '削除', temple, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if a == 6 %>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <% end %>
+      <% if i == 5 %>
+      </tr>
+      <% a = a + 1 %>
+      <% i = 0 %>
+      <% end %>
+      <% i = i + 1 %>
+    <% end %>
+	</tbody>
+</table>
+  
+      
+
+
+<br>
+
+<%= link_to '時間割追加', new_temple_path %>

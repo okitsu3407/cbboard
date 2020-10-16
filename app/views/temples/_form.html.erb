@@ -1,0 +1,51 @@
+<%= form_with(model: temple, local: true) do |form| %>
+  <% if temple.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(temple.errors.count, "error") %> prohibited this temple from being saved:</h2>
+
+      <ul>
+      <% temple.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :学年 %>
+    <%= form.select :grate_id, Grate.all.map { |b| [b.gakunen,b.id] } %>
+  </div>
+
+  <div class="field">
+  <%= form.label :クラス %>
+  <%= form.select :gclass_id, Gclass.all.map { |b| [b.kumi,b.id] } %>
+
+  <div class="field">
+    <%= form.label :曜日 %>
+    <%= form.select :week, Temple.weeks,{},{class:"form-control"} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :時限 %>
+    <%= form.select :clock_id, Clock.all.map { |b| [b.zigen,b.id] } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :教科 %>
+    <%= form.select :title_id, Title.all.map { |b| [b.kyouka,b.id] } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :教室 %>
+    <%= form.select :classroom_id, Classroom.all.map { |b| [b.kyousitsu,b.id] } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :先生 %>
+    <%= form.select :teacher_id, Teacher.all.map { |b| [b.sensei,b.id] } %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
