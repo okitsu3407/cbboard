@@ -18,7 +18,7 @@
     
     .example {
         position:relative;
-        left:400px;
+        left:500px;
     }
 
     .example p{
@@ -28,6 +28,33 @@
         top:70px;
         left:45px;
     }
+    .example2 {
+        position:relative;
+        left:800px;
+    }
+
+    .example2 p{
+        position: absolute;
+        color:white;
+        font-size:20px;
+        top:70px;
+        left:45px;
+    }
+
+    .example3 {
+        position:relative;
+        left:300px;
+    }
+
+    .example3 p{
+        position: absolute;
+        color:white;
+        font-size:20px;
+        top:70px;
+        left:45px;
+    }
+
+
     h2 {
         position: absolute;
         right: 0;
