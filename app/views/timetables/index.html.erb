@@ -22,16 +22,16 @@
   <tbody>
     <% @timetables.each do |timetable| %>
       <tr>
-        <td><%= timetable.grade_id %></td>
+        <td><%= timetable.grate_id %></td>
         <td><%= timetable.gclass_id %></td>
         <td><%= timetable.hiduke %></td>
         <td><%= timetable.timed %></td>
-        <td><%= timetable.title %></td>
+        <td><%= timetable.title.kyouka %></td>
         <td><%= timetable.content %></td>
         <td><%= timetable.task %></td>
         <td><%= timetable.need %></td>
-        <td><%= timetable.classroom %></td>
-        <td><%= timetable.teacher %></td>
+        <td><%= timetable.classroom.kyousitsu %></td>
+        <td><%= timetable.teacher.sensei %></td>
         <td><%= link_to '表示', timetable %></td>
         <td><%= link_to '編集', edit_timetable_path(timetable) %></td>
         <td><%= link_to '削除', timetable, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Grade:</strong>
+  <%= @temple.grate_id %>
+</p>
+
+<p>
+  <strong>Gclass:</strong>
+  <%= @temple.gclass_id %>
+</p>
+
+<p>
+  <strong>Week:</strong>
+  <%= @temple.week %>
+</p>
+
+<p>
+  <strong>Timed:</strong>
+  <%= @temple.timed %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @temple.title %>
+</p>
+
+<p>
+  <strong>Classroom:</strong>
+  <%= @temple.classroom %>
+</p>
+
+<p>
+  <strong>Teacher:</strong>
+  <%= @temple.teacher %>
+</p>
+
+<%= link_to 'Edit', edit_temple_path(@temple) %> |
+<%= link_to 'Back', temples_path %>

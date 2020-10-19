@@ -1,5 +1,12 @@
 <h1>新規作成</h1>
 
-<%= render 'form', timetable: @timetable %>
+<%= form_with(model: @timetable, local: true) do |form| %>
+
+  
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+  
 
 <%= link_to '戻る', timetables_path %>

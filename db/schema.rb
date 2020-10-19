@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201009061227) do
+ActiveRecord::Schema.define(version: 20201012033244) do
 
   create_table "classrooms", force: :cascade do |t|
     t.string "kyousitsu"
@@ -50,8 +50,23 @@ ActiveRecord::Schema.define(version: 20201009061227) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "temples", force: :cascade do |t|
+    t.integer "gclass_id"
+    t.string "week"
+    t.integer "timed"
+    t.string "title"
+    t.string "classroom"
+    t.string "teacher"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "clock_id"
+    t.integer "title_id"
+    t.integer "classroom_id"
+    t.integer "teacher_id"
+    t.integer "grate_id"
+  end
+
   create_table "timetables", force: :cascade do |t|
-    t.integer "grade_id"
     t.integer "gclass_id"
     t.date "hiduke"
     t.integer "timed"
@@ -66,6 +81,8 @@ ActiveRecord::Schema.define(version: 20201009061227) do
     t.integer "title_id"
     t.integer "classroom_id"
     t.integer "teacher_id"
+    t.integer "clock_id"
+    t.integer "grate_id"
   end
 
   create_table "titles", force: :cascade do |t|
