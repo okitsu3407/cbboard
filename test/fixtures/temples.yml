@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  grade_id: 1
+  gclass_id: 1
+  week: MyString
+  timed: 1
+  title: MyString
+  classroom: MyString
+  teacher: MyString
+
+two:
+  grade_id: 1
+  gclass_id: 1
+  week: MyString
+  timed: 1
+  title: MyString
+  classroom: MyString
+  teacher: MyString
