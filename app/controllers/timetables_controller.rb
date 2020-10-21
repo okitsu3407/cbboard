@@ -1,6 +1,6 @@
 class TimetablesController < ApplicationController
   before_action :set_timetable, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /timetables
   # GET /timetables.json
   def index
@@ -24,16 +24,40 @@ class TimetablesController < ApplicationController
   # POST /timetables
   # POST /timetables.json
   def create
+  
     @fromdate = Date.today
     @todate = Date.today + 7
-    (@fromdate..@todate).each do |date|
-      @yobi = date.wday
-      <% Temple.grate.gakunen.each do |gakunen| %>@temples.grate.gakunen
-        <% Temple..each do |kumi| %>
-          <% end %>
-      <% end %>
-    <% end %>
 
+     (@fromdate..@todate).each do |date| 
+       @yobi = date.wday
+
+       Grate.all.each do |gakunen_two| 
+
+        Gclass.all.each do |kumi_two| 
+
+          @ygg = Temple.where(week:@yobi,grate:gakunen_two.id,gclass:kumi_two.id).order(clock_id: :asc)
+          if @ygg.present?
+            @ygg.each do |record|
+              @timetable = Timetable.new
+              @timetable.gclass_id = record.gclass_id
+              @timetable.hiduke = date
+              @timetable.timed =  record.timed
+              @timetable.title = record.title
+              @timetable.classroom = record.classroom
+              @timetable.teacher = record.teacher
+              @timetable.title_id = record.title_id
+              @timetable.classroom_id =record.classroom_id
+              @timetable.teacher_id = record.teacher_id
+              @timetable.clock_id = record.clock_id
+              @timetable.grate_id = record.grate_id
+              @timetable.save
+            end
+          end
+
+         end 
+       end 
+     end 
+      
 
 
     redirect_to timetables_path, notice: 'Timetable was successfully created.'
