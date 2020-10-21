@@ -2,7 +2,8 @@
 @import "bootstrap";
 
 body {
-  color: white;
+  background-color: #fff;
+  color: #333;
   margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -22,11 +23,11 @@ pre {
 }
 
 a {
-  text-decoration: underline;
+  text-decoration:underline;
   color: #000;
 
   &:visited {
-    color: rgb(57, 192, 255);
+    color: yellow;
   }
 
   &:hover {
