@@ -199,8 +199,21 @@ Clock.create(zigen: "５限")
 Clock.create(zigen: "６限")
 Clock.create(zigen: "７限")
 
-
-
-
-
-
+require 'csv'
+Temple.delete_all
+Temple.connection.execute("delete from sqlite_sequence where name='temples'")
+CSV.foreach('db/seeds/temples.csv', headers: true) do |row|
+    Content.create(
+        id: row['id'],
+        gclass_id: row['gclass_id'],
+        created_at: row['created_at'],
+        updated_at: row['updated_at'],
+        week :row['week'],
+        timed: row['timed'],
+        title_id: row['title_id'],
+        clock_id: row['clock_id'],
+        classroom_id: row['classroom_id']
+        teacher_id: row['teacher_id']
+        grate_id: row['grate_id']
+    )
+  end
