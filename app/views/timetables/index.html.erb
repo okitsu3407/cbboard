@@ -2,12 +2,12 @@
 
 <h1>連絡黒板</h1>
 
-<table>
+<table border = "1">
   <thead>
     <tr>
+      <th>日付</th>
       <th>学年</th>
       <th>クラス</th>
-      <th>日付</th>
       <th>時間割</th>
       <th>教科</th>
       <th>内容</th>
@@ -22,10 +22,10 @@
   <tbody>
     <% @timetables.each do |timetable| %>
       <tr>
-        <td><%= timetable.grate_id %></td>
-        <td><%= timetable.gclass_id %></td>
-        <td><%= timetable.hiduke %></td>
-        <td><%= timetable.timed %></td>
+        <td><%= timetable.hiduke %>(<%= timetable.week %>)</td>
+        <td><%= timetable.grate.gakunen %></td>
+        <td><%= timetable.gclass.kumi %></td>
+        <td><%= timetable.clock.zigen %></td>
         <td><%= timetable.title.kyouka %></td>
         <td><%= timetable.content %></td>
         <td><%= timetable.task %></td>
