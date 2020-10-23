@@ -24,9 +24,9 @@ class TimetablesController < ApplicationController
   # POST /timetables
   # POST /timetables.json
   def create
-  
-    @fromdate = Date.today
-    @todate = Date.today + 7
+    
+    @fromdate = params[:fromdate].to_date
+    @todate = params[:fromdate_two].to_date
 
      (@fromdate..@todate).each do |date| 
        @yobi = date.wday
