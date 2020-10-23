@@ -23,11 +23,11 @@ pre {
 }
 
 a {
-  text-decoration:underline;
+  //text-decoration:underline;
   color: rgb(255, 9, 9);
 
   &:visited {
-    color: rgb(234, 0, 255);
+    color: rgba(0, 255, 85, 0.849);
   }
 
   &:hover {
