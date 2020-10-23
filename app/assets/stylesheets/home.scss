@@ -21,7 +21,7 @@
     }
     
     .example {
-        position:relative;
+        position: absolute;
         left:500px;
     }
 
@@ -34,6 +34,7 @@
     }
     .example2 {
         position: absolute;
+        top:350px;
         left:800px;
     }
 
@@ -47,6 +48,7 @@
 
     .example3 {
         position: absolute;
+        top:350px;
         left:300px;
     }
 
