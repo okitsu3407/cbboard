@@ -3,7 +3,7 @@
 
 body {
   background-color: #fff;
-  color: #333;
+  color: red;
   margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -24,7 +24,7 @@ pre {
 
 a {
   text-decoration:underline;
-  color: #000;
+  color: rgb(255, 9, 9);
 
   &:visited {
     color: rgb(234, 0, 255);
