@@ -2,7 +2,9 @@
 
 <h1>時間割テンプレート</h1>
 
+<% if @temples.present? %>
 <h3><%= @temples[0].grate.gakunen %>年<%= @temples[0].gclass.kumi %>組</h3>
+<% end %>
 
 <table border = "1">
 <thead>
