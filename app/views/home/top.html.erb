@@ -1,20 +1,18 @@
 <div class="title">
-  <img src="/images/title.png" width="380pxpx" height="80px">
+  <img src="/images/title.png" width="380px" height="80px">
 </div>
 
-<h2><span class="text-combine"><%= @today.mon %></span>月 <span class="text-combine"><%= @today.day %></span>日 「<%= @yobi %>曜日」</h2>
+<h2><span class="text-combine"><font face="UD デジタル 教科書体 N-B"><%= @today.mon %></span>月 <span class="text-combine"><%= @today.day %></span>日 「<%= @yobi %>曜日」</font></h2>
 
     <div class="example">
-      <img src="/images/kokubankesi.png">
-      <p><%= link_to '時間割テーブルへ', timetables_path %></p>
+      <%= link_to image_tag("/images/kesi.png") ,"../timetables" ,:size =>'180x100' %>
     </div>
 
     <div class="example2">
-    <img src="/images/kami.png">
-    <p><%= link_to '月間行事予定', plans_path %></p>
+      <%= link_to image_tag("/images/km.png") ,"../plans" %>
     </div>
 
     <div class="example3">
-    <img src="/images/kami.png">
-    <p><%= link_to '課題提出', users_path %></p>
+      <img src="/images/cami.png" width="180px">
+      <p><%= link_to '課題提出', users_path %></p>
     </div>

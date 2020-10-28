@@ -27,13 +27,13 @@ a {
   color: rgb(0, 238, 255);
 
   &:visited {
-    color: rgba(0, 255, 85, 0.849);
+    color: gold;
   }
 
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
+  //&:hover {
+  //  color: #fff;
+  //  background-color:orchid;
+  //}
 }
 
 th {
