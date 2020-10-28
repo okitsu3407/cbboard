@@ -8,5 +8,7 @@ class Temple < ApplicationRecord
     belongs_to :clock
 
     enum weeks: { "月" => 1, "火" => 2, "水" => 3, "木" => 4, "金" => 5 }
+    
+    
 
 end

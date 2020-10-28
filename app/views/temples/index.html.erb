@@ -2,19 +2,15 @@
 
 <h1>時間割テンプレート</h1>
 
-<% if @temples.present? %>
-<h3><%= @temples[0].grate.gakunen %>年<%= @temples[0].gclass.kumi %>組</h3>
-<% end %>
 
+<% b = 0 %>
 <table border = "1">
 <thead>
 
   <tr>
-      <% Temple.weeks.each do |w| %>
-      <th></th>
-      <td><%= w[0] %></td>
+    
       <!--<th colspan="3"></th>-->
-      <% end %>
+      
   </tr>
        
 </thead>
@@ -23,6 +19,14 @@
     <% i = 1 %>
     <% a = 0 %> 
     <% @temples.each do |temple| %>
+    <% if b == 0 %>
+      <th><%= temple.grate.gakunen %>年<%= temple.gclass.kumi %>組</th>
+      <% Temple.weeks.each do |w| %>
+        <th></th>
+        <td><%= w[0] %></td>
+        <% end %>
+      <% b = 1 %>
+    <% end %>
       <% if i == 1 %>
       <tr>
       <td><%= temple.clock.zigen %></td>
@@ -47,9 +51,14 @@
         <td></td>
         <td></td>
         <% end %>
+        
       <% if i == 5 %>
       </tr>
       <% a = a + 1 %>
+      <% if a == 7 %>
+      <% a = 0 %>
+      <% b = 0 %>
+      <% end %>
       <% i = 0 %>
       <% end %>
       <% i = i + 1 %>

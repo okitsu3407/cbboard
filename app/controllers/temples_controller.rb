@@ -4,7 +4,7 @@ class TemplesController < ApplicationController
   # GET /temples
   # GET /temples.json
   def index
-    @temples = Temple.all.order(clock_id: :asc,week: :asc)
+    @temples = Temple.all.order(grate_id: :asc,gclass_id: :asc,clock_id: :asc,week: :asc)
   end
 
   # GET /temples/1
@@ -21,6 +21,7 @@ class TemplesController < ApplicationController
   def edit
   end
 
+
   # POST /temples
   # POST /temples.json
   def create
@@ -28,7 +29,7 @@ class TemplesController < ApplicationController
 
     respond_to do |format|
       if @temple.save
-        format.html { redirect_to @temple, notice: 'Temple was successfully created.' }
+        format.html { redirect_to @temple, notice: '時間割の追加に成功しました。' }
         format.json { render :show, status: :created, location: @temple }
       else
         format.html { render :new }

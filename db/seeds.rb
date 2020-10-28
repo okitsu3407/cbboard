@@ -183,7 +183,7 @@ Grate.create(gakunen: "3")
 
 
 Gclass.delete_all
-Gclass.connection.execute("delete from sqlite_sequence where name='glasses'")
+Gclass.connection.execute("delete from sqlite_sequence where name='gclasses'")
 Gclass.create(kumi: "1")
 Gclass.create(kumi: "2")
 Gclass.create(kumi: "3")
@@ -199,21 +199,164 @@ Clock.create(zigen: "５限")
 Clock.create(zigen: "６限")
 Clock.create(zigen: "７限")
 
+
 require 'csv'
 Temple.delete_all
 Temple.connection.execute("delete from sqlite_sequence where name='temples'")
-CSV.foreach('db/seeds/temples.csv', headers: true) do |row|
-    Content.create(
-        id: row['id'],
+CSV.foreach('db/temples_11.csv', headers: true) do |row|
+    Temple.create(
         gclass_id: row['gclass_id'],
-        created_at: row['created_at'],
-        updated_at: row['updated_at'],
-        week :row['week'],
+        week: row['week'],
         timed: row['timed'],
         title_id: row['title_id'],
         clock_id: row['clock_id'],
-        classroom_id: row['classroom_id']
-        teacher_id: row['teacher_id']
+        classroom_id: row['classroom_id'],
+        teacher_id: row['teacher_id'],
         grate_id: row['grate_id']
     )
-  end
+end
+
+CSV.foreach('db/temples_12.csv', headers: true) do |row|
+    Temple.create(
+        gclass_id: row['gclass_id'],
+        week: row['week'],
+        timed: row['timed'],
+        title_id: row['title_id'],
+        clock_id: row['clock_id'],
+        classroom_id: row['classroom_id'],
+        teacher_id: row['teacher_id'],
+        grate_id: row['grate_id']
+    )
+end
+
+CSV.foreach('db/temples_13.csv', headers: true) do |row|
+    Temple.create(
+        gclass_id: row['gclass_id'],
+        week: row['week'],
+        timed: row['timed'],
+        title_id: row['title_id'],
+        clock_id: row['clock_id'],
+        classroom_id: row['classroom_id'],
+        teacher_id: row['teacher_id'],
+        grate_id: row['grate_id']
+    )
+end
+
+CSV.foreach('db/temples_14.csv', headers: true) do |row|
+    Temple.create(
+        gclass_id: row['gclass_id'],
+        week: row['week'],
+        timed: row['timed'],
+        title_id: row['title_id'],
+        clock_id: row['clock_id'],
+        classroom_id: row['classroom_id'],
+        teacher_id: row['teacher_id'],
+        grate_id: row['grate_id']
+    )
+end
+
+CSV.foreach('db/temples_21.csv', headers: true) do |row|
+    Temple.create(
+        gclass_id: row['gclass_id'],
+        week: row['week'],
+        timed: row['timed'],
+        title_id: row['title_id'],
+        clock_id: row['clock_id'],
+        classroom_id: row['classroom_id'],
+        teacher_id: row['teacher_id'],
+        grate_id: row['grate_id']
+    )
+end
+
+CSV.foreach('db/temples_22.csv', headers: true) do |row|
+    Temple.create(
+        gclass_id: row['gclass_id'],
+        week: row['week'],
+        timed: row['timed'],
+        title_id: row['title_id'],
+        clock_id: row['clock_id'],
+        classroom_id: row['classroom_id'],
+        teacher_id: row['teacher_id'],
+        grate_id: row['grate_id']
+    )
+end
+
+CSV.foreach('db/temples_23.csv', headers: true) do |row|
+    Temple.create(
+        gclass_id: row['gclass_id'],
+        week: row['week'],
+        timed: row['timed'],
+        title_id: row['title_id'],
+        clock_id: row['clock_id'],
+        classroom_id: row['classroom_id'],
+        teacher_id: row['teacher_id'],
+        grate_id: row['grate_id']
+    )
+end
+
+CSV.foreach('db/temples_24.csv', headers: true) do |row|
+    Temple.create(
+        gclass_id: row['gclass_id'],
+        week: row['week'],
+        timed: row['timed'],
+        title_id: row['title_id'],
+        clock_id: row['clock_id'],
+        classroom_id: row['classroom_id'],
+        teacher_id: row['teacher_id'],
+        grate_id: row['grate_id']
+    )
+end
+
+CSV.foreach('db/temples_31.csv', headers: true) do |row|
+    Temple.create(
+        gclass_id: row['gclass_id'],
+        week: row['week'],
+        timed: row['timed'],
+        title_id: row['title_id'],
+        clock_id: row['clock_id'],
+        classroom_id: row['classroom_id'],
+        teacher_id: row['teacher_id'],
+        grate_id: row['grate_id']
+    )
+end
+
+CSV.foreach('db/temples_32.csv', headers: true) do |row|
+    Temple.create(
+        gclass_id: row['gclass_id'],
+        week: row['week'],
+        timed: row['timed'],
+        title_id: row['title_id'],
+        clock_id: row['clock_id'],
+        classroom_id: row['classroom_id'],
+        teacher_id: row['teacher_id'],
+        grate_id: row['grate_id']
+    )
+end
+
+CSV.foreach('db/temples_33.csv', headers: true) do |row|
+    Temple.create(
+        gclass_id: row['gclass_id'],
+        week: row['week'],
+        timed: row['timed'],
+        title_id: row['title_id'],
+        clock_id: row['clock_id'],
+        classroom_id: row['classroom_id'],
+        teacher_id: row['teacher_id'],
+        grate_id: row['grate_id']
+    )
+end
+
+CSV.foreach('db/temples_34.csv', headers: true) do |row|
+    Temple.create(
+        gclass_id: row['gclass_id'],
+        week: row['week'],
+        timed: row['timed'],
+        title_id: row['title_id'],
+        clock_id: row['clock_id'],
+        classroom_id: row['classroom_id'],
+        teacher_id: row['teacher_id'],
+        grate_id: row['grate_id']
+    )
+end
+
+ 
