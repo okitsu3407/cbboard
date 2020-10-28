@@ -203,7 +203,6 @@ Clock.create(zigen: "７限")
 require 'csv'
 Temple.delete_all
 Temple.connection.execute("delete from sqlite_sequence where name='temples'")
-<<<<<<< HEAD
 CSV.foreach('db/temples_11.csv', headers: true) do |row|
     Temple.create(
         gclass_id: row['gclass_id'],
@@ -271,11 +270,9 @@ end
 
 CSV.foreach('db/temples_22.csv', headers: true) do |row|
     Temple.create(
-=======
 CSV.foreach('db/temples.csv', headers: true) do |row|
     Content.create(
         id: row['id'],
->>>>>>> bf4d4d86cde13a7ee826a62e348b88df83afc9af
         gclass_id: row['gclass_id'],
         week: row['week'],
         timed: row['timed'],
@@ -285,7 +282,6 @@ CSV.foreach('db/temples.csv', headers: true) do |row|
         teacher_id: row['teacher_id'],
         grate_id: row['grate_id']
     )
-<<<<<<< HEAD
 end
 
 CSV.foreach('db/temples_23.csv', headers: true) do |row|
@@ -367,6 +363,4 @@ CSV.foreach('db/temples_34.csv', headers: true) do |row|
 end
 
  
-=======
 end
->>>>>>> bf4d4d86cde13a7ee826a62e348b88df83afc9af
