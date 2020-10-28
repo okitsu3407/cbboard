@@ -268,11 +268,9 @@ CSV.foreach('db/temples_21.csv', headers: true) do |row|
     )
 end
 
+
 CSV.foreach('db/temples_22.csv', headers: true) do |row|
     Temple.create(
-CSV.foreach('db/temples.csv', headers: true) do |row|
-    Content.create(
-        id: row['id'],
         gclass_id: row['gclass_id'],
         week: row['week'],
         timed: row['timed'],
@@ -363,4 +361,3 @@ CSV.foreach('db/temples_34.csv', headers: true) do |row|
 end
 
  
-end
