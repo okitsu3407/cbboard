@@ -361,4 +361,7 @@ CSV.foreach('db/temples_34.csv', headers: true) do |row|
 end
 
  
+<<<<<<< HEAD
 
+=======
+>>>>>>> 43d8e65ef5abac40cda80f3ee7807f80a11fd8a2
