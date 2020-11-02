@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :titles
   resources :classrooms
   get 'home/top'
-
+  post 'plans/upload'
   resources :gclasses
   resources :subjects
   resources :grates

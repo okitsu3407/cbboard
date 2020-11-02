@@ -56,9 +56,25 @@ class PlansController < ApplicationController
   def destroy
     @plan.destroy
     respond_to do |format|
-      format.html { redirect_to plans_url, notice: 'Plan was successfully destroyed.' }
+      format.html { redirect_to plans_url, notice: '本当によろしいですか？' }
       format.json { head :no_content }
     end
+  end
+
+  def upload
+      case month
+      when 1 then
+
+      when 2 then
+
+      when 3 then
+
+      when 4 then
+
+      else
+
+      end
+
   end
 
   private
@@ -71,4 +87,5 @@ class PlansController < ApplicationController
     def plan_params
       params.fetch(:plan, {})
     end
+
 end
