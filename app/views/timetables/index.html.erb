@@ -2,13 +2,13 @@
 
 <h1>連絡黒板</h1>
 
-<table border = "1">
+<table border = "1" align = "center">
   <thead>
     <tr>
       <th>日付</th>
       <th>学年</th>
       <th>クラス</th>
-      <th>時間割</th>
+      <th>時限</th>
       <th>教科</th>
       <th>内容</th>
       <th>課題</th>
@@ -19,13 +19,13 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody align = "center">
     <% @timetables.each do |timetable| %>
-       <% @week = ["日","月","火","水","木","金","土"] %>
+       <% week = ["日","月","火","水","木","金","土"] %>
       <tr>
-        <td><%= timetable.hiduke %>(<%= @week[timetable.hiduke.wday] %>)</td>
+        <td><%= timetable.hiduke %>(<%= week[timetable.hiduke.wday] %>)</td>
         <td><%= timetable.grate.gakunen %></td>
-        <td><%= timetable.gclass.kumi %></td>
+        <td><%= timetable.gclass_id %></td>
         <td><%= timetable.clock.zigen %></td>
         <td><%= timetable.title.kyouka %></td>
         <td><%= timetable.content %></td>
@@ -33,9 +33,8 @@
         <td><%= timetable.need %></td>
         <td><%= timetable.classroom.kyousitsu %></td>
         <td><%= timetable.teacher.sensei %></td>
-        <td><%= link_to '表示', timetable %></td>
         <td><%= link_to '編集', edit_timetable_path(timetable) %></td>
-        <td><%= link_to '削除', timetable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '削除', timetable, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
     <% end %>
 
@@ -45,3 +44,4 @@
 <br>
 
 <%= link_to '新規作成', new_timetable_path %>
+<%= button_to "全て削除", destroy_all_timetables_path, method: :delete, data: { confirm: '本当に全て削除しますか？(※データ量に応じて時間がかかります）' } %>

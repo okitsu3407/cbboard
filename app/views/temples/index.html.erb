@@ -2,73 +2,85 @@
 
 <h1>時間割テンプレート</h1>
 
-
-<% b = 0 %>
-<table border = "1">
-<thead>
-
-  <tr>
+<% Grate.all.each do |gaku| %>                                                       <!--学年（１～３）でループ-->
+                                                                    
+  <% Gclass.all.each do |kumi| %>                                                    <!--  組（１～４）でループ-->
     
-      <!--<th colspan="3"></th>-->
-      
-  </tr>
-       
-</thead>
-
-  <tbody>
-    <% i = 1 %>
-    <% a = 0 %> 
-    <% @temples.each do |temple| %>
-    <% if b == 0 %>
-      <th><%= temple.grate.gakunen %>年<%= temple.gclass.kumi %>組</th>
-      <% Temple.weeks.each do |w| %>
-        <th></th>
-        <td><%= w[0] %></td>
-        <% end %>
-      <% b = 1 %>
-    <% end %>
-      <% if i == 1 %>
-      <tr>
-      <td><%= temple.clock.zigen %></td>
-      <% if a == 6 %>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <% end %>
-      <% else %>
-      <td></td>
-      <% end %>
-        
-        <td><%= temple.title.kyouka %>
-        <br>
-        <%= link_to '詳細', temple %>
-        <%= link_to '編集', edit_temple_path(temple) %>
-        <%= link_to '削除', temple, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% if a == 6 %>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <% end %>
-        
-      <% if i == 5 %>
-      </tr>
-      <% a = a + 1 %>
-      <% if a == 7 %>
-      <% a = 0 %>
-      <% b = 0 %>
-      <% end %>
-      <% i = 0 %>
-      <% end %>
-      <% i = i + 1 %>
-    <% end %>
-	</tbody>
-</table>
+        <% tablecount = 1 %>
+        <% rowcount = 1 %>
+        <% columncount = 1 %>
+        <% index = 0 %>
   
-      
+        <thead></thead>
 
+        <tbody>
+
+             
+              <h4 align = "center"><b><%= gaku.gakunen %> - <%= kumi.kumi %></h4>      <!--学年と組を表示-->
+    
+              <% temple = @temples.where(grate_id:gaku,gclass_id:kumi) %>             <!--対応する学年と組のレコードを抽出-->
+
+              <table border = "1" align = "center">  
+
+              <% temple.size.times do %>                                              <!--抽出したレコード数でループ-->
+                   
+                  <% if tablecount == 1 %>                      
+                      <tr>
+                          <th></th>
+                          <% Temple.weeks.each do |w| %> 
+                              <td  align = "center"><%= w[0] %></td>                  <!--テーブルの開始だけ曜日を表示-->
+                          <% end %>
+                      </tr>
+                      <% tablecount = 0 %>
+                  <% end %>
+                
+             
+                  <% if rowcount == 1 %>
+                        <tr>
+                      <td><%= temple[index].clock.zigen %></td>                       <!--１列目だけ時限を表示-->
+                  <% end %>
+                  
+                  
+
+                  <% if columncount == 7 %>                                          
+                     <th></th>                                                        <!--７限の横の空白調整-->
+                     <th></th> 
+                  <% end %>
+
+                  <td  align = "center"><%= temple[index].title.kyouka %>             <!--教科を表示("br"を使うため詳細、編集、削除は同td内)-->
+                       <br>
+                       (  <%= link_to '詳細', temple[index] %>  )
+                       <!-- <%= link_to '編集', edit_temple_path(temple[index]) %> -->
+                       <!-- <%= link_to '削除', temple[index], method: :delete, data: { confirm: '本当に削除しますか？' } %></td> -->
+
+                  <% if columncount == 7 %>    
+                        <th></th>                                                     <!--７限の横の空白調整-->
+                        <th></th>
+                     <% columncount = 0 %>      
+                     <% rowcount = 5 %>
+                     <% tablecount = 1 %>
+                       </table>
+                  <% end %>
+
+                  <%  rowcount += 1 %>
+                  <% index += 1 %>
+
+                  <% if rowcount == 6 %>
+                        </tr>
+                     <% columncount += 1 %>    
+                     <% rowcount = 1 %>  
+                  <% end %>
+
+                  <% if index == temple.size %>
+                    <% index = 0 %>
+                  <% end %>
+
+              <% end %>
+         </tbody>
+                   
+  <% end %>
+<% end %>
 
 <br>
 
-<%= link_to '時間割追加', new_temple_path %>
+<!-- <%= link_to '時間割追加', new_temple_path %> -->

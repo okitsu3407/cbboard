@@ -2,20 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.home{
-    body{
-        background-image: url("/images/bb.png");
-        background-size:cover;
-    }
-    
-    h1 {
-        color: white;
-        text-align: center;
-        font-size:40px;
-        padding:20px;
-        width:280px;
-    }
-    
+.home{    
     .title{
         padding:30px;
     }

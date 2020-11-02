@@ -1,39 +1,36 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Grade:</strong>
-  <%= @temple.grate_id %>
+  <% yobi = ["月","火","水","木","金"] %>
+  <%= yobi[@temple.week.to_i-1] %>曜日
+</p>
+
+<h4><%= @temple.clock.zigen %></h4>
+
+<p>
+  <strong>学年:</strong>
+  <%= @temple.grate.gakunen %>年
 </p>
 
 <p>
-  <strong>Gclass:</strong>
-  <%= @temple.gclass_id %>
+  <strong>組:</strong>
+  <%= @temple.gclass.kumi %>組
 </p>
 
 <p>
-  <strong>Week:</strong>
-  <%= @temple.week %>
+  <strong>教科名:</strong>
+  <%= @temple.title.kyouka %>
 </p>
 
 <p>
-  <strong>Timed:</strong>
-  <%= @temple.timed %>
+  <strong>教室:</strong>
+  <%= @temple.classroom.kyousitsu %>
 </p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @temple.title %>
+  <strong>先生:</strong>
+  <%= @temple.teacher.sensei %>
 </p>
 
-<p>
-  <strong>Classroom:</strong>
-  <%= @temple.classroom %>
-</p>
-
-<p>
-  <strong>Teacher:</strong>
-  <%= @temple.teacher %>
-</p>
-
-<%= link_to 'Edit', edit_temple_path(@temple) %> |
-<%= link_to 'Back', temples_path %>
+<!-- <%= link_to '編集', edit_temple_path(@temple) %> | -->
+<%= link_to '戻る', temples_path %>

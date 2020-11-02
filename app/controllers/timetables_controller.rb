@@ -60,7 +60,7 @@ class TimetablesController < ApplicationController
       
 
 
-    redirect_to timetables_path, notice: 'Timetable was successfully created.'
+    redirect_to timetables_path
 
     #@timetable = Timetable.new(timetable_params)
 
@@ -80,7 +80,7 @@ class TimetablesController < ApplicationController
   def update
     respond_to do |format|
       if @timetable.update(timetable_params)
-        format.html { redirect_to @timetable, notice: 'Timetable was successfully updated.' }
+        format.html { redirect_to @timetable }
         format.json { render :show, status: :ok, location: @timetable }
       else
         format.html { render :edit }
@@ -94,11 +94,15 @@ class TimetablesController < ApplicationController
   def destroy
     @timetable.destroy
     respond_to do |format|
-      format.html { redirect_to timetables_url, notice: 'Timetable was successfully destroyed.' }
+      format.html { redirect_to timetables_url, notice: '削除しました' }
       format.json { head :no_content }
     end
   end
 
+  def destroy_all
+    Timetable.destroy_all
+    redirect_to timetables_path, notice: '削除しました'
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_timetable
