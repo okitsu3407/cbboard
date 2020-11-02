@@ -1,54 +1,55 @@
 <p id="notice"><%= notice %></p>
 
+
+<% yobi = ["日","月","火","水","木","金","土"] %>
+<h4>
+  <%= @timetable.hiduke %>(<%= yobi[@timetable.hiduke.wday] %>)
+</h4>
+
+<h4>
+  <%= @timetable.clock.zigen %>目
+</4>
+
 <p>
-  <strong>Grade:</strong>
-  <%= @timetable.grate_id %>
+  <strong>学年:</strong>
+  <%= @timetable.grate.gakunen %>年
 </p>
 
 <p>
-  <strong>Gclass:</strong>
-  <%= @timetable.gclass_id %>
+  <strong>クラス:</strong>
+  <%= @timetable.gclass.kumi %>組
+</p>
+
+
+<p>
+  <strong>教科名:</strong>
+  <%= @timetable.title.kyouka %>
 </p>
 
 <p>
-  <strong>Hiduke:</strong>
-  <%= @timetable.hiduke %>
-</p>
-
-<p>
-  <strong>Timed:</strong>
-  <%= @timetable.timed %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @timetable.title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
+  <strong>内容:</strong>
   <%= @timetable.content %>
 </p>
 
 <p>
-  <strong>Task:</strong>
+  <strong>課題:</strong>
   <%= @timetable.task %>
 </p>
 
 <p>
-  <strong>Need:</strong>
+  <strong>必要なもの:</strong>
   <%= @timetable.need %>
 </p>
 
 <p>
-  <strong>Classroom:</strong>
-  <%= @timetable.classroom %>
+  <strong>教室:</strong>
+  <%= @timetable.classroom.kyousitsu %>
 </p>
 
 <p>
-  <strong>Teacher:</strong>
-  <%= @timetable.teacher %>
+  <strong>先生:</strong>
+  <%= @timetable.teacher.sensei %>
 </p>
 
-<%= link_to 'Edit', edit_timetable_path(@timetable) %> |
-<%= link_to 'Back', timetables_path %>
+<p><%= link_to '編集し直す', edit_timetable_path(@timetable) %> |
+<%= link_to '戻る', timetables_path %></p>
