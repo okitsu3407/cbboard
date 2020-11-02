@@ -62,19 +62,28 @@ class PlansController < ApplicationController
   end
 
   def upload
-      case month
-      when 1 then
 
-      when 2 then
+    if params[:images].present?
 
-      when 3 then
+    filename = ""
+    case params[:month].to_i
+    when 1 then
+      filename = '4-6month.pdf'
+    when 2 then
+      filename = '7-9month.pdf'
+    when 3 then
+      filename = '10-12month.pdf'
+    when 4 then
+      filename = '1-3month.pdf'
+    else
 
-      when 4 then
+    end
 
-      else
-
-      end
-
+      File.open( "public/images/#{filename}", 'w+b') { |f|
+      f.write(params[:images].read)
+      }
+    end
+    redirect_to plans_path
   end
 
   private

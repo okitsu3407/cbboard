@@ -7,7 +7,7 @@
 <p><a href="/images/10-12month.pdf"><font color="white" size="4"><b>10・11・12</b>月予定表</font></a></p>
 <p><a href="/images/1-3month.pdf"><font color="white" size="4"><b>1・2・3</b>月予定表</font></a></p>
 
-<%= form_tag({controller: :plans,action: :upload}) do %>
+<%= form_tag({controller: :plans,action: :upload},{:multipart => true }) do %>
     <!-- ここにform_tagメソッドを記述 -->
 月:<select name="month">
 <option value="1">４～６月</option>
