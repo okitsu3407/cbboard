@@ -56,9 +56,34 @@ class PlansController < ApplicationController
   def destroy
     @plan.destroy
     respond_to do |format|
-      format.html { redirect_to plans_url, notice: 'Plan was successfully destroyed.' }
+      format.html { redirect_to plans_url, notice: '本当によろしいですか？' }
       format.json { head :no_content }
     end
+  end
+
+  def upload
+
+    if params[:images].present?
+
+    filename = ""
+    case params[:month].to_i
+    when 1 then
+      filename = '4-6month.pdf'
+    when 2 then
+      filename = '7-9month.pdf'
+    when 3 then
+      filename = '10-12month.pdf'
+    when 4 then
+      filename = '1-3month.pdf'
+    else
+
+    end
+
+      File.open( "public/images/#{filename}", 'w+b') { |f|
+      f.write(params[:images].read)
+      }
+    end
+    redirect_to plans_path
   end
 
   private
@@ -71,4 +96,5 @@ class PlansController < ApplicationController
     def plan_params
       params.fetch(:plan, {})
     end
+
 end
