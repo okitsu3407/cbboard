@@ -111,6 +111,6 @@ class TimetablesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def timetable_params
-      params.require(:timetable).permit(:grate_id, :clock_id, :title_id, :gclass_id, :week, :timed, :classroom_id, :teacher_id)
+      params.require(:timetable).permit(:grate_id, :clock_id, :title_id, :gclass_id, :week, :timed, :classroom_id, :teacher_id, :content, :task, :need)
     end
 end
