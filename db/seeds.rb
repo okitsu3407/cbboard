@@ -361,3 +361,4 @@ CSV.foreach('db/temples_34.csv', headers: true) do |row|
 end
 
  
+

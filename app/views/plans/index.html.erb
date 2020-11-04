@@ -2,9 +2,28 @@
 
 <h1><font face="UD デジタル 教科書体 N-B">月間行事予定</h1>
 
+<<<<<<< HEAD
 
 <a href="/images/4-6month.pdf"><img src="/images/haru.png" width="300px">
 <a href="/images/7-9month.pdf"><img src="/images/natu.png" width="300px">
 <br>
 <a href="/images/10-12month.pdf"><img src="/images/aki.png" width="300px">
 <a href="/images/1-3month.pdf"><img src="/images/huki.png" width="300px">
+=======
+<p><a href="/images/4-6month.pdf"><font color="white" size="4"><b>4・5・6</b>月予定表</font></a></p>
+<p><a href="/images/7-9month.pdf"><font color="white" size="4"><b>7・8・9</b>月予定表</font></a></p>
+<p><a href="/images/10-12month.pdf"><font color="white" size="4"><b>10・11・12</b>月予定表</font></a></p>
+<p><a href="/images/1-3month.pdf"><font color="white" size="4"><b>1・2・3</b>月予定表</font></a></p>
+
+<%= form_tag({controller: :plans,action: :upload},{:multipart => true }) do %>
+    <!-- ここにform_tagメソッドを記述 -->
+月:<select name="month">
+<option value="1">４～６月</option>
+<option value="2">７～９月</option>
+<option value="3">１０～１２月</option>
+<option value="4">１～３月</option>
+
+<input type="file"  name="images" accept=".pdf">
+<input type="submit" value="更新">
+<% end %>
+>>>>>>> cef3310709df7a69eff20c5d7af53131a8a3f0b5

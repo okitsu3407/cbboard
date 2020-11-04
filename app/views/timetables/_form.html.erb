@@ -11,25 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :学年 %>
-    <%= form.select :grate_id, Grate.all.map { |b| [b.gakunen,b.id] } %>
-  </div>
 
-  <div class="field">
-    <%= form.label :クラス %>
-    <%= form.select :gclass_id, Gclass.all.map { |b| [b.kumi,b.id] } %>
-  </div>
+ 
+ 
+      <!--  <div class="field">                             ・・・学年～時限はいじられないようコメントアウトしてます 
+          <%= form.label :学年 %>
+          <%= form.select :grate_id, Grate.all.map { |b| [b.gakunen,b.id] } %>
+        </div>
 
-  <div class="field">
-    <%= form.label :日付け %>
-    <%= form.date_select :hiduke, id: :timetable_hiduke %>
-  </div>
+        <div class="field">
+          <%= form.label :クラス %>
+          <%= form.select :gclass_id, Gclass.all.map { |b| [b.kumi,b.id] } %>
+        </div>
 
-  <div class="field">
-    <%= form.label :時限 %>
-    <%= form.select :clock_id, Clock.all.map { |b| [b.zigen,b.id] } %>
-  </div>
+        <div class="field">
+          <%= form.label :日付け %>
+          <%= form.date_select :hiduke, id: :timetable_hiduke %>
+        </div>
+
+        <div class="field">
+          <%= form.label :時限 %>
+          <%= form.select :clock_id, Clock.all.map { |b| [b.zigen,b.id] } %>
+        </div> -->
+  
 
   <div class="field">
     <%= form.label :教科 %>
