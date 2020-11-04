@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  
+
   private
 
   def basic_authenticate
@@ -8,6 +8,5 @@ class ApplicationController < ActionController::Base
       user == 'high' && pass == 'school'
     end
   end
-
 
 end
