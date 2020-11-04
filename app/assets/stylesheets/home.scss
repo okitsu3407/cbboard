@@ -9,14 +9,14 @@
     
     .example {
         position: absolute;
-        top:110px;
-        left:400px;
+        top: 13%;
+        left:30%;
     }
 
     .example2 {
         position: absolute;
-        top:350px;
-        left:750px;
+        top:47%;
+        left:55%;
     }
     
     .example3 {
@@ -48,4 +48,8 @@
         -ms-text-combine-horizontal: all;
         text-combine-upright: all;
       }
+
+    .login{
+        margin-top : 40%;
+    }
 }
