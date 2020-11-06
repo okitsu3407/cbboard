@@ -29,5 +29,7 @@ class HomeController < ApplicationController
             flash.now[:alert] = "ようこそ　名無しさん"
         elsif session[:login] = ""
             flash.now[:alert] = ""
+        end
+    end
 
 end
