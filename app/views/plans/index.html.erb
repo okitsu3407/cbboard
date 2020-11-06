@@ -3,20 +3,23 @@
 <h1><font face="UD デジタル 教科書体 N-B">月間行事予定</h1>
 
 <div class="ex">
-  <a href="/images/4-6month.pdf"><img src="/images/haru.png" width="400px">
+  <a href="/images/4-6month.pdf"><img src="/images/haru.png" width="320px">
 </div>
 <div class="ex2">
-  <a href="/images/7-9month.pdf"><img src="/images/natu.png" width="400px">
+  <a href="/images/7-9month.pdf"><img src="/images/natu.png" width="320px">
 </div>
 <div class="ex3">
-  <a href="/images/10-12month.pdf"><img src="/images/aki.png" width="400px">
+  <a href="/images/10-12month.pdf"><img src="/images/aki.png" width="320px">
 </div>
 <div class="ex4">
-  <a href="/images/1-3month.pdf"><img src="/images/huki.png" width="400px">
+  <a href="/images/1-3month.pdf"><img src="/images/huki.png" width="320px">
 </div>
 
+<% if session[:login] == true %>
+<div class = "yoteipdf" >
 <%= form_tag({controller: :plans,action: :upload},{:multipart => true }) do %>
-    <!-- ここにform_tagメソッドを記述 -->
+月間行事予定のpdfを変更する場合はこちら
+<br>
 月:<select name="month">
 <option value="1">４～６月</option>
 <option value="2">７～９月</option>
@@ -26,3 +29,6 @@
 <input type="file"  name="images" accept=".pdf">
 <input type="submit" value="更新">
 <% end %>
+</div>
+<% end %>
+
