@@ -3,7 +3,10 @@
 
 body {
   background-color: #fff;
-  color:aqua;
+  -webkit-text-stroke-width: 0.4px;
+  -webkit-text-stroke-color: rgb(0, 0, 0);
+  -webkit-text-fill-color: white;
+  text-shadow: 1px 1px 0 rgb(60, 27, 248);
   margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
