@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<% if session[:login] == true %>
+
 <h1>時間割テンプレート</h1>
 
 <% Grate.all.each do |gaku| %>                                                       <!--学年（１～３）でループ-->
@@ -84,3 +86,7 @@
 <br>
 
 <!-- <%= link_to '時間割追加', new_temple_path %> -->
+
+<% else %>
+※このページを表示するにはログインが必要です
+<% end %>
