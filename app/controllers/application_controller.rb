@@ -5,8 +5,10 @@ class ApplicationController < ActionController::Base
 
   def basic_authenticate
     authenticate_or_request_with_http_basic do |user,pass|
-      user == 'high' && pass == 'school'
+     if user == 'high' && pass == 'school'
+      session[:login] = true
     end
+  end
   end
 
 end
