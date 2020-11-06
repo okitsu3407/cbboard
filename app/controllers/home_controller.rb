@@ -14,8 +14,8 @@ class HomeController < ApplicationController
         @today = Date.today
         week = ['日','月','火','水','木','金','土'] 
         @yobi = week[@today.wday]
-        render "top",status: 401
         session[:login] = ""
+        render "top",status: 401
     end
 
     def top
