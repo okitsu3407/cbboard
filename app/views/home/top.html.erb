@@ -17,7 +17,9 @@
 </div>
 
 <div class="login">
-<%= link_to 'ログイン' , home_login_path,class: 'btn btn-default' %>
-<br>
+<% if session[:login] == true %>
 <%= link_to 'ログインアウト' , home_logout_path,class: 'btn btn-default' %>
+<% else %>
+<%= link_to 'ログイン' , home_login_path,class: 'btn btn-default' %>
+<% end %>
 </div>
