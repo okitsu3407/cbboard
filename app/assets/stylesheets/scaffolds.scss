@@ -23,17 +23,11 @@ p, ol, ul, td {
 //}
 
 a {
-  //text-decoration:underline;
   color: chartreuse;
 
-  &:visited {
-    color: rgb(255, 255, 255);
+  &:hover {
+    color: #fff;
   }
-
-  //&:hover {
-  //  color: #fff;
-  //  background-color:orchid;
-  //}
 }
 
 th {
