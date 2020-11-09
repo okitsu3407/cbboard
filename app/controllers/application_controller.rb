@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
     authenticate_or_request_with_http_basic do |user,pass|
      if user == 'high' && pass == 'school'
       session[:login] = true
+      flash[:message] = 'ログインしています。'
     end
   end
   end

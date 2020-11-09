@@ -19,7 +19,7 @@
         <tbody>
 
              
-              <h4 align = "center"><b><%= gaku.gakunen %> - <%= kumi.kumi %></h4>      <!--学年と組を表示-->
+              <h3 align = "center"><b><%= gaku.gakunen %> - <%= kumi.kumi %></h3>      <!--学年と組を表示-->
     
               <% temple = @temples.where(grate_id:gaku,gclass_id:kumi) %>             <!--対応する学年と組のレコードを抽出-->
 
@@ -52,7 +52,7 @@
 
                   <td  align = "center"><%= temple[index].title.kyouka %>             <!--教科を表示("br"を使うため詳細、編集、削除は同td内)-->
                        <br>
-                       (  <%= link_to '詳細', temple[index] %>  )
+                         <%= link_to '詳細', temple[index] %>  
                        <!-- <%= link_to '編集', edit_temple_path(temple[index]) %> -->
                        <!-- <%= link_to '削除', temple[index], method: :delete, data: { confirm: '本当に削除しますか？' } %></td> -->
 

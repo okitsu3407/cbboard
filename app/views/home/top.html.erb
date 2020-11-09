@@ -2,6 +2,8 @@
   <img src="/images/title.png" width="380px" height="80px">
 </div>
 
+
+
 <h2><span class="text-combine"><font face="UD デジタル 教科書体 N-B"><%= @today.mon %></span>月 <span class="text-combine"><%= @today.day %></span>日 「<%= @yobi %>曜日」</font></h2>
 
 <div class="example">
@@ -21,6 +23,8 @@
 <%= link_to '時間割テンプレートを表示', "../temples" %>
 <br>
 <%= link_to 'ログインアウト' , home_logout_path,class: 'btn btn-default' %>
+<br>
+<div class="logme"><%=  flash[:message] %></div>
 <% else %>
 <%= link_to 'ログイン' , home_login_path,class: 'btn btn-default' %>
 <% end %>
