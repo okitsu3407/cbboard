@@ -34,6 +34,8 @@
         color:white;
     }
 
+
+
     .text-combine {
         -webkit-text-combine: horizontal;
         -ms-text-combine-horizontal: all;
@@ -43,6 +45,22 @@
     .login{
         margin-top : 40%;
     }
+<<<<<<< HEAD
 }
 
     
+=======
+
+    button {
+    color: #fff; /* 文字色を白にする */
+    background-color: #3a3a3a; /* 背景色をグレー（#3a3a3a）にする */
+    border: 2px solid #000; /* 要素の枠を2pxの太さで、線の種類をsolidに、色を黒にする */
+    text-decoration: none; /* リンクに出てくる下線を無効にする*/
+  }
+  button:hover{
+    color: #000; /* 文字色を白にする */
+    background-color: #c9c9c9; /* 背景色をグレー（#c9c9c9）にする */
+    text-decoration: none; /* リンクに出てくる下線を無効にする*/    
+}
+}
+>>>>>>> 5b76903fe26fa24b1a04742a19f066b11b162e8d

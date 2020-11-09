@@ -19,6 +19,7 @@
 </div>
 
 <div class="login">
+<<<<<<< HEAD
 <% if session[:login] == true %>
 <%= link_to '時間割テンプレートを表示', "../temples" %>
 <br>
@@ -28,4 +29,13 @@
 <% else %>
 <%= link_to 'ログイン' , home_login_path,class: 'btn btn-default' %>
 <% end %>
+=======
+  <% if session[:login] == true %>
+    <%= link_to '時間割テンプレートを表示', "../temples" %>
+  <br>
+    <button><%= link_to 'ログインアウト' , home_logout_path %></button>
+  <% else %>
+  <button><%= link_to 'ログイン' , home_login_path %></button>
+  <% end %>
+>>>>>>> 5b76903fe26fa24b1a04742a19f066b11b162e8d
 </div>
