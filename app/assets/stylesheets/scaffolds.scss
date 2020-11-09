@@ -2,11 +2,15 @@
 @import "bootstrap";
 
 body {
+<<<<<<< HEAD
   background-color: #fff;
   -webkit-text-stroke-width: 0.23px;
   -webkit-text-stroke-color: rgb(0, 0, 0);
   -webkit-text-fill-color: rgb(255, 254, 254);
   text-shadow: 2px 2px 0 rgb(0, 0, 0);
+=======
+  color: chartreuse;
+>>>>>>> e18578944e9d87c1a677ac88e308f04a9e9a1060
   margin: 33px;
   font-family: 'UD デジタル 教科書体 N-B';
   font-size: 13px;
@@ -14,16 +18,17 @@ body {
 }
 
 p, ol, ul, td {
+  color: chartreuse;
   font-family: 'UD デジタル 教科書体 N-B';
   font-size: 13px;
   line-height: 18px;
 }
 
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
-}
+//pre {
+//  background-color: #eee;
+//  padding: 10px;
+//  font-size: 11px;
+//}
 
 a {
   color: rgb(255, 255, 255);
@@ -51,34 +56,34 @@ div {
   color: green;
 }
 
-.field_with_errors {
-  padding: 2px;
-  background-color: aqua;
-  display: table;
-}
+//.field_with_errors {
+//  padding: 2px;
+//  background-color: aqua;
+//  display: table;
+//}
 
-#error_explanation {
-  width: 450px;
-  border: 2px solid aqua;
-  padding: 7px 7px 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
+//#error_explanation {
+//  width: 450px;
+//  border: 2px solid aqua;
+//  padding: 7px 7px 0;
+//  margin-bottom: 20px;
+ // background-color: #f0f0f0;
 
-  h2 {
-    text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px -7px 0;
-    background-color: rgb(25, 78, 158);
-    color: #fff;
-  }
+  //h2 {
+  //  text-align: left;
+  //  font-weight: bold;
+  //  padding: 5px 5px 5px 15px;
+  //  font-size: 12px;
+  //  margin: -7px -7px 0;
+  //  background-color: rgb(25, 78, 158);
+  //  color: #fff;
+  //}
 
-  ul li {
-    font-size: 12px;
-    list-style: square;
-  }
-}
+  //ul li {
+  //  font-size: 12px;
+  //  list-style: square;
+  //}
+//}
 
 label {
   display: block;
