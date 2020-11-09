@@ -20,8 +20,8 @@
   <% if session[:login] == true %>
     <%= link_to '時間割テンプレートを表示', "../temples" %>
   <br>
-    <%= link_to 'ログインアウト' , home_logout_path,class: 'btn btn-default' %>
+    <button><%= link_to 'ログインアウト' , home_logout_path %></button>
   <% else %>
-    <%= link_to 'ログイン' , home_login_path,class: 'btn btn-default' %>
+  <button><%= link_to 'ログイン' , home_login_path %></button>
   <% end %>
 </div>
