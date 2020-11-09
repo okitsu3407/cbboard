@@ -14,7 +14,7 @@
 
 <% @timetables.each do |timetable| %>
       
-
+   
     <% if gakuhozon != timetable.grate.gakunen or kumihozon != timetable.gclass.kumi %>
       <% count = 1 %>
     <% end %>
@@ -62,7 +62,7 @@
 
           <tr>  
             <td><%= timetable.clock.zigen %></td>
-            <td><%= timetable.title.kyouka %></td>
+            <td class="kyouka"><%= timetable.title.kyouka %></td>
             <td><%= timetable.content %></td>
             <td><%= timetable.task %></td>
             <td><%= timetable.need %></td>

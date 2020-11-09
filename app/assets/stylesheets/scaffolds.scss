@@ -4,6 +4,12 @@
 body {
   background-color: #fff;
   -webkit-text-stroke-width: 0.23px;
+<<<<<<< HEAD
+  -webkit-text-fill-color: rgb(0, 0, 0);
+  margin: 33px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 18px;
+=======
   -webkit-text-stroke-color: rgb(0, 0, 0);
   -webkit-text-fill-color: rgb(255, 254, 254);
   text-shadow: 2px 2px 0 rgb(0, 0, 0);
@@ -11,6 +17,7 @@ body {
   margin: 33px;
   font-family: 'UD デジタル 教科書体 N-B';
   font-size: 13px;
+>>>>>>> 5b76903fe26fa24b1a04742a19f066b11b162e8d
   line-height: 18px;
 }
 
@@ -28,19 +35,36 @@ p, ol, ul, td {
 //}
 
 a {
+<<<<<<< HEAD
+  //text-decoration:underline;
+  -webkit-text-fill-color: rgb(135, 253, 0);
+  //&:hover {
+  //  color: #fff;
+  //  background-color:orchid;
+  //}
+=======
   color: rgb(255, 255, 255);
 
   &:hover {
     color: rgb(255, 255, 255);
   }
+>>>>>>> 5b76903fe26fa24b1a04742a19f066b11b162e8d
 }
 
+
 th {
-  padding-bottom: 5px;
+  padding: 10px 5px 10px 5px;
+  -webkit-text-fill-color: rgb(4, 105, 4);
+  text-align: center;
 }
 
 td {
-  padding: 0 5px 7px;
+  padding: 10px 5px 10px 5px;
+  font-size: 15px;
+}
+.kyouka{
+  font-size: 20px;
+  font-weight: bold;
 }
 
 div {
@@ -84,4 +108,14 @@ div {
 
 label {
   display: block;
+}
+
+h3{
+  -webkit-text-fill-color: rgb(255, 255, 255);
+  font-size: 30px;
+}
+
+.logme{
+  font-size: 13px;
+  -webkit-text-fill-color: rgb(221, 214, 214);
 }
