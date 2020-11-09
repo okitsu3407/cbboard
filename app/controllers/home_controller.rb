@@ -24,8 +24,6 @@ class HomeController < ApplicationController
         @yobi = week[@today.wday]
     end
 
-<<<<<<< HEAD
-=======
     def create
         if session[:login] = true
             flash.now[:alert] = "ようこそ　名無しさん"
@@ -34,5 +32,4 @@ class HomeController < ApplicationController
         end
     end
 
->>>>>>> 5b76903fe26fa24b1a04742a19f066b11b162e8d
 end
