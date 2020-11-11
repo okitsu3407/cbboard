@@ -31,24 +31,19 @@
         -ms-writing-mode: tb-rl;
         writing-mode: vertical-rl;
         text-orientation: upright;
-        color:white;
+        -webkit-text-fill-color:white;
     }
-
-
 
     .text-combine {
         -webkit-text-combine: horizontal;
         -ms-text-combine-horizontal: all;
         text-combine-upright: all;
-      }
+    }
 
     .login{
         margin-top : 40%;
     }
 }
-
-
-    
 
     button {
     color: #fff; /* 文字色を白にする */
