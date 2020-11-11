@@ -3,16 +3,16 @@
 <h1><font face="UD デジタル 教科書体 N-B">月間行事予定</h1>
 
 <div class="ex">
-  <a href="/images/4-6month.pdf"><img src="/images/haru.png" width="320px">
+  <%= link_to image_tag('/images/haru.png', width: "320px"), '/images/4-6month.pdf' %>
 </div>
 <div class="ex2">
-  <a href="/images/7-9month.pdf"><img src="/images/natu.png" width="320px">
+  <%= link_to image_tag('/images/natu.png', width: "320px"), '/images/7-9month.pdf' %>
 </div>
 <div class="ex3">
-  <a href="/images/10-12month.pdf"><img src="/images/aki.png" width="320px">
+  <%= link_to image_tag('/images/aki.png', width: "320px"), '/images/10-12month.pdf' %>
 </div>
 <div class="ex4">
-  <a href="/images/1-3month.pdf"><img src="/images/huki.png" width="320px">
+  <%= link_to image_tag('/images/huyu.png', width: "320px"), '/images/1-3month.pdf' %>
 </div>
 
 <% if session[:login] == true %>
