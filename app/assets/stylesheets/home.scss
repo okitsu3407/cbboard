@@ -3,6 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .home{    
+    body{
+        background-image: url("/images/b.png");
+        background-size: cover;
+        background-repeat: no-repeat;    
+    }
+    
     .title{
         padding:30px;
     }
@@ -31,33 +37,29 @@
         -ms-writing-mode: tb-rl;
         writing-mode: vertical-rl;
         text-orientation: upright;
-        color:white;
+        -webkit-text-fill-color:white;
     }
-
-
 
     .text-combine {
         -webkit-text-combine: horizontal;
         -ms-text-combine-horizontal: all;
         text-combine-upright: all;
-      }
+    }
 
     .login{
         margin-top : 40%;
     }
 
-
-    
-
     button {
-    color: #fff; /* 文字色を白にする */
-    background-color: #3a3a3a; /* 背景色をグレー（#3a3a3a）にする */
-    border: 2px solid #000; /* 要素の枠を2pxの太さで、線の種類をsolidに、色を黒にする */
-    text-decoration: none; /* リンクに出てくる下線を無効にする*/
-  }
-  button:hover{
-    color: #000; /* 文字色を白にする */
-    background-color: #c9c9c9; /* 背景色をグレー（#c9c9c9）にする */
-    text-decoration: none; /* リンクに出てくる下線を無効にする*/    
-}
+        color: #fff; /* 文字色を白にする */
+        background-color: #3a3a3a; /* 背景色をグレー（#3a3a3a）にする */
+        border: 2px solid #000; /* 要素の枠を2pxの太さで、線の種類をsolidに、色を黒にする */
+        text-decoration: none; /* リンクに出てくる下線を無効にする*/
+    }
+
+    button:hover{
+        color: #000; /* 文字色を黒にする */
+        background-color: #c9c9c9; /* 背景色をグレー（#c9c9c9）にする */
+        text-decoration: none; /* リンクに出てくる下線を無効にする*/    
+    }
 }
