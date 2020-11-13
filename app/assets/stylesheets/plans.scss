@@ -3,6 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .plans{    
+    body{
+        background-image: url("/images/b.png");
+        background-size: cover;
+        background-repeat: no-repeat;    
+    }
+
     .ex {
         position: absolute;
         top:90px;

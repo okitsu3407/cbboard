@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :teachers
   resources :titles
   resources :classrooms
-  get 'home/top'
+  get '/', to: 'home#top'
   get 'home/login'
   get 'home/logout'
   post 'plans/upload'
