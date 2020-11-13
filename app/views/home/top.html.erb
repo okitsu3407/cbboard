@@ -22,8 +22,6 @@
   <% if session[:login] == true %>
     <button><%= link_to 'ログインアウト' , home_logout_path %></button>
     <br>
-    <div class="logme"><%=  flash[:message] %></div>
-    <br>
     <%= link_to '時間割テンプレートを表示', "../temples" %>
   <% else %>
   <button><%= link_to 'ログイン' , home_login_path %></button>
