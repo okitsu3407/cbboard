@@ -7,6 +7,7 @@
     <tr>
       <th>内容</th>
       <th colspan="3"></th>
+      <%= link_to 'topに戻る', "/" %>
     </tr>
   </thead>
 
@@ -16,7 +17,7 @@
         <td><%= meyasu.content %></td>
         <td><%= link_to '詳細', meyasu %></td>
         <td><%= link_to '編集', edit_meyasu_path(meyasu) %></td>
-        <td><%= link_to '削除', meyasu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '削除', meyasu, method: :delete, data: { confirm: '本当によろしいですか？' } %></td>
       </tr>
     <% end %>
   </tbody>
