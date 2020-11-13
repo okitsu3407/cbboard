@@ -103,8 +103,10 @@ h3{
 }
 
 .logme{
-  font-size: 13px;
-  -webkit-text-fill-color: rgb(221, 214, 214);
+  text-align: right;
+  margin-right :30px;
+  font-size: 15px;
+  -webkit-text-fill-color: rgb(47, 230, 10);
 }
 
 h1{
@@ -121,3 +123,8 @@ h5{
   -webkit-text-fill-color: rgb(255, 255, 255);
   text-align: right;
 }
+
+.log2{
+  padding-top: 10px;
+}
+
