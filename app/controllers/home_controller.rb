@@ -24,4 +24,12 @@ class HomeController < ApplicationController
         @yobi = week[@today.wday]
     end
 
+    def create
+        if session[:login] = true
+            flash.now[:alert] = "ようこそ　名無しさん"
+        elsif session[:login] = ""
+            flash.now[:alert] = ""
+        end
+    end
+
 end
