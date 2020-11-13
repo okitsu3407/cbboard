@@ -1,0 +1,22 @@
+<%= form_with(model: meyasu, local: true) do |form| %>
+  <% if meyasu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(meyasu.errors.count, "error") %> prohibited this meyasu from being saved:</h2>
+
+      <ul>
+      <% meyasu.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content, id: :meyasu_content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
