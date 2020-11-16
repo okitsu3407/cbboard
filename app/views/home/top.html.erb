@@ -7,16 +7,22 @@
 <h2><span class="text-combine"><font face="UD デジタル 教科書体 N-B"><%= @today.mon %></span>月 <span class="text-combine"><%= @today.day %></span>日 「<%= @yobi %>曜日」日直</font></h2>
 
 <div class="example">
-  <%= link_to image_tag("/images/ks.png") ,"../timetables" ,:size =>'180x100' %>
+  <%= link_to image_tag("/images/ks.png",size: "350x300") ,"../timetables" %>
 </div>
+
+<p class="ex">- 出 雲 商 業 高 等 学 校 の 時 間 割 が<br><br>　手 早 く 見 れ て 課 題 や 授 業 で 行<br><br>　う 範 囲 な ど の 詳 細 が 閲 覧 可 能 </p>
 
 <div class="example2">
-  <%= link_to image_tag("/images/kd.png") ,"../plans" %>
+  <%= link_to image_tag("/images/kd.png",size: "350x300") ,"../plans" %>
 </div>
 
+<p class="ex2">-出雲商業高等学校の行事予定１～１２月分が大まかに閲覧可能（随時更新されます）</p>
+
 <div class="example3">
-  <%= link_to image_tag("/images/meyani.png") ,"../meyasus" %>
+  <%= link_to image_tag("/images/meyani.png",size: "400x280") ,"../meyasus" %>
 </div>
+
+<p>-生徒会が行う目安箱がなんとシステム化！どんな内容でも書ける（不適切な内容は削除します）</p>
 
 <div class="login">
   <% if session[:login] == true %>
