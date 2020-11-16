@@ -16,19 +16,35 @@
     .example {
         position: absolute;
         top: 13%;
-        left:30%;
+        left:20%;
     }
 
     .example2 {
         position: absolute;
         top:47%;
-        left:55%;
+        left:45%;
     }
     
     .example3 {
         position: absolute;
         top:47%;
-        left:4%;
+        left:-4.5%;
+    }
+
+    p.ex{
+        position: absolute;
+        font-size: 20px;
+        -webkit-text-fill-color: white;
+        width: 400px;
+        left:50%;
+    }
+
+    p.ex2{
+        position: absolute;
+        font-size: 20px;
+        -webkit-text-fill-color: white;
+        width: 400px;
+        left:10%;
     }
 
     h2 {
