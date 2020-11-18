@@ -35,6 +35,7 @@
         position: absolute;
         font-size: 20px;
         -webkit-text-fill-color: white;
+        text-shadow:1px 1px 0 black;
         width: 400px;
         left:50%;
     }
@@ -45,6 +46,14 @@
         -webkit-text-fill-color: white;
         width: 400px;
         left:10%;
+    }
+
+    p.ex3{
+        position: absolute;
+        font-size: 20px;
+        -webkit-text-fill-color: white;
+        width: 400px;
+        left:70%;
     }
 
     h2 {
