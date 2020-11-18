@@ -1,8 +1,18 @@
 <div class="title">
-  <img src="/images/title.png" width="380px" height="80px">
+  <img src="/images/title.png" width="380px" height="70px">
 </div>
 
+<div style="position:absolute; left:48%">
+  <img src="/images/red.png">
+</div>
 
+<div style="position:absolute; top:55%; left:20%">
+  <img src="/images/blue.png">
+</div>
+
+<div style="position:absolute; top:55%; left:70%">
+  <img src="/images/yellow.png">
+</div>
 
 <h2><span class="text-combine"><font face="UD デジタル 教科書体 N-B"><%= @today.mon %></span>月 <span class="text-combine"><%= @today.day %></span>日 「<%= @yobi %>曜日」日直</font></h2>
 
@@ -16,13 +26,13 @@
   <%= link_to image_tag("/images/kd.png",size: "350x300") ,"../plans" %>
 </div>
 
-<p class="ex2">- 出 雲 商 業 高 等 学 校 の 行 事 予 定 １ ～ １２ 月 分 が 大 ま か に 閲 覧 可 能  （随 時 更 新 さ れ ま す）</p>
+<p class="ex2">- 出 雲 商 業 高 等 学 校 の<br><br>　行 事 予 定 １ ～ １２ 月 分<br><br>　が 大 ま か に 閲 覧 可 能<br><br><span class="text-red">　　　　（※随時更新されます）</span></p>
 
 <div class="example3">
   <%= link_to image_tag("/images/meyani.png",size: "400x280") ,"../meyasus" %>
 </div>
 
-<p class="ex3">- 生 徒 会 が 行 う 目 安 箱 が な ん と シ ス テ ム 化 ！ ど ん な 内 容 で も 書 け る（不 適 切 な 内 容 は 削 除 し ま す）</p>
+<p class="ex3">- 生 徒 会 が 行 う 目 安 箱 が<br><br>　な ん と シ ス テ ム 化 ！<br><br>　ど ん な 内 容 で も 書 け る<br><br><span class="text-red">　（※不適切な内容は削除します）</span></p>
 
 <div class="login">
   <% if session[:login] == true %>
