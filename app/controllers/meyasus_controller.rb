@@ -24,11 +24,12 @@ class MeyasusController < ApplicationController
   # POST /meyasus
   # POST /meyasus.json
   def create
-    @meyasu = Meyasu.new(meyasu_params)
+    @meyasu = Meyasu.new
+    @meyasu.content = params[:freeans]
 
     respond_to do |format|
       if @meyasu.save
-        format.html { redirect_to @meyasu, notice: 'Meyasu was successfully created.' }
+        format.html { redirect_to meyasus_path, notice: '送信しました。' }
         format.json { render :show, status: :created, location: @meyasu }
       else
         format.html { render :new }
@@ -56,10 +57,11 @@ class MeyasusController < ApplicationController
   def destroy
     @meyasu.destroy
     respond_to do |format|
-      format.html { redirect_to meyasus_url, notice: 'Meyasu was successfully destroyed.' }
+      format.html { redirect_to meyasus_url, notice: '削除しました。' }
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
