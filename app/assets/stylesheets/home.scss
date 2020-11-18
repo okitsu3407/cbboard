@@ -10,12 +10,12 @@
     }
     
     .title{
-        padding:30px;
+        padding:20px;
     }
     
     .example {
         position: absolute;
-        top: 13%;
+        top: 15%;
         left:20%;
     }
 
@@ -35,7 +35,9 @@
         position: absolute;
         font-size: 20px;
         -webkit-text-fill-color: white;
+        text-shadow:1.5px 1.5px 0 black;
         width: 400px;
+        top:25%;
         left:50%;
     }
 
@@ -43,6 +45,7 @@
         position: absolute;
         font-size: 20px;
         -webkit-text-fill-color: white;
+        text-shadow:1.5px 1.5px 0 black;
         width: 300px;
         top:60%;
         left:72%;
@@ -52,7 +55,8 @@
         position: absolute;
         font-size: 20px;
         -webkit-text-fill-color: white;
-        width: 300px;
+        text-shadow:1.5px 1.5px 0 black;
+        width: 330px;
         top:60%;
         left:22%;
     }
@@ -65,6 +69,10 @@
         writing-mode: vertical-rl;
         text-orientation: upright;
         -webkit-text-fill-color:white;
+    }
+
+    .text-red{
+        -webkit-text-fill-color: rgb(255, 115, 115);
     }
 
     .text-combine {
