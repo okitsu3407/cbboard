@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201113044651) do
+ActiveRecord::Schema.define(version: 20201120061120) do
 
   create_table "classrooms", force: :cascade do |t|
     t.string "kyousitsu"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "bunbetsu"
   end
 
   create_table "clocks", force: :cascade do |t|
@@ -59,6 +60,7 @@ ActiveRecord::Schema.define(version: 20201113044651) do
     t.string "sensei"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "busyo"
   end
 
   create_table "temples", force: :cascade do |t|
@@ -101,6 +103,8 @@ ActiveRecord::Schema.define(version: 20201113044651) do
     t.string "kyouka"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "yomi"
+    t.string "yomitemp"
   end
 
   create_table "users", force: :cascade do |t|
