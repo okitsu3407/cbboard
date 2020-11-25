@@ -19,6 +19,7 @@ class TitlesController < ApplicationController
 
   # GET /titles/1/edit
   def edit
+    @titles = Title.all
   end
 
   # POST /titles

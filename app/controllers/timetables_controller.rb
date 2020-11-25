@@ -21,6 +21,9 @@ class TimetablesController < ApplicationController
 
   # GET /timetables/1/edit
   def edit
+    @titles = Title.all
+    @teachers = Teacher.all
+    @classrooms = Classroom.all
   end
 
   # POST /timetables

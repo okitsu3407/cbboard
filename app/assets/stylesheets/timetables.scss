@@ -7,17 +7,127 @@
         background-image: url("/images/b1.png");
         background-size: cover;
         background-repeat: no-repeat;
+        font-size: 17px;
+        font-weight: bold;
+        line-height:30px;
     }
 }
 
+.field{
+  -webkit-text-fill-color: rgb(255, 255, 255); /* 文字色を白にする */
+}
+
+button{
+  -webkit-text-fill-color: rgb(255, 250, 250); /* 文字色を白にする */
+  font-weight: bold;
+}
 
 #sampleModal{
     display:none;
-    width:50%;
-    height:50%;
+    width:800px;
+    height:500px;
     background-color: rgb(255, 255, 255);
     position:fixed;
-    top:15%;
-    left:35%;
+    top:100px;
+    left:270px;
     z-index: 1;
     }
+
+    #sampleModal2{
+      display:none;
+      width:1200px;
+      height:500px;
+      background-color: rgb(255, 255, 255);
+      position:fixed;
+      top:100px;
+    left:270px;
+      z-index: 1;
+      }
+
+      #sampleModal3{
+        display:none;
+        width:900px;
+        height:500px;
+        background-color: rgb(255, 255, 255);
+        position:fixed;
+        top:100px;
+        left:270px;
+        z-index: 1;
+        }
+
+    h4{
+      font-size: 15px;
+      -webkit-text-fill-color: rgb(0, 0, 0);
+    }
+
+    .tab_radio{
+        /*ラジオボタンは表示しない*/
+        display:none;
+      }
+      .tab_menu{
+        /*タブの基本スタイル*/
+        font-size: 15px;
+        text-align: center;
+        border: solid rgb(0, 0, 0);
+        border-width:1px 1px 0 1px;
+        border-radius:3px 3px 0 0;
+        margin: 0 2px;
+        padding:0 3px;
+        width:90px;
+        display:inline-block;
+        /*選択されていないタブは透明色*/
+        background-color:transport;
+        -webkit-text-fill-color: rgb(0, 0, 0); 
+      }
+
+      
+      .tab_radio:checked + .tab_menu{
+        /*選択されているタブは白背景*/
+        /* タブコンテンツの上線にかぶせて隠す */
+        background-color:white;
+      }
+      
+      .tab_contains{
+        /*コンテンツの基本スタイル*/
+        font-size: 17px;
+        line-height: 30px;
+        width:90%;
+        border: solid rgb(0, 0, 0) 1px;
+        border-radius:3px;
+        padding:1rem;
+        /*選択されたタブで上線をかぶせる*/
+        margin-top:-1px;
+        background-color:white;
+        /*選択されていないコンテンツは非表示*/
+        display:none;
+      }
+
+
+      #tab_radio_A:checked ~ #tab_contains_A,
+      #tab_radio_B:checked ~ #tab_contains_B,
+      #tab_radio_C:checked ~ #tab_contains_C,
+      #tab_radio_D:checked ~ #tab_contains_D,
+      #tab_radio_E:checked ~ #tab_contains_E,
+      #tab_radio_F:checked ~ #tab_contains_F,
+      #tab_radio_G:checked ~ #tab_contains_G,
+      #tab_radio_H:checked ~ #tab_contains_H,
+      #tab_radio_I:checked ~ #tab_contains_I,
+      #tab_radio_J:checked ~ #tab_contains_J,
+      #tab_radio_K:checked ~ #tab_contains_K,
+      #tab_radio_L:checked ~ #tab_contains_L,
+      #tab_radio_M:checked ~ #tab_contains_M,
+      #tab_radio_N:checked ~ #tab_contains_N,
+      #tab_radio_O:checked ~ #tab_contains_O,
+      #tab_radio_P:checked ~ #tab_contains_P,
+      #tab_radio_Q:checked ~ #tab_contains_Q,
+      #tab_radio_R:checked ~ #tab_contains_R,
+      #tab_radio_S:checked ~ #tab_contains_S,
+      #tab_radio_T:checked ~ #tab_contains_T,
+      #tab_radio_U:checked ~ #tab_contains_U,
+      #tab_radio_V:checked ~ #tab_contains_V,
+      #tab_radio_W:checked ~ #tab_contains_W,
+      #tab_radio_X:checked ~ #tab_contains_X,
+      #tab_radio_Y:checked ~ #tab_contains_Y,
+      #tab_radio_Z:checked ~ #tab_contains_Z{
+        display:block;
+      }
