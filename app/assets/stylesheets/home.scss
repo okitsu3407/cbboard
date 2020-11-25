@@ -10,25 +10,55 @@
     }
     
     .title{
-        padding:30px;
+        padding:20px;
     }
     
     .example {
         position: absolute;
-        top: 13%;
-        left:30%;
+        top: 15%;
+        left:20%;
     }
 
     .example2 {
         position: absolute;
         top:47%;
-        left:55%;
+        left:45%;
     }
     
     .example3 {
         position: absolute;
         top:47%;
-        left:4%;
+        left:-4.5%;
+    }
+
+    p.ex{
+        position: absolute;
+        font-size: 20px;
+        -webkit-text-fill-color: white;
+        text-shadow:1.5px 1.5px 0 black;
+        width: 400px;
+        top:25%;
+        left:50%;
+    }
+
+    p.ex2{
+        position: absolute;
+        font-size: 20px;
+        -webkit-text-fill-color: white;
+        text-shadow:1.5px 1.5px 0 black;
+        width: 300px;
+        top:60%;
+        left:72%;
+    }
+
+    p.ex3 {
+        position: absolute;
+        font-size: 20px;
+        -webkit-text-fill-color: white;
+        text-shadow:1.5px 1.5px 0 black;
+        width: 330px;
+        top:60%;
+        left:22%;
     }
 
     h2 {
@@ -39,6 +69,10 @@
         writing-mode: vertical-rl;
         text-orientation: upright;
         -webkit-text-fill-color:white;
+    }
+
+    .text-red{
+        -webkit-text-fill-color: rgb(255, 115, 115);
     }
 
     .text-combine {
