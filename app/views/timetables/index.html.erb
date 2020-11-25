@@ -1,8 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h5>ここのページでは出商の時間割が閲覧できます</h5>
 <h1>連絡黒板</h1>
+<h4>ここのページでは出商の時間割が閲覧できます</h4>
 <%= link_to 'topに戻る', "/" %>
+
+<% if session[:login] == true %>
+<%= link_to '新規作成', new_timetable_path %>
+<%= button_to "全て削除", destroy_all_timetables_path, method: :delete, data: { confirm: '本当に全て削除しますか？(※データ量に応じて時間がかかります）' } %>
+<% end %>
 
 <% week = ["日","月","火","水","木","金","土"] %>
 <% count = 1 %>
@@ -79,9 +84,3 @@
     </tbody>
     </table>
   <br>
-
-  
-  <% if session[:login] == true %>
-  <%= link_to '新規作成', new_timetable_path %>
-  <%= button_to "全て削除", destroy_all_timetables_path, method: :delete, data: { confirm: '本当に全て削除しますか？(※データ量に応じて時間がかかります）' } %>
-  <% end %>

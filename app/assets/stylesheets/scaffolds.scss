@@ -96,9 +96,24 @@ label {
   display: block;
 }
 
+h1{
+  font-size: 40px;
+  -webkit-text-fill-color: rgb(221, 214, 214);
+}
+
 h3{
   -webkit-text-fill-color: rgb(255, 255, 255);
   font-size: 30px;
+}
+
+h4{
+  -webkit-text-fill-color: rgb(255, 255, 255);
+  font-size: 30px;
+}
+
+h5{
+  -webkit-text-fill-color: rgb(255, 255, 255);
+  text-align: right;
 }
 
 .logme{
@@ -108,20 +123,9 @@ h3{
   -webkit-text-fill-color: rgb(47, 230, 10);
 }
 
-h1{
-  font-size: 40px;
-  -webkit-text-fill-color: rgb(221, 214, 214);
-}
-
 .temple{
   padding-bottom: 7px;
   font-size: 2px;
-}
-
-
-h5{
-  -webkit-text-fill-color: rgb(255, 255, 255);
-  text-align: right;
 }
 
 .log2{

@@ -35,8 +35,12 @@
 
     .yoteipdf {
         position: absolute;
-        top: 620px;
-        right: 40px;
+        top: 5%;
+        left: 3%;
+    }
+
+    p {
+        -webkit-text-fill-color: honeydew;
     }
 
 }

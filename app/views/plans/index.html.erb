@@ -1,27 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'topに戻る', "/" %>
-
+<div style="position:absolute; top:95%;">
+  <%= link_to 'topに戻る', "/" %>
+</div>
 
 <div style="position:absolute; top:20%; left:32%">
   <img src="/images/planT.png">
 </div>
+
 <div class="ex">
   <%= link_to image_tag('/images/har.png', width: "440px"), '/images/4-6month.pdf' %>
 </div>
+
 <div class="ex2">
   <%= link_to image_tag('/images/nat.png', width: "500px"), '/images/7-9month.pdf' %>
 </div>
+
 <div class="ex3">
   <%= link_to image_tag('/images/ak.png', width: "420px"), '/images/10-12month.pdf' %>
 </div>
+
 <div class="ex4">
   <%= link_to image_tag('/images/huy.png', width: "440px"), '/images/1-3month.pdf' %>
 </div>
 
 <% if session[:login] == true %>
+
 <div class = "yoteipdf" >
+
 <%= form_tag({controller: :plans,action: :upload},{:multipart => true }) do %>
+
+<p>
 月間行事予定のpdfを変更する場合はこちら
 <br>
 月:<select name="month">
@@ -32,7 +41,9 @@
 <input type="file"  name="images" accept=".pdf">
 <br>
 <input type="submit" value="更新">
+</p>
 <% end %>
+
 </div>
 <% end %>
 
