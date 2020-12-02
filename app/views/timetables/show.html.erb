@@ -1,55 +1,55 @@
-<p id="notice"><%= notice %></p>
+<h4 id="notice"><%= notice %></h4>
 
 
 <% yobi = ["日","月","火","水","木","金","土"] %>
-<h4>
+<h3>
   <%= @timetable.hiduke %>(<%= yobi[@timetable.hiduke.wday] %>)
-</h4>
+</h3>
 
-<h4>
+<h3>
   <%= @timetable.clock.zigen %>目
-</4>
+</3>
 
-<p>
+<h3>
   <strong>学年:</strong>
   <%= @timetable.grate.gakunen %>年
-</p>
+</h3>
 
-<p>
+<h3>
   <strong>クラス:</strong>
   <%= @timetable.gclass.kumi %>組
-</p>
+</h3>
 
 
-<p>
+<h3>
   <strong>教科名:</strong>
   <%= @timetable.title.kyouka %>
-</p>
+</h3>
 
-<p>
+<h3>
   <strong>内容:</strong>
   <%= @timetable.content %>
-</p>
+</h3>
 
-<p>
+<h3>
   <strong>課題:</strong>
   <%= @timetable.task %>
-</p>
+</h3>
 
-<p>
+<h3>
   <strong>必要なもの:</strong>
   <%= @timetable.need %>
-</p>
+</h3>
 
-<p>
+<h3>
   <strong>教室:</strong>
   <%= @timetable.classroom.kyousitsu %>
-</p>
+</h3>
 
-<p>
+<h3>
   <strong>先生:</strong>
   <%= @timetable.teacher.sensei %>
-</p>
+</h3>
 
-<p><%= link_to '編集し直す', edit_timetable_path(@timetable) %> |
-<%= link_to '戻る', timetables_path %></p>
+<h4><%= link_to '編集し直す', edit_timetable_path(@timetable) %> |
+<%= link_to '戻る', timetables_path %></h4>
