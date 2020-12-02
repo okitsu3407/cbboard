@@ -5,6 +5,7 @@ class PlansController < ApplicationController
   # GET /plans.json
   def index
     @plans = Plan.all
+    @year = Date.today
   end
 
   # GET /plans/1
