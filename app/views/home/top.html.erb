@@ -2,37 +2,37 @@
   <img src="/images/title.png" width="380px" height="70px">
 </div>
 
-<div style="position:absolute; left:48%">
+<div style="position:absolute; left:33%">
   <img src="/images/re.png">
 </div>
 
-<div style="position:absolute; top:55%; left:20%">
+<div style="position:absolute; top:55%; left:10%">
   <img src="/images/blue.png">
 </div>
 
-<div style="position:absolute; top:55%; left:70%">
+<div style="position:absolute; top:55%; left:55%">
   <img src="/images/yellow.png">
 </div>
 
 <h2><span class="text-combine"><font face="UD デジタル 教科書体 N-B"><%= @today.mon %></span>月 <span class="text-combine"><%= @today.day %></span>日「<%= @yobi %>曜日」日直　出商太郎</font></h2>
 
 <div class="example">
-  <%= link_to image_tag("/images/ks.png",size: "350x270") ,"../timetables" %>
+  <%= link_to image_tag("/images/ks.png",size: "200x150") ,"../timetables" %>
 </div>
 
-<p class="ex">- 出 雲 商 業 高 等 学 校 の 時 間 割 が<br><br>　手 早 く 見 れ て 課 題 や 授 業 で 行<br><br>　う 範 囲 な ど の 詳 細 が 閲 覧 可 能<br><br><span class="text-red">　　　　（※毎日６時更新されます）</span></p>
+<p class="ex">- 出 雲 商 業 高 等 学 校 の 時 間 割 が<br><br>　手 早 く 見 れ て 課 題 や 授 業 で 行<br><br>　う 範 囲 な ど の 詳 細 が 閲 覧 可 能<br><br><span class="text-red">　　　　（※毎日１８時更新されます）</span></p>
 
 <div class="example2">
-  <%= link_to image_tag("/images/kd.png",size: "350x300") ,"../plans" %>
+  <%= link_to image_tag("/images/kd.png",size: "210x160") ,"../plans" %>
 </div>
 
-<p class="ex2">- 出 雲 商 業 高 等 学 校 の<br><br>　行 事 予 定 １ ～ １２ 月 分<br><br>　が 大 ま か に 閲 覧 可 能<br><br><span class="text-red">　　　　（※随時更新されます）</span></p>
+<p class="ex2">- 出 雲 商 業 高 等 学 校 の 行 事 予 定<br><br>　１ ～ １２ 月 分 が 大 ま か に 閲 覧<br><br>　可 能<br><br><span class="text-red">　　　　　（※随時更新されます）</span></p>
 
 <div class="example3">
-  <%= link_to image_tag("/images/meyani.png",size: "400x280") ,"../meyasus" %>
+  <%= link_to image_tag("/images/meyani.png",size: "240x150") ,"../meyasus" %>
 </div>
 
-<p class="ex3">- 生 徒 会 が 行 う 目 安 箱 が<br><br>　な ん と シ ス テ ム 化 ！<br><br>　ど ん な 内 容 で も 書 け る<br><br><span class="text-red">　（※不適切な内容は削除します）</span></p>
+<p class="ex3">- 生 徒 会 が 行 う 目 安 箱 が な ん と<br><br>　シ ス テ ム 化 ！<br><br>　ど ん な 内 容 で も 書 け る<br><br><span class="text-red">　　　（※不適切な内容は削除します）</span></p>
 
 <div class="login">
   <% if session[:login] == true %>
