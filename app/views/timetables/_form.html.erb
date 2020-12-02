@@ -34,15 +34,19 @@
           <%= form.select :clock_id, Clock.all.map { |b| [b.zigen,b.id] } %>
         </div> -->
   
-
-  <div class="field" id="selectkyoka">
-    <%= form.label :〇教科 %>
-    <%= form.select :title_id, Title.all.map { |b| [b.kyouka,b.id] } %>
+  
+  <div class="field">
+  <%= form.label :〇教科 %>
+  <div  id="selectkyoka">
+    ※教科を選択してください。
   </div>
-
+  </div>
+ 
+  <div class="button">
   <button type="button" class="" data-toggle="modal" data-target="#sampleModal" >
-	教科を検索
+	教科を選択
   </button>
+  </div>
 
     <!-- モーダル・ダイアログ -->
     <div class="modal fade" id="sampleModal" tabindex="-1">
@@ -199,27 +203,38 @@
 
   <div class="field">
     <%= form.label :〇内容 %>
+    <div class="contenttext">
     <%= form.text_area :content, id: :timetable_content %>
+    </div>
   </div>
 
   <div class="field">
     <%= form.label :〇課題 %>
+    <div class="contenttext">
     <%= form.text_area :task, id: :timetable_task %>
+    </div>
   </div>
 
   <div class="field">
     <%= form.label :〇必要なもの %>
+    <div class="contenttext">
     <%= form.text_area :need, id: :timetable_need %>
+    </div>
+  </div>
+  
+  
+  <div class="field">
+   <%= form.label :〇教室 %>
+   <div id="selectroom">
+   ※教室を選択してください。
+   </div>
   </div>
 
-  <div class="field" id="selectroom">
-    <%= form.label :〇教室 %>
-    <%= form.select :classroom_id, Classroom.all.map { |b| [b.kyousitsu,b.id] } %>
-  </div>
-
+  <div class="button">
   <button type="button" class="" data-toggle="modal" data-target="#sampleModal3">
-	教室を検索
+	教室を選択
   </button>
+  </div>
 
     <!-- モーダル・ダイアログ -->
     <div class="modal fade" id="sampleModal3" tabindex="-1">
@@ -415,14 +430,18 @@
 
 
 
-  <div class="field" id="selectkyosi">
+  <div class="field">
     <%= form.label :〇先生 %>
-    <%= form.select :teacher_id, Teacher.all.map { |b| [b.sensei,b.id] } %>
+    <div id="selectkyosi">
+    ※先生を選択してください。
+    </div>
   </div>
 
+  <div class="button">
   <button type="button" class="" data-toggle="modal" data-target="#sampleModal2" >
-	先生を検索
+	先生を選択
   </button>
+  </div>
 
     <!-- モーダル・ダイアログ -->
     <div class="modal fade" id="sampleModal2" tabindex="-1">
