@@ -15,6 +15,34 @@
 
 .field{
   -webkit-text-fill-color: rgb(255, 255, 255); /* 文字色を白にする */
+  padding-bottom: 30px;
+}
+
+.button{
+  margin-top: -40px;
+  margin-bottom: 30px;
+}
+
+#selectkyoka{
+  background-color: rgb(65, 156, 4);
+  width: 250px;
+  text-align: center;
+}
+
+#selectroom{
+  background-color: rgb(65, 156, 4);
+  width: 250px;
+  text-align: center;
+}
+
+#selectkyosi{
+  background-color: rgb(65, 156, 4);
+  width: 250px;
+  text-align: center;
+}
+
+.contenttext{
+  -webkit-text-fill-color: rgb(0, 0, 0);
 }
 
 button{
@@ -28,19 +56,19 @@ button{
     height:500px;
     background-color: rgb(255, 255, 255);
     position:fixed;
-    top:100px;
-    left:270px;
+    top:200px;
+    left:400px;
     z-index: 1;
     }
 
-    #sampleModal2{
+    #sampleModal2{            
       display:none;
-      width:1200px;
+      width:1220px;
       height:500px;
       background-color: rgb(255, 255, 255);
       position:fixed;
-      top:100px;
-    left:270px;
+      top:200px;
+    left:290px;
       z-index: 1;
       }
 
@@ -50,8 +78,8 @@ button{
         height:500px;
         background-color: rgb(255, 255, 255);
         position:fixed;
-        top:100px;
-        left:270px;
+        top:200px;
+        left:400px;
         z-index: 1;
         }
 
