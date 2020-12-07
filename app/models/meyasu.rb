@@ -5,7 +5,7 @@ class Meyasu < ApplicationRecord
 
 def error_check
 
-    @out = ["ああああ","かかかか","ささささ","たたたた","なななな","はははは"]
+    @out = ["fuck you","死ね","アホ","あほ","ばか","馬鹿","バカ","キモイ","キモ","デブ","ブス","うざい"]
     n = 0
 
     if content.blank?
@@ -19,8 +19,8 @@ def error_check
     end
 
     if n >= 1
-    errors[:base] << 'あなたが入力した文に不適切な内容が含まれています'
-    errors[:base] << '入力をやり直してください'
+        errors[:base] << 'あなたが入力した文に不適切な内容が含まれています'
+        errors[:base] << '入力をやり直してください'
     end
 
 end

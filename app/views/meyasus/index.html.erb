@@ -14,8 +14,10 @@
     <table>
     <p>送信された意見</p>
       <% @meyasus.each do |meyasu| %>
-        <td><%= meyasu.content %></td>
-        <td><%= link_to '削除', meyasu, method: :delete, data: { confirm: '本当によろしいですか?' } %></td>
+        <tr>
+          <td><%= meyasu.content %></td>
+          <td><%= link_to '削除', meyasu, method: :delete, data: { confirm: '本当によろしいですか?' } %></td>
+        </tr>
       <% end %>
     </table>
   <% end %>
