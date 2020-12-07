@@ -34,6 +34,7 @@
           <%= form.select :clock_id, Clock.all.map { |b| [b.zigen,b.id] } %>
         </div> -->
   
+        
   
   <div class="field">
   <%= form.label :〇教科 %>
@@ -91,8 +92,9 @@
             <% yoso.times do %>
              
              <% kyo =  yomi[a].kyouka %>
+             <% kyo_id = yomi[a].id %>
 
-             <input type="radio" value="<%= kyo %>" name="title[kyouka]" id="tabkyo" class="tab_radio_2" >
+             <input type="radio" value="<%= kyo_id %>" name="timetable[title_id]" id="tabkyo" class="tab_radio_2" >
              <%= form.label :kyouka, "#{kyo}", {style: "display: inline-block;"} %>
 
               <% a += 1 %>
@@ -107,8 +109,9 @@
             <% yoso.times do %>
 
               <% kyo =  yomi[a].kyouka %>
+              <% kyo_id = yomi[a].id %>
 
-              <input type="radio" value="<%= kyo %>" name="title[kyouka]" id="tabkyo" class="tab_radio_2" >
+              <input type="radio" value="<%= kyo_id %>" name="timetable[title_id]" id="tabkyo" class="tab_radio_2" >
               <%= form.label :kyouka, "#{kyo}", {style: "display: inline-block;"} %>
               <br>
               <% a += 1 %>
@@ -121,9 +124,11 @@
             <% yoso = yomi.length %>
             <% a = 0 %>
             <% yoso.times do %>
+
                <% kyo =  yomi[a].kyouka %>
+               <% kyo_id = yomi[a].id %>
               
-               <input type="radio" value="<%= kyo %>" name="title[kyouka]" id="tabkyo" class="tab_radio_2" >
+               <input type="radio" value="<%= kyo_id %>" name="timetable[title_id]" id="tabkyo" class="tab_radio_2" >
                <%= form.label :kyouka, "#{kyo}", {style: "display: inline-block;"} %>
               <br>
               <% a += 1 %>
@@ -136,9 +141,11 @@
             <% yoso = yomi.length %>
             <% a = 0 %>
             <% yoso.times do %>
+
               <% kyo =  yomi[a].kyouka %>
+              <% kyo_id = yomi[a].id %>
               
-              <input type="radio" value="<%= kyo %>" name="title[kyouka]" id="tabkyo" class="tab_radio_2" >
+              <input type="radio" value="<%= kyo_id %>" name="timetable[title_id]" id="tabkyo" class="tab_radio_2" >
               <%= form.label :kyouka, "#{kyo}", {style: "display: inline-block;"} %>
               <br>
               <% a += 1 %>
@@ -151,9 +158,11 @@
             <% yoso = yomi.length %>
             <% a = 0 %>
             <% yoso.times do %>
+
               <% kyo =  yomi[a].kyouka %>
+              <% kyo_id = yomi[a].id %>
               
-              <input type="radio" value="<%= kyo %>" name="title[kyouka]" id="tabkyo" class="tab_radio_2" >
+              <input type="radio" value="<%= kyo_id %>" name="timetable[title_id]" id="tabkyo" class="tab_radio_2" >
               <%= form.label :kyouka, "#{kyo}", {style: "display: inline-block;"} %>
               <br>
               <% a += 1 %>
@@ -166,9 +175,11 @@
             <% yoso = yomi.length %>
             <% a = 0 %>
             <% yoso.times do %>
+
               <% kyo =  yomi[a].kyouka %>
+              <% kyo_id = yomi[a].id %>
               
-              <input type="radio" value="<%= kyo %>" name="title[kyouka]" id="tabkyo" class="tab_radio_2" >
+              <input type="radio" value="<%= kyo_id %>" name="timetable[title_id]" id="tabkyo" class="tab_radio_2" >
               <%= form.label :kyouka, "#{kyo}", {style: "display: inline-block;"} %>
               <br>
               <% a += 1 %>
@@ -181,9 +192,11 @@
             <% yoso = yomi.length %>
             <% a = 0 %>
             <% yoso.times do %>
+
               <% kyo =  yomi[a].kyouka %>
+              <% kyo_id = yomi[a].id %>
               
-              <input type="radio" value="<%= kyo %>" name="title[kyouka]" id="tabkyo" class="tab_radio_2" >
+              <input type="radio" value="<%= kyo_id %>" name="timetable[title_id]" id="tabkyo" class="tab_radio_2" >
               <%= form.label :kyouka, "#{kyo}", {style: "display: inline-block;"} %>
               <br>
               <% a += 1 %>
@@ -281,11 +294,12 @@
             <% yoso.times do %>
              
              <% room =  bunbetsu[a].kyousitsu %>
+             <% room_id = bunbetsu[a].id %>
              <% if a % 4 == 0 && a != 0 %>
              <br>
              <% end %>
 
-             <input type="radio" value="<%= room %>" name="classroom[kyousitsu]" id="tabkyo" class="tab_radio_2" >
+             <input type="radio" value="<%= room_id %>" name="timetable[classroom_id]" id="tabkyo" class="tab_radio_2" >
              <%= form.label :kyousitsu, "#{room}", {style: "display: inline-block;"} %>
 
               <% a += 1 %>
@@ -301,8 +315,9 @@
           <% yoso.times do %>
            
            <% room =  bunbetsu[a].kyousitsu %>
+           <% room_id = bunbetsu[a].id %>
 
-           <input type="radio" value="<%= room %>" name="classroom[kyousitsu]" id="tabkyo" class="tab_radio_2" >
+           <input type="radio" value="<%= room_id %>" name="timetable[classroom_id]" id="tabkyo" class="tab_radio_2" >
            <%= form.label :kyousitsu, "#{room}", {style: "display: inline-block;"} %>
 
             <% a += 1 %>
@@ -318,8 +333,9 @@
         <% yoso.times do %>
          
          <% room =  bunbetsu[a].kyousitsu %>
+         <% room_id = bunbetsu[a].id %>
 
-         <input type="radio" value="<%= room %>" name="classroom[kyousitsu]" id="tabkyo" class="tab_radio_2" >
+         <input type="radio" value="<%= room_id %>" name="timetable[classroom_id]" id="tabkyo" class="tab_radio_2" >
          <%= form.label :kyousitsu, "#{room}", {style: "display: inline-block;"} %>
 
           <% a += 1 %>
@@ -335,8 +351,10 @@
           <% yoso.times do %>
            
            <% room =  bunbetsu[a].kyousitsu %>
+           <% room_id = bunbetsu[a].id %>
 
-           <input type="radio" value="<%= room %>" name="classroom[kyousitsu]" id="tabkyo" class="tab_radio_2" >
+
+           <input type="radio" value="<%= room_id %>" name="timetable[classroom_id]" id="tabkyo" class="tab_radio_2" >
            <%= form.label :kyousitsu, "#{room}", {style: "display: inline-block;"} %>
 
             <% a += 1 %>
@@ -352,8 +370,10 @@
           <% yoso.times do %>
            
            <% room =  bunbetsu[a].kyousitsu %>
+           <% room_id = bunbetsu[a].id %>
 
-           <input type="radio" value="<%= room %>" name="classroom[kyousitsu]" id="tabkyo" class="tab_radio_2" >
+
+           <input type="radio" value="<%= room_id %>" name="timetable[classroom_id]" id="tabkyo" class="tab_radio_2" >
            <%= form.label :kyousitsu, "#{room}", {style: "display: inline-block;"} %>
 
             <% a += 1 %>
@@ -369,8 +389,9 @@
           <% yoso.times do %>
            
            <% room =  bunbetsu[a].kyousitsu %>
+           <% room_id = bunbetsu[a].id %>
 
-           <input type="radio" value="<%= room %>" name="classroom[kyousitsu]" id="tabkyo" class="tab_radio_2" >
+           <input type="radio" value="<%= room_id %>" name="timetable[classroom_id]" id="tabkyo" class="tab_radio_2" >
            <%= form.label :kyousitsu, "#{room}", {style: "display: inline-block;"} %>
 
             <% a += 1 %>
@@ -386,8 +407,10 @@
           <% yoso.times do %>
            
            <% room =  bunbetsu[a].kyousitsu %>
+           <% room_id = bunbetsu[a].id %>
 
-           <input type="radio" value="<%= room %>" name="classroom[kyousitsu]" id="tabkyo" class="tab_radio_2" >
+
+           <input type="radio" value="<%= room_id %>" name="timetable[classroom_id]" id="tabkyo" class="tab_radio_2" >
            <%= form.label :kyousitsu, "#{room}", {style: "display: inline-block;"} %>
 
             <% a += 1 %>
@@ -403,12 +426,13 @@
           <% yoso.times do %>
            
            <% room =  bunbetsu[a].kyousitsu %>
+           <% room_id = bunbetsu[a].id %>
 
            <% if a % 6 == 0 && a != 0 %>
            <br>
            <% end %>
 
-           <input type="radio" value="<%= room %>" name="classroom[kyousitsu]" id="tabkyo" class="tab_radio_2" >
+           <input type="radio" value="<%= room_id %>" name="timetable[classroom_id]" id="tabkyo" class="tab_radio_2" >
            <%= form.label :kyousitsu, "#{room}", {style: "display: inline-block;"} %>
 
             <% a += 1 %>
@@ -496,8 +520,9 @@
             <% yoso.times do %>
              
              <% kyosi =  busyo[a].sensei %>
+             <% kyosi_id = busyo[a].id %>
 
-             <input type="radio" value="<%= kyosi %>" name="teacher[sensei]" id="tabkyo" class="tab_radio_2" >
+             <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
              <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
 
               <% a += 1 %>
@@ -512,10 +537,11 @@
             <% a = 0 %>
             <% yoso.times do %>
              
-             <% kyo =  busyo[a].sensei %>
+             <% kyosi =  busyo[a].sensei %>
+             <% kyosi_id = busyo[a].id %>
 
-             <input type="radio" value="<%= kyo %>" name="teacher[sensei]" id="tabkyo" class="tab_radio_2" >
-             <%= form.label :sensei, "#{kyo}", {style: "display: inline-block;"} %>
+             <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
+             <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
 
               <% a += 1 %>
             <% end %>
@@ -529,10 +555,11 @@
             <% a = 0 %>
             <% yoso.times do %>
              
-             <% kyo =  busyo[a].sensei %>
+             <% kyosi =  busyo[a].sensei %>
+             <% kyosi_id = busyo[a].id %>
 
-             <input type="radio" value="<%= kyo %>" name="teacher[sensei]" id="tabkyo" class="tab_radio_2" >
-             <%= form.label :sensei, "#{kyo}", {style: "display: inline-block;"} %>
+             <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
+             <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
 
               <% a += 1 %>
             <% end %>
@@ -546,10 +573,11 @@
           <% a = 0 %>
           <% yoso.times do %>
            
-           <% kyo =  busyo[a].sensei %>
+           <% kyosi =  busyo[a].sensei %>
+           <% kyosi_id = busyo[a].id %>
 
-           <input type="radio" value="<%= kyo %>" name="teacher[sensei]" id="tabkyo" class="tab_radio_2" >
-           <%= form.label :sensei, "#{kyo}", {style: "display: inline-block;"} %>
+           <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
+           <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
 
             <% a += 1 %>
           <% end %>
@@ -563,10 +591,11 @@
           <% a = 0 %>
           <% yoso.times do %>
            
-           <% kyo =  busyo[a].sensei %>
+           <% kyosi =  busyo[a].sensei %>
+           <% kyosi_id = busyo[a].id %>
 
-           <input type="radio" value="<%= kyo %>" name="teacher[sensei]" id="tabkyo" class="tab_radio_2" >
-           <%= form.label :sensei, "#{kyo}", {style: "display: inline-block;"} %>
+           <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
+           <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
 
             <% a += 1 %>
           <% end %>
@@ -580,10 +609,11 @@
           <% a = 0 %>
           <% yoso.times do %>
            
-           <% kyo =  busyo[a].sensei %>
+           <% kyosi =  busyo[a].sensei %>
+           <% kyosi_id = busyo[a].id %>
 
-           <input type="radio" value="<%= kyo %>" name="teacher[sensei]" id="tabkyo" class="tab_radio_2" >
-           <%= form.label :sensei, "#{kyo}", {style: "display: inline-block;"} %>
+           <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
+           <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
 
             <% a += 1 %>
           <% end %>
@@ -597,10 +627,11 @@
           <% a = 0 %>
           <% yoso.times do %>
            
-           <% kyo =  busyo[a].sensei %>
+           <% kyosi =  busyo[a].sensei %>
+           <% kyosi_id = busyo[a].id %>
 
-           <input type="radio" value="<%= kyo %>" name="teacher[sensei]" id="tabkyo" class="tab_radio_2" >
-           <%= form.label :sensei, "#{kyo}", {style: "display: inline-block;"} %>
+           <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
+           <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
 
             <% a += 1 %>
           <% end %>
@@ -614,10 +645,11 @@
         <% a = 0 %>
         <% yoso.times do %>
          
-         <% kyo =  busyo[a].sensei %>
+         <% kyosi =  busyo[a].sensei %>
+         <% kyosi_id = busyo[a].id %>
 
-         <input type="radio" value="<%= kyo %>" name="teacher[sensei]" id="tabkyo" class="tab_radio_2" >
-         <%= form.label :sensei, "#{kyo}", {style: "display: inline-block;"} %>
+         <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
+         <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
 
           <% a += 1 %>
         <% end %>
@@ -631,10 +663,11 @@
       <% a = 0 %>
       <% yoso.times do %>
        
-       <% kyo =  busyo[a].sensei %>
+       <% kyosi =  busyo[a].sensei %>
+       <% kyosi_id = busyo[a].id %>
 
-       <input type="radio" value="<%= kyo %>" name="teacher[sensei]" id="tabkyo" class="tab_radio_2" >
-       <%= form.label :sensei, "#{kyo}", {style: "display: inline-block;"} %>
+       <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
+       <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
 
         <% a += 1 %>
       <% end %>
@@ -648,10 +681,11 @@
         <% a = 0 %>
         <% yoso.times do %>
          
-         <% kyo =  busyo[a].sensei %>
+         <% kyosi =  busyo[a].sensei %>
+         <% kyosi_id = busyo[a].id %>
 
-         <input type="radio" value="<%= kyo %>" name="teacher[sensei]" id="tabkyo" class="tab_radio_2" >
-         <%= form.label :sensei, "#{kyo}", {style: "display: inline-block;"} %>
+         <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
+         <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
 
           <% a += 1 %>
         <% end %>
@@ -665,10 +699,11 @@
         <% a = 0 %>
         <% yoso.times do %>
          
-         <% kyo =  busyo[a].sensei %>
+         <% kyosi =  busyo[a].sensei %>
+         <% kyosi_id = busyo[a].id %>
 
-         <input type="radio" value="<%= kyo %>" name="teacher[sensei]" id="tabkyo" class="tab_radio_2" >
-         <%= form.label :sensei, "#{kyo}", {style: "display: inline-block;"} %>
+         <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
+         <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
 
           <% a += 1 %>
         <% end %>
@@ -684,18 +719,42 @@
       </div>
     </div>
 
+  
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
 
 <script>
+var hash_title = {
+<% Title.all.each do |t| %> 
+  '<%= t.id %>':'<%= t.kyouka %>',
+<% end %>
+}
+</script>
+
+<script>
+var hash_class = {
+<% Classroom.all.each do |c| %> 
+  '<%= c.id %>':'<%= c.kyousitsu %>',
+<% end %>
+}
+</script>
+
+<script>
+var hash_teacher = {
+<% Teacher.all.each do |t| %> 
+  '<%= t.id %>':'<%= t.sensei %>',
+<% end %>
+}
+</script>
+
+<script>
     $('#titlebutton').click(function() {
     
-      const str1 = $('input:radio[name="title[kyouka]"]:checked').val();
-      $('#tabkyo').text(str1);
+      const str1 = $('input:radio[name="timetable[title_id]"]:checked').val();
     
-    $("#selectkyoka").text(str1);
+    $("#selectkyoka").text(hash_title[str1]);
     
     })
 </script>
@@ -703,10 +762,9 @@
 <script>
     $('#classroombutton').click(function() {
     
-      const str1 = $('input:radio[name="classroom[kyousitsu]"]:checked').val();
-      $('#tabkyo').text(str1);
+      const str1 = $('input:radio[name="timetable[classroom_id]"]:checked').val();
     
-    $("#selectroom").text(str1);
+    $("#selectroom").text(hash_class[str1]);
     
     })
 </script>
@@ -714,10 +772,10 @@
 <script>
     $('#teacherbutton').click(function() {
     
-      const str1 = $('input:radio[name="teacher[sensei]"]:checked').val();
+      const str1 = $('input:radio[name="timetable[teacher_id]"]:checked').val();
       $('#tabkyo').text(str1);
     
-    $("#selectkyosi").text(str1);
+    $("#selectkyosi").text(hash_teacher[str1]);
     
     })
 </script>
