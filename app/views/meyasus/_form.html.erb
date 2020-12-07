@@ -4,15 +4,18 @@
 
       <ul>
       <% meyasu.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <li><%= message %></li>
       <% end %>
       </ul>
     </div>
+
   <% end %>
 
   <div class="field">
     <%= form.label :内容 %>
     <%= form.text_area :content, id: :meyasu_content %>
+    <p>該当した言葉</p>
+    <div class="meyasu_error"><%= Meyasu.message(meyasu.content) %></div>
   </div>
 
 <% end %>
