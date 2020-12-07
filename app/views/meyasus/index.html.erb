@@ -1,25 +1,31 @@
 <p id="notice"><%= notice %></p>
+<thead>
   <h1><font face="UD デジタル 教科書体 N-B">目安箱</h1>
-  <p>内容:</p>
+</thead>
 
+<tbody>
+  <p>内容:</p>
   <%= form_tag({controller: :meyasus,action: :create}) do %>
   <textarea name="freeans" rows="4" cols="40"></textarea>
   <br>
   <input type="submit" value="送信する"><input type="reset" value="リセット">
   <br>
   <% end %>
+<tbody>
 
   <% if session[:login] == true %>
 
     <table>
-    <p>送信された意見</p>
-      <% @meyasus.each do |meyasu| %>
-        <tr>
+      <p>送信された意見</p>
+        <% @meyasus.each do |meyasu| %>
           <td><%= meyasu.content %></td>
           <td><%= link_to '削除', meyasu, method: :delete, data: { confirm: '本当によろしいですか?' } %></td>
-        </tr>
-      <% end %>
+        <% end %>
     </table>
   <% end %>
-
+  <p>入力例:</p>
+  <p>　・スマホを使わせてほしい</p>
+  <p>　・昼休みの時間をあと５分増やしてほしい</p>
+  <p>　　　　　　　　　　　　　　　　　etc…</p>
+  <p></p>
   <%= link_to 'topに戻る', "/" %>

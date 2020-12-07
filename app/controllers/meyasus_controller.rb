@@ -43,7 +43,7 @@ class MeyasusController < ApplicationController
   def update
     respond_to do |format|
       if @meyasu.update(meyasu_params)
-        format.html { redirect_to @meyasu, notice: 'Meyasu was successfully updated.' }
+        format.html { redirect_to @meyasu, notice: '更新しました' }
         format.json { render :show, status: :ok, location: @meyasu }
       else
         format.html { render :edit }
