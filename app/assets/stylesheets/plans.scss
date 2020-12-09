@@ -15,6 +15,10 @@
         left:5%;
         &:hover {
             transform: scale(1.1);
+            transition: box-shadow 0.2s ease,
+                        transform 0.2s ease,
+                        z-index 0s 0s ease;
+            filter: drop-shadow(5px 5px 5px rgb(32, 32, 32));
         }        
     }
 
@@ -24,6 +28,10 @@
         left:63%;
         &:hover {
             transform: scale(1.1);
+            transition: box-shadow 0.2s ease,
+                        transform 0.2s ease,
+                        z-index 0s 0s ease;
+            filter: drop-shadow(5px 5px 5px rgb(32, 32, 32));
         }        
     }
     
@@ -33,6 +41,10 @@
         left:5%;
         &:hover {
             transform: scale(1.1);
+            transition: box-shadow 0.2s ease,
+                        transform 0.2s ease,
+                        z-index 0s 0s ease;
+            filter: drop-shadow(5px 5px 5px rgb(32, 32, 32));
         }        
     }
 
@@ -42,6 +54,10 @@
         left:63%;
         &:hover {
             transform: scale(1.1);
+            transition: box-shadow 0.2s ease,
+                        transform 0.2s ease,
+                        z-index 0s 0s ease;
+            filter: drop-shadow(5px 5px 5px rgb(32, 32, 32));
         }        
     }
 
