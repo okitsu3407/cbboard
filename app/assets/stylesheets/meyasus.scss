@@ -6,36 +6,37 @@ body{
     background-size: cover;
     background-repeat: no-repeat;   
 
-    p {
-        -webkit-text-fill-color: honeydew;
-    }
-
     .meyasu_error {
         -webkit-text-fill-color: rgb(4, 190, 181);
     }
-}
 
-
-h1{
-    padding: 20px;
-}
-
-h3{
-    padding-top: 30px;
-}
-
-.put{
-    position: relative; left: 200px; 
-    position: relative; top: -50px; 
-}
-
-.box{
+    h1{
+        padding: 20px;
+    }
     
-    position: relative; left: 200px; 
+    h3{
+        padding-top: 30px;
+    }
+    
+    .put{
+        position: absolute;
+        left: 200px; 
+        top: 15%; 
+    }
+    
+    .box{
+        position: absolute;
+        left: 200px; 
+        top:40%;
+    }
+    
+    p {
+        -webkit-text-fill-color: honeydew;
+        position: relative;
+        font-size: 20px;
+        left: 170px;
+        top: 200px;
+    }
 }
 
-h6{
-    font-size: 20px;
-    position: relative; left: 200px; 
-    -webkit-text-fill-color: honeydew;
-}
+
