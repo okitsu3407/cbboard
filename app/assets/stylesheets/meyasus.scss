@@ -6,7 +6,38 @@ body{
     background-size: cover;
     background-repeat: no-repeat;   
 
-    p {
-        -webkit-text-fill-color: honeydew;
+    .meyasu_error {
+        -webkit-text-fill-color: rgb(4, 190, 181);
     }
+
+    h1{
+        padding: 20px;
+    }
+    
+    h3{
+        padding-top: 30px;
+    }
+    
+    .put{
+        position: absolute;
+        left: 200px; 
+        top: 15%; 
+    }
+    
+    .box{
+        position: absolute;
+        left: 200px; 
+        top:40%;
+    }
+    
+    p.boxp {
+        -webkit-text-fill-color: honeydew;
+        position: absolute;
+        font-size: 20px;
+        left: 200px;
+        top: 45%;
+    }
+
 }
+
+
