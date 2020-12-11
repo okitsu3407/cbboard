@@ -6,7 +6,7 @@
   <div class="put">
   <h3>入力欄</h3>
 
-<tbody>
+  <tbody>
   <%= form_tag({controller: :meyasus,action: :create}) do %>
   <textarea name="freeans" rows="4" cols="40"></textarea>
   <br>
@@ -28,10 +28,8 @@
       <% end %>
     </table>
   <% else %>
-    <h6>・学校生活で改善してほしいこと、意見などをご自由にお書きください。</h6>
-    <h6>・不適切な内容が含まれる場合は送信できません。</h6>
-    <h6>・送信された内容はログインユーザーのみが確認できます。</h6>
   <% end %>
+  <p class="boxp">・学校生活で改善してほしいこと、意見などをご自由にお書きください。<br><br>・不適切な内容が含まれる場合は送信できません。<br><br>・送信された内容はログインユーザーのみが確認できます。</p>
   </div>
 
   

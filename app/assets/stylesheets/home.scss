@@ -17,18 +17,39 @@
         position: absolute;
         top: 8%;
         left:43%;
+        &:hover {
+            transform: scale(1.3);
+            transition: box-shadow 0.2s ease,
+                        transform 0.2s ease,
+                        z-index 0s 0s ease;
+            filter: drop-shadow(5px 5px 5px rgb(32, 32, 32));
+        }        
     }
 
     .example2 {
         position: absolute;
         top:43%;
         left:64%;
+        &:hover {
+            transform: scale(1.3);
+            transition: box-shadow 0.2s ease,
+                        transform 0.2s ease,
+                        z-index 0s 0s ease;
+            filter: drop-shadow(5px 5px 5px rgb(32, 32, 32));
+        }        
     }
     
     .example3 {
         position: absolute;
         top:42%;
         left:18%;
+        &:hover {
+            transform: scale(1.3);
+            transition: box-shadow 0.2s ease,
+                        transform 0.2s ease,
+                        z-index 0s 0s ease;
+            filter: drop-shadow(5px 5px 5px rgb(32, 32, 32));
+        }        
     }
 
     p.ex{
@@ -84,6 +105,7 @@
     .login{
         margin-top : 40%;
     }
+ 
 }
 
 button {
@@ -94,7 +116,6 @@ button {
 }
 button:hover{
     color: #000; /* 文字色を白にする */
-    background-color: #c9c9c9; /* 背景色をグレー（#c9c9c9）にする */
     text-decoration: none; /* リンクに出てくる下線を無効にする*/    
 }
 

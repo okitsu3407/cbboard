@@ -13,24 +13,52 @@
         position: absolute;
         top:10%;
         left:5%;
+        &:hover {
+            transform: scale(1.1);
+            transition: box-shadow 0.2s ease,
+                        transform 0.2s ease,
+                        z-index 0s 0s ease;
+            filter: drop-shadow(5px 5px 5px rgb(32, 32, 32));
+        }        
     }
 
     .ex2 {
         position: absolute;
         top:10%;
         left:63%;
+        &:hover {
+            transform: scale(1.1);
+            transition: box-shadow 0.2s ease,
+                        transform 0.2s ease,
+                        z-index 0s 0s ease;
+            filter: drop-shadow(5px 5px 5px rgb(32, 32, 32));
+        }        
     }
     
     .ex3 {
         position: absolute;
         top:50%;
         left:5%;
+        &:hover {
+            transform: scale(1.1);
+            transition: box-shadow 0.2s ease,
+                        transform 0.2s ease,
+                        z-index 0s 0s ease;
+            filter: drop-shadow(5px 5px 5px rgb(32, 32, 32));
+        }        
     }
 
     .ex4 {
         position: absolute;
         top:48%;
         left:63%;
+        &:hover {
+            transform: scale(1.1);
+            transition: box-shadow 0.2s ease,
+                        transform 0.2s ease,
+                        z-index 0s 0s ease;
+            filter: drop-shadow(5px 5px 5px rgb(32, 32, 32));
+        }        
     }
 
     .yoteipdf {
