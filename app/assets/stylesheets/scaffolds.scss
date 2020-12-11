@@ -6,7 +6,6 @@ body {
   font-size: 18px;
   -webkit-text-stroke-color: rgb(0, 0, 0);
   -webkit-text-fill-color: rgb(0, 0, 0);
-  color: chartreuse;
   margin: 33px;
   font-family: 'UD デジタル 教科書体 N-B';
   font-size: 13px;
@@ -14,7 +13,6 @@ body {
 }
 
 p, ol, ul, td {
-  color: chartreuse;
   font-family: 'UD デジタル 教科書体 N-B';
   font-size: 13px;
   line-height: 18px;
@@ -28,7 +26,6 @@ p, ol, ul, td {
 
 a {
   //text-decoration:underline;
-  -webkit-text-fill-color: rgb(135, 253, 0);
   //&:hover {
   //  color: #fff;
   //  background-color:orchid;
@@ -120,7 +117,6 @@ h5{
   text-align: right;
   margin-right :30px;
   font-size: 15px;
-  -webkit-text-fill-color: rgb(47, 230, 10);
 }
 
 .temple{
