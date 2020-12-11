@@ -72,6 +72,6 @@ class MeyasusController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def meyasu_params
-      params.require(:meyasu).permit(:content)
+      params.require(:meyasu).permit(:content, :grate)
     end
 end
