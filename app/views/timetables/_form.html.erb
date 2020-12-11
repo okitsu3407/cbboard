@@ -1,13 +1,14 @@
 <%= form_with(model: timetable, local: true) do |form| %>
   <% if timetable.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(timetable.errors.count,"") %>個のエラー</h2>
+      <h2>※　<%= pluralize(timetable.errors.count,"") %>つの入力ミスがあります</h2>
 
-      
+      <div class="error">
       <% timetable.errors.full_messages.each do |message| %>
-        <h4>〇<%= message %></h4>
+        <p>▪<%= message %></p>
       <% end %>
-    
+      </div>
+
     </div>
   <% end %>
 
