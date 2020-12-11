@@ -131,6 +131,33 @@ button{
       }
 
 
+      #error_explanation{
+        width        : 500px;
+        height       : 202px;
+        background   : rgb(192, 10, 10);
+      }
+
+      .error{
+        width        : 490px;
+        height       : 170px;
+        background   : rgb(212, 208, 208);
+        position: relative; left: 5px; 
+        position: relative; top: -21px;
+      }
+
+      h2{
+        font-size: 20px;
+        -webkit-text-fill-color: rgb(255, 255, 255); 
+        position: relative; left: 30px;
+      }
+      
+      p{
+        font-size: 17px;
+        position: relative; left: 50px; 
+        position: relative; top: 20px;
+        line-height: 30px;
+      }
+
       #tab_radio_A:checked ~ #tab_contains_A,
       #tab_radio_B:checked ~ #tab_contains_B,
       #tab_radio_C:checked ~ #tab_contains_C,
