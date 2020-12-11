@@ -1,18 +1,17 @@
 <%= form_with(model: timetable, local: true) do |form| %>
   <% if timetable.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(timetable.errors.count, "error") %> prohibited this timetable from being saved:</h2>
+      <h2>※　<%= pluralize(timetable.errors.count,"") %>つの入力ミスがあります</h2>
 
-      <ul>
+      <div class="error">
       <% timetable.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <p>▪<%= message %></p>
       <% end %>
-      </ul>
+      </div>
+
     </div>
   <% end %>
 
-
- 
  
       <!--  <div class="field">                             ・・・学年～時限はいじられないようコメントアウトしてます 
           <%= form.label :学年 %>
@@ -36,6 +35,7 @@
   
         
   
+  
   <div class="field">
   <%= form.label :〇教科 %>
   <div  id="selectkyoka">
@@ -47,6 +47,8 @@
   <button type="button" class="" data-toggle="modal" data-target="#sampleModal" >
 	教科を選択
   </button>
+
+  
   </div>
 
     <!-- モーダル・ダイアログ -->
@@ -213,6 +215,8 @@
         </div>
       </div>
     </div>
+
+  
 
   <div class="field">
     <%= form.label :〇内容 %>

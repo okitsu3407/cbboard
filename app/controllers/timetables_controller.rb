@@ -1,6 +1,6 @@
 class TimetablesController < ApplicationController
   before_action :set_timetable, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_tables, only: [:edit, :update]
 
   
   # GET /timetables
@@ -21,9 +21,7 @@ class TimetablesController < ApplicationController
 
   # GET /timetables/1/edit
   def edit
-    @titles = Title.all
-    @teachers = Teacher.all
-    @classrooms = Classroom.all
+   
   end
 
   # POST /timetables
@@ -83,6 +81,15 @@ class TimetablesController < ApplicationController
   # PATCH/PUT /timetables/1
   # PATCH/PUT /timetables/1.json
   def update
+    unless params[:title_id].present? 
+      @timetable.title_id = 0
+    end
+    unless params[:classroom_id].present?
+      @timetable.classroom_id = 0
+    end
+    unless params[:teacher_id].present?
+      @timetable.teacher_id = 0
+    end
     respond_to do |format|
       if @timetable.update(timetable_params)
         format.html { redirect_to @timetable }
@@ -112,6 +119,12 @@ class TimetablesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_timetable
       @timetable = Timetable.find(params[:id])
+    end
+  
+    def set_tables
+      @titles = Title.all
+      @teachers = Teacher.all
+      @classrooms = Classroom.all
     end
 
     # Only allow a list of trusted parameters through.
