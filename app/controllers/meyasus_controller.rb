@@ -36,6 +36,7 @@ class MeyasusController < ApplicationController
         format.json { render json: @meyasu.errors, status: :unprocessable_entity }
       end
     end
+   
   end
 
   # PATCH/PUT /meyasus/1
