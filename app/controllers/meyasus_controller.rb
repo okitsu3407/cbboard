@@ -26,6 +26,7 @@ class MeyasusController < ApplicationController
   def create
     @meyasu = Meyasu.new
     @meyasu.content = params[:freeans]
+    @meyasu.grate  = params[:gakunen]
 
     respond_to do |format|
       if @meyasu.save
