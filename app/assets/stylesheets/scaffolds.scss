@@ -29,13 +29,14 @@ p, ol, ul, td {
 a {
   //text-decoration:underline;
   -webkit-text-fill-color: rgb(135, 253, 0);
+  
   //&:hover {
   //  color: #fff;
   //  background-color:orchid;
   //}
+
   font-size: 15px;
 }
-
 
 th {
   padding: 10px 5px 10px 5px;
@@ -48,15 +49,18 @@ td {
   padding: 10px 5px 10px 5px;
   font-size: 15px;
 }
+
 .kyouka{
   font-size: 20px;
   font-weight: bold;
 }
 
 div {
+  
   &.field, &.actions {
     margin-bottom: 10px;
   }
+
 }
 
 #notice {
@@ -74,9 +78,9 @@ div {
 //  border: 2px solid aqua;
 //  padding: 7px 7px 0;
 //  margin-bottom: 20px;
- // background-color: #f0f0f0;
-
-  //h2 {
+ // background-color: #F0F0F0;
+  
+ //h2 {
   //  text-align: left;
   //  font-weight: bold;
   //  padding: 5px 5px 5px 15px;
@@ -90,6 +94,7 @@ div {
   //  font-size: 12px;
   //  list-style: square;
   //}
+
 //}
 
 label {
@@ -131,5 +136,3 @@ h5{
 .log2{
   padding-top: 10px;
 }
-
-
