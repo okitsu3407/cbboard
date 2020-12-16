@@ -1,16 +1,16 @@
 <%= form_with(model: timetable, local: true) do |form| %>
-  <% if timetable.errors.any? %>
-    <div id="error_explanation">
-      <h2>※　<%= pluralize(timetable.errors.count,"") %>つの入力ミスがあります</h2>
+    <% if timetable.errors.any? %>
+      <div id="error_explanation">
+        <h2>※　<%= pluralize(timetable.errors.count,"") %>つの入力ミスがあります</h2>
 
-      <div class="error">
-      <% timetable.errors.full_messages.each do |message| %>
-        <p>▪<%= message %></p>
-      <% end %>
+        <div class="error">
+        <% timetable.errors.full_messages.each do |message| %>
+          <p>▪<%= message %></p>
+        <% end %>
+        </div>
+
       </div>
-
-    </div>
-  <% end %>
+    <% end %>
 
  
       <!--  <div class="field">                             ・・・学年～時限はいじられないようコメントアウトしてます 
@@ -34,22 +34,18 @@
         </div> -->
   
         
-  
-  
-  <div class="field">
-  <%= form.label :〇教科 %>
-  <div  id="selectkyoka">
-    ※教科を選択してください。
-  </div>
-  </div>
+    <div class="field">
+      <%= form.label :〇教科 %>
+      <div  id="selectkyoka">
+        ※教科を選択してください。
+      </div>
+    </div>
  
-  <div class="button">
-  <button type="button" class="" data-toggle="modal" data-target="#sampleModal" >
-	教科を選択
-  </button>
-
-  
-  </div>
+    <div class="button">
+      <button type="button" class="" data-toggle="modal" data-target="#sampleModal" >
+      教科を選択
+      </button>
+    </div>
 
     <!-- モーダル・ダイアログ -->
     <div class="modal fade" id="sampleModal" tabindex="-1">
@@ -62,7 +58,12 @@
           <div class="modal-body">
 
           <!-- タブメニュー -->
-          <input type="radio" name="tab_item" id="tab_radio_A" class="tab_radio" checked>
+
+          <input type="radio" name="tab_item" id="tab_radio_not_1" class="tab_radio">
+          <label for="tab_radio_not_1" class="tab_menu">特殊</label>
+
+
+          <input type="radio" name="tab_item" id="tab_radio_A" class="tab_radio">
           <label for="tab_radio_A" class="tab_menu">あ行</label>
           
            <input type="radio" name="tab_item" id="tab_radio_B" class="tab_radio">
@@ -82,6 +83,26 @@
 
           <input type="radio" name="tab_item" id="tab_radio_G" class="tab_radio">
           <label for="tab_radio_G" class="tab_menu">ら行</label>
+
+          
+
+
+          <!-- タブnot_1 表示内容 -->
+          <div id="tab_contains_not_1" class="tab_contains">
+            <% yomi = @titles.where(yomi:'特殊') %>
+            <% yoso = yomi.length %>
+            <% a = 0 %>
+            <% yoso.times do %>
+
+              <% kyo =  yomi[a].kyouka %>
+              <% kyo_id = yomi[a].id %>
+              
+              <input type="radio" value="<%= kyo_id %>" name="timetable[title_id]" id="tabkyo" class="tab_radio_2" >
+              <%= form.label :kyouka, "#{kyo}", {style: "display: inline-block;"} %>
+              
+              <% a += 1 %>
+            <% end %>
+          </div>
           
             <!-- タブA 表示内容 -->
 
@@ -204,6 +225,8 @@
               <% a += 1 %>
             <% end %>
           </div>
+
+          
     
           
 
@@ -264,10 +287,14 @@
           <div class="modal-body">
 
           <!-- タブメニュー -->
-          <input type="radio" name="tab_item" id="tab_radio_H" class="tab_radio" checked>
+
+          <input type="radio" name="tab_item" id="tab_radio_not_2" class="tab_radio">
+          <label for="tab_radio_not_2" class="tab_menu">特殊</label>
+
+          <input type="radio" name="tab_item" id="tab_radio_H" class="tab_radio">
           <label for="tab_radio_H" class="tab_menu">〇年〇組教室</label>
 
-          <input type="radio" name="tab_item" id="tab_radio_I" class="tab_radio" checked>
+          <input type="radio" name="tab_item" id="tab_radio_I" class="tab_radio">
           <label for="tab_radio_I" class="tab_menu">演習室</label>
           
            <input type="radio" name="tab_item" id="tab_radio_J" class="tab_radio">
@@ -287,6 +314,28 @@
 
           <input type="radio" name="tab_item" id="tab_radio_O" class="tab_radio">
           <label for="tab_radio_O" class="tab_menu">その他</label>
+
+          
+
+          <!-- タブnot_2 表示内容 -->
+
+          <div id="tab_contains_not_2" class="tab_contains">
+              <% bunbetsu = @classrooms.where(bunbetsu:'特殊') %>
+              <% yoso = bunbetsu.length %>
+              <% a = 0 %>
+              <% yoso.times do %>
+              
+              <% room =  bunbetsu[a].kyousitsu %>
+              <% room_id = bunbetsu[a].id %>
+
+
+              <input type="radio" value="<%= room_id %>" name="timetable[classroom_id]" id="tabkyo" class="tab_radio_2" >
+              <%= form.label :kyousitsu, "#{room}", {style: "display: inline-block;"} %>
+
+                <% a += 1 %>
+              <% end %>
+           </div>
+
 
         
             <!-- タブH 表示内容 -->
@@ -313,42 +362,42 @@
           <!-- タブI 表示内容 -->
 
           <div id="tab_contains_I" class="tab_contains">
-          <% bunbetsu = @classrooms.where(bunbetsu:'演習室') %>
-          <% yoso = bunbetsu.length %>
-          <% a = 0 %>
-          <% yoso.times do %>
-           
-           <% room =  bunbetsu[a].kyousitsu %>
-           <% room_id = bunbetsu[a].id %>
+            <% bunbetsu = @classrooms.where(bunbetsu:'演習室') %>
+            <% yoso = bunbetsu.length %>
+            <% a = 0 %>
+            <% yoso.times do %>
+            
+            <% room =  bunbetsu[a].kyousitsu %>
+            <% room_id = bunbetsu[a].id %>
 
-           <input type="radio" value="<%= room_id %>" name="timetable[classroom_id]" id="tabkyo" class="tab_radio_2" >
-           <%= form.label :kyousitsu, "#{room}", {style: "display: inline-block;"} %>
+            <input type="radio" value="<%= room_id %>" name="timetable[classroom_id]" id="tabkyo" class="tab_radio_2" >
+            <%= form.label :kyousitsu, "#{room}", {style: "display: inline-block;"} %>
 
-            <% a += 1 %>
-          <% end %>
+              <% a += 1 %>
+            <% end %>
         </div>
 
         <!-- タブJ 表示内容 -->
 
         <div id="tab_contains_J" class="tab_contains">
-        <% bunbetsu = @classrooms.where(bunbetsu:'パソコン室') %>
-        <% yoso = bunbetsu.length %>
-        <% a = 0 %>
-        <% yoso.times do %>
-         
-         <% room =  bunbetsu[a].kyousitsu %>
-         <% room_id = bunbetsu[a].id %>
+            <% bunbetsu = @classrooms.where(bunbetsu:'パソコン室') %>
+            <% yoso = bunbetsu.length %>
+            <% a = 0 %>
+            <% yoso.times do %>
+            
+            <% room =  bunbetsu[a].kyousitsu %>
+            <% room_id = bunbetsu[a].id %>
 
-         <input type="radio" value="<%= room_id %>" name="timetable[classroom_id]" id="tabkyo" class="tab_radio_2" >
-         <%= form.label :kyousitsu, "#{room}", {style: "display: inline-block;"} %>
+            <input type="radio" value="<%= room_id %>" name="timetable[classroom_id]" id="tabkyo" class="tab_radio_2" >
+            <%= form.label :kyousitsu, "#{room}", {style: "display: inline-block;"} %>
 
-          <% a += 1 %>
-        <% end %>
-      </div>
+              <% a += 1 %>
+            <% end %>
+        </div>
           
             <!-- タブK 表示内容 -->
 
-            <div id="tab_contains_K" class="tab_contains">
+        <div id="tab_contains_K" class="tab_contains">
           <% bunbetsu = @classrooms.where(bunbetsu:'運動場') %>
           <% yoso = bunbetsu.length %>
           <% a = 0 %>
@@ -387,61 +436,62 @@
           <!-- タブM 表示内容 -->
 
          <div id="tab_contains_M" class="tab_contains">
-          <% bunbetsu = @classrooms.where(bunbetsu:'職員室') %>
-          <% yoso = bunbetsu.length %>
-          <% a = 0 %>
-          <% yoso.times do %>
-           
-           <% room =  bunbetsu[a].kyousitsu %>
-           <% room_id = bunbetsu[a].id %>
+              <% bunbetsu = @classrooms.where(bunbetsu:'職員室') %>
+              <% yoso = bunbetsu.length %>
+              <% a = 0 %>
+              <% yoso.times do %>
+              
+              <% room =  bunbetsu[a].kyousitsu %>
+              <% room_id = bunbetsu[a].id %>
 
-           <input type="radio" value="<%= room_id %>" name="timetable[classroom_id]" id="tabkyo" class="tab_radio_2" >
-           <%= form.label :kyousitsu, "#{room}", {style: "display: inline-block;"} %>
+              <input type="radio" value="<%= room_id %>" name="timetable[classroom_id]" id="tabkyo" class="tab_radio_2" >
+              <%= form.label :kyousitsu, "#{room}", {style: "display: inline-block;"} %>
 
-            <% a += 1 %>
-          <% end %>
-        </div>
+                <% a += 1 %>
+              <% end %>
+         </div>
 
           <!-- タブN 表示内容 -->
 
           <div id="tab_contains_N" class="tab_contains">
-          <% bunbetsu = @classrooms.where(bunbetsu:'準備室') %>
-          <% yoso = bunbetsu.length %>
-          <% a = 0 %>
-          <% yoso.times do %>
-           
-           <% room =  bunbetsu[a].kyousitsu %>
-           <% room_id = bunbetsu[a].id %>
+              <% bunbetsu = @classrooms.where(bunbetsu:'準備室') %>
+              <% yoso = bunbetsu.length %>
+              <% a = 0 %>
+              <% yoso.times do %>
+              
+              <% room =  bunbetsu[a].kyousitsu %>
+              <% room_id = bunbetsu[a].id %>
 
 
-           <input type="radio" value="<%= room_id %>" name="timetable[classroom_id]" id="tabkyo" class="tab_radio_2" >
-           <%= form.label :kyousitsu, "#{room}", {style: "display: inline-block;"} %>
+              <input type="radio" value="<%= room_id %>" name="timetable[classroom_id]" id="tabkyo" class="tab_radio_2" >
+              <%= form.label :kyousitsu, "#{room}", {style: "display: inline-block;"} %>
 
-            <% a += 1 %>
-          <% end %>
-        </div>
+                <% a += 1 %>
+              <% end %>
+           </div>
 
           <!-- タブO 表示内容 -->
 
           <div id="tab_contains_O" class="tab_contains">
-          <% bunbetsu = @classrooms.where(bunbetsu:'その他') %>
-          <% yoso = bunbetsu.length %>
-          <% a = 0 %>
-          <% yoso.times do %>
+              <% bunbetsu = @classrooms.where(bunbetsu:'その他') %>
+                <% yoso = bunbetsu.length %>
+                <% a = 0 %>
+              <% yoso.times do %>
+                
+                <% room =  bunbetsu[a].kyousitsu %>
+                <% room_id = bunbetsu[a].id %>
+
+                <% if a % 6 == 0 && a != 0 %>
+                <br>
+                <% end %>
+
+                <input type="radio" value="<%= room_id %>" name="timetable[classroom_id]" id="tabkyo" class="tab_radio_2" >
+                <%= form.label :kyousitsu, "#{room}", {style: "display: inline-block;"} %>
+  
+                  <% a += 1 %>
+                <% end %>
+           </div>
            
-           <% room =  bunbetsu[a].kyousitsu %>
-           <% room_id = bunbetsu[a].id %>
-
-           <% if a % 6 == 0 && a != 0 %>
-           <br>
-           <% end %>
-
-           <input type="radio" value="<%= room_id %>" name="timetable[classroom_id]" id="tabkyo" class="tab_radio_2" >
-           <%= form.label :kyousitsu, "#{room}", {style: "display: inline-block;"} %>
-
-            <% a += 1 %>
-          <% end %>
-        </div>
 
           </div>
           <div class="modal-footer">
@@ -482,7 +532,11 @@
           <div class="modal-body">
 
           <!-- タブメニュー -->
-          <input type="radio" name="tab_item" id="tab_radio_P" class="tab_radio" checked>
+
+          <input type="radio" name="tab_item" id="tab_radio_not_3" class="tab_radio">
+          <label for="tab_radio_not_3" class="tab_menu">特殊</label>
+
+          <input type="radio" name="tab_item" id="tab_radio_P" class="tab_radio">
           <label for="tab_radio_P" class="tab_menu">総務部</label>
           
            <input type="radio" name="tab_item" id="tab_radio_Q" class="tab_radio">
@@ -514,205 +568,229 @@
 
           <input type="radio" name="tab_item" id="tab_radio_Z" class="tab_radio">
           <label for="tab_radio_Z" class="tab_menu">校医,薬剤師</label>
-          
-            <!-- タブP 表示内容 -->
 
-            <div id="tab_contains_P" class="tab_contains">
-            <% busyo = @teachers.where(busyo:'総務部') %>
-            <% yoso = busyo.length %>
-            <% a = 0 %>
-            <% yoso.times do %>
-             
-             <% kyosi =  busyo[a].sensei %>
-             <% kyosi_id = busyo[a].id %>
 
-             <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
-             <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
 
-              <% a += 1 %>
-            <% end %>
+          <!-- タブnot_3 表示内容 -->
+
+          <div id="tab_contains_not_3" class="tab_contains">
+              <% busyo = @teachers.where(busyo: '特殊') %>
+              <% yoso = busyo.length %>
+              <% a = 0 %>
+              <% yoso.times do %>
+              
+              <% kyosi =  busyo[a].sensei %>
+              <% kyosi_id = busyo[a].id %>
+
+              <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
+              <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
+
+                <% a += 1 %>
+              <% end %>
           </div>
+              
+
           
-            <!-- タブQ 表示内容 -->
-
-            <div id="tab_contains_Q" class="tab_contains">
-            <% busyo = @teachers.where(busyo:'教務部') %>
-            <% yoso = busyo.length %>
-            <% a = 0 %>
-            <% yoso.times do %>
-             
-             <% kyosi =  busyo[a].sensei %>
-             <% kyosi_id = busyo[a].id %>
-
-             <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
-             <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
-
-              <% a += 1 %>
-            <% end %>
-          </div>
           
-            <!-- タブR 表示内容 -->
+              <!-- タブP 表示内容 -->
 
-            <div id="tab_contains_R" class="tab_contains">
-            <% busyo = @teachers.where(busyo:'生徒指導部') %>
-            <% yoso = busyo.length %>
-            <% a = 0 %>
-            <% yoso.times do %>
-             
-             <% kyosi =  busyo[a].sensei %>
-             <% kyosi_id = busyo[a].id %>
+              <div id="tab_contains_P" class="tab_contains">
+                <% busyo = @teachers.where(busyo:'総務部') %>
+                <% yoso = busyo.length %>
+                <% a = 0 %>
+                <% yoso.times do %>
+                
+                <% kyosi =  busyo[a].sensei %>
+                <% kyosi_id = busyo[a].id %>
 
-             <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
-             <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
+                <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
+                <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
 
-              <% a += 1 %>
-            <% end %>
-          </div>
+                  <% a += 1 %>
+                <% end %>
+              </div>
+              
+              <!-- タブQ 表示内容 -->
 
-          <!-- タブS 表示内容 -->
+              <div id="tab_contains_Q" class="tab_contains">
+                <% busyo = @teachers.where(busyo:'教務部') %>
+                <% yoso = busyo.length %>
+                <% a = 0 %>
+                <% yoso.times do %>
+                
+                <% kyosi =  busyo[a].sensei %>
+                <% kyosi_id = busyo[a].id %>
 
-          <div id="tab_contains_S" class="tab_contains">
-          <% busyo = @teachers.where(busyo:'進路指導部') %>
-          <% yoso = busyo.length %>
-          <% a = 0 %>
-          <% yoso.times do %>
-           
-           <% kyosi =  busyo[a].sensei %>
-           <% kyosi_id = busyo[a].id %>
+                <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
+                <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
 
-           <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
-           <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
+                  <% a += 1 %>
+                <% end %>
+              </div>
+          
+              <!-- タブR 表示内容 -->
 
-            <% a += 1 %>
-          <% end %>
-        </div>
+              <div id="tab_contains_R" class="tab_contains">
+                <% busyo = @teachers.where(busyo:'生徒指導部') %>
+                <% yoso = busyo.length %>
+                <% a = 0 %>
+                <% yoso.times do %>
+                
+                <% kyosi =  busyo[a].sensei %>
+                <% kyosi_id = busyo[a].id %>
 
-          <!-- タブT 表示内容 -->
+                <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
+                <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
 
-          <div id="tab_contains_T" class="tab_contains">
-          <% busyo = @teachers.where(busyo:'保健相談部') %>
-          <% yoso = busyo.length %>
-          <% a = 0 %>
-          <% yoso.times do %>
-           
-           <% kyosi =  busyo[a].sensei %>
-           <% kyosi_id = busyo[a].id %>
+                  <% a += 1 %>
+                <% end %>
+              </div>
 
-           <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
-           <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
+              <!-- タブS 表示内容 -->
 
-            <% a += 1 %>
-          <% end %>
-        </div>
+              <div id="tab_contains_S" class="tab_contains">
+                <% busyo = @teachers.where(busyo:'進路指導部') %>
+                <% yoso = busyo.length %>
+                <% a = 0 %>
+                <% yoso.times do %>
+                
+                <% kyosi =  busyo[a].sensei %>
+                <% kyosi_id = busyo[a].id %>
 
-          <!-- タブU 表示内容 -->
+                <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
+                <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
 
-          <div id="tab_contains_U" class="tab_contains">
-          <% busyo = @teachers.where(busyo:'図書視聴覚部') %>
-          <% yoso = busyo.length %>
-          <% a = 0 %>
-          <% yoso.times do %>
-           
-           <% kyosi =  busyo[a].sensei %>
-           <% kyosi_id = busyo[a].id %>
+                  <% a += 1 %>
+                <% end %>
+              </div>
 
-           <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
-           <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
+              <!-- タブT 表示内容 -->
 
-            <% a += 1 %>
-          <% end %>
-        </div>
+              <div id="tab_contains_T" class="tab_contains">
+                <% busyo = @teachers.where(busyo:'保健相談部') %>
+                <% yoso = busyo.length %>
+                <% a = 0 %>
+                <% yoso.times do %>
+                
+                <% kyosi =  busyo[a].sensei %>
+                <% kyosi_id = busyo[a].id %>
 
-          <!-- タブV 表示内容 -->
+                <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
+                <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
 
-          <div id="tab_contains_V" class="tab_contains">
-          <% busyo = @teachers.where(busyo:'商業部') %>
-          <% yoso = busyo.length %>
-          <% a = 0 %>
-          <% yoso.times do %>
-           
-           <% kyosi =  busyo[a].sensei %>
-           <% kyosi_id = busyo[a].id %>
+                  <% a += 1 %>
+                <% end %>
+              </div>
 
-           <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
-           <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
+              <!-- タブU 表示内容 -->
 
-            <% a += 1 %>
-          <% end %>
-        </div>
+              <div id="tab_contains_U" class="tab_contains">
+                <% busyo = @teachers.where(busyo:'図書視聴覚部') %>
+                <% yoso = busyo.length %>
+                <% a = 0 %>
+                <% yoso.times do %>
+                
+                <% kyosi =  busyo[a].sensei %>
+                <% kyosi_id = busyo[a].id %>
+
+                <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
+                <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
+
+                  <% a += 1 %>
+                <% end %>
+              </div>
+
+              <!-- タブV 表示内容 -->
+
+              <div id="tab_contains_V" class="tab_contains">
+                <% busyo = @teachers.where(busyo:'商業部') %>
+                <% yoso = busyo.length %>
+                <% a = 0 %>
+                <% yoso.times do %>
+                
+                <% kyosi =  busyo[a].sensei %>
+                <% kyosi_id = busyo[a].id %>
+
+                <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
+                <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
+
+                  <% a += 1 %>
+                <% end %>
+              </div>
        
-        <!-- タブW 表示内容 -->
+             <!-- タブW 表示内容 -->
 
-        <div id="tab_contains_W" class="tab_contains">
-        <% busyo = @teachers.where(busyo:'事務') %>
-        <% yoso = busyo.length %>
-        <% a = 0 %>
-        <% yoso.times do %>
-         
-         <% kyosi =  busyo[a].sensei %>
-         <% kyosi_id = busyo[a].id %>
+            <div id="tab_contains_W" class="tab_contains">
+              <% busyo = @teachers.where(busyo:'事務') %>
+              <% yoso = busyo.length %>
+              <% a = 0 %>
+              <% yoso.times do %>
+              
+              <% kyosi =  busyo[a].sensei %>
+              <% kyosi_id = busyo[a].id %>
 
-         <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
-         <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
+              <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
+              <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
 
-          <% a += 1 %>
-        <% end %>
-      </div>
+                <% a += 1 %>
+              <% end %>
+            </div>
 
-      <!-- タブX 表示内容 -->
+             <!-- タブX 表示内容 -->
 
-      <div id="tab_contains_X" class="tab_contains">
-      <% busyo = @teachers.where(busyo:'PTA,高野連') %>
-      <% yoso = busyo.length %>
-      <% a = 0 %>
-      <% yoso.times do %>
-       
-       <% kyosi =  busyo[a].sensei %>
-       <% kyosi_id = busyo[a].id %>
+            <div id="tab_contains_X" class="tab_contains">
+              <% busyo = @teachers.where(busyo:'PTA,高野連') %>
+              <% yoso = busyo.length %>
+              <% a = 0 %>
+              <% yoso.times do %>
+              
+              <% kyosi =  busyo[a].sensei %>
+              <% kyosi_id = busyo[a].id %>
 
-       <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
-       <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
+              <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
+              <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
 
-        <% a += 1 %>
-      <% end %>
-    </div>
+                <% a += 1 %>
+              <% end %>
+            </div>
 
-    <!-- タブY 表示内容 -->
+              <!-- タブY 表示内容 -->
 
-        <div id="tab_contains_Y" class="tab_contains">
-        <% busyo = @teachers.where(busyo:'非常勤務') %>
-        <% yoso = busyo.length %>
-        <% a = 0 %>
-        <% yoso.times do %>
-         
-         <% kyosi =  busyo[a].sensei %>
-         <% kyosi_id = busyo[a].id %>
+            <div id="tab_contains_Y" class="tab_contains">
+              <% busyo = @teachers.where(busyo:'非常勤務') %>
+              <% yoso = busyo.length %>
+              <% a = 0 %>
+              <% yoso.times do %>
+              
+              <% kyosi =  busyo[a].sensei %>
+              <% kyosi_id = busyo[a].id %>
 
-         <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
-         <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
+              <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
+              <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
 
-          <% a += 1 %>
-        <% end %>
-      </div>
+                <% a += 1 %>
+              <% end %>
+            </div>
 
-      <!-- タブZ 表示内容 -->
+            <!-- タブZ 表示内容 -->
 
-        <div id="tab_contains_Z" class="tab_contains">
-        <% busyo = @teachers.where(busyo:'校医,薬剤師') %>
-        <% yoso = busyo.length %>
-        <% a = 0 %>
-        <% yoso.times do %>
-         
-         <% kyosi =  busyo[a].sensei %>
-         <% kyosi_id = busyo[a].id %>
+            <div id="tab_contains_Z" class="tab_contains">
+              <% busyo = @teachers.where(busyo:'校医,薬剤師') %>
+              <% yoso = busyo.length %>
+              <% a = 0 %>
+              <% yoso.times do %>
+              
+              <% kyosi =  busyo[a].sensei %>
+              <% kyosi_id = busyo[a].id %>
 
-         <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
-         <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
+              <input type="radio" value="<%= kyosi_id %>" name="timetable[teacher_id]" id="tabkyo" class="tab_radio_2" >
+              <%= form.label :sensei, "#{kyosi}", {style: "display: inline-block;"} %>
 
-          <% a += 1 %>
-        <% end %>
-      </div>
-          
+                <% a += 1 %>
+              <% end %>
+            </div>
+
+            
 
           </div>
           <div class="modal-footer">
@@ -777,7 +855,7 @@ var hash_teacher = {
     $('#teacherbutton').click(function() {
     
       const str1 = $('input:radio[name="timetable[teacher_id]"]:checked').val();
-      $('#tabkyo').text(str1);
+
     
     $("#selectkyosi").text(hash_teacher[str1]);
     

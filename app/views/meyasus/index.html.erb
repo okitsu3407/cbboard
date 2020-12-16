@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <thead>
   <h1><font face="UD デジタル 教科書体 N-B">目安箱</h1>
-  <%= link_to 'topに戻る', "/" %>
+  <%= link_to 'トップに戻る', "/" %>
 
   <div class="put">
   <h3>入力欄</h3>
@@ -10,6 +10,11 @@
   <%= form_tag({controller: :meyasus,action: :create}) do %>
   <textarea name="freeans" rows="4" cols="40"></textarea>
   <br>
+  学年:<select name="gakunen">
+  <option value="1">１</option>
+  <option value="2">２</option>
+  <option value="3">３</option>
+
   <input type="submit" value="送信する"><input type="reset" value="リセット">
   <br>
   <% end %>
@@ -22,14 +27,18 @@
     <h3>送信された意見</h3>
       <% @meyasus.each do |meyasu| %>
         <tr>
-        <td>・<%= meyasu.content %></td>
+        <td><%= meyasu.grate %>年・<%= meyasu.content %></td>
         <td><%= link_to '削除', meyasu, method: :delete, data: { confirm: '本当によろしいですか?' } %></td>
         </tr>
       <% end %>
     </table>
   <% else %>
+  <p class="boxp">
+  ・学校生活で改善してほしいこと、意見などをご自由にお書きください。
+  <br><br>・不適切な内容が含まれる場合は送信できません。
+  <br><br>・送信された内容はログインユーザーのみが確認できます。
+  </p>
   <% end %>
-  <p class="boxp">・学校生活で改善してほしいこと、意見などをご自由にお書きください。<br><br>・不適切な内容が含まれる場合は送信できません。<br><br>・送信された内容はログインユーザーのみが確認できます。</p>
   </div>
 
   

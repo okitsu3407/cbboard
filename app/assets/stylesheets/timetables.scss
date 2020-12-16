@@ -72,7 +72,7 @@ button{
 
 #sampleModal{
     display:none;
-    width:800px;
+    width:880px;
     height:500px;
     background-color: rgb(255, 255, 255);
     position:fixed;
@@ -83,23 +83,23 @@ button{
 
     #sampleModal2{            
       display:none;
-      width:1220px;
+      width:1320px;
       height:500px;
       background-color: rgb(255, 255, 255);
       position:fixed;
       top:200px;
-    left:290px;
+      left:20px;
       z-index: 1;
       }
 
       #sampleModal3{
         display:none;
-        width:900px;
+        width:1000px;
         height:500px;
         background-color: rgb(255, 255, 255);
         position:fixed;
         top:200px;
-        left:400px;
+        left:300px;
         z-index: 1;
         }
 
@@ -185,6 +185,7 @@ button{
       #tab_radio_E:checked ~ #tab_contains_E,
       #tab_radio_F:checked ~ #tab_contains_F,
       #tab_radio_G:checked ~ #tab_contains_G,
+      #tab_radio_not_1:checked ~ #tab_contains_not_1,
       #tab_radio_H:checked ~ #tab_contains_H,
       #tab_radio_I:checked ~ #tab_contains_I,
       #tab_radio_J:checked ~ #tab_contains_J,
@@ -193,6 +194,7 @@ button{
       #tab_radio_M:checked ~ #tab_contains_M,
       #tab_radio_N:checked ~ #tab_contains_N,
       #tab_radio_O:checked ~ #tab_contains_O,
+      #tab_radio_not_2:checked ~ #tab_contains_not_2,
       #tab_radio_P:checked ~ #tab_contains_P,
       #tab_radio_Q:checked ~ #tab_contains_Q,
       #tab_radio_R:checked ~ #tab_contains_R,
@@ -203,6 +205,7 @@ button{
       #tab_radio_W:checked ~ #tab_contains_W,
       #tab_radio_X:checked ~ #tab_contains_X,
       #tab_radio_Y:checked ~ #tab_contains_Y,
-      #tab_radio_Z:checked ~ #tab_contains_Z{
+      #tab_radio_Z:checked ~ #tab_contains_Z,
+      #tab_radio_not_3:checked ~ #tab_contains_not_3{
         display:block;
       }
