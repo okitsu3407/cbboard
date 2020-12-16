@@ -3,14 +3,34 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .timetables{
-    body{
-        background-image: url("/images/b1.png");
-        background-size: cover;
-        background-repeat: no-repeat;
-        font-size: 17px;
-        font-weight: bold;
-        line-height:30px;
-    }
+  body{
+    background-image: url("/images/b1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 17px;
+    font-weight: bold;
+    line-height:30px;
+  }
+
+  .tester{
+    position: absolute;
+    top: 8%;
+    left:80%;
+    transition: box-shadow 0.2s ease,
+    transform 0.2s ease,
+    z-index auto;
+    filter: drop-shadow(5px 5px 5px rgb(32, 32, 32));
+  }
+
+  .tester .tst{
+    position: absolute;
+    display: none;
+  }
+
+  .tester:hover .tst{
+    z-index: 2;
+    display: block;
+  }
 }
 
 .field{
