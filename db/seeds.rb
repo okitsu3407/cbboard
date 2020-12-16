@@ -8,6 +8,7 @@
 Title.delete_all
 Title.connection.execute("delete from sqlite_sequence where name='titles'")
 Title.create(kyouka: "国語表現Ⅰ",yomi: "か行")
+Title.create(kyouka: "数学Ⅰ",yomi: "さ行")
 Title.create(kyouka: "数学Ⅱ",yomi: "さ行")
 Title.create(kyouka: "日本史 A",yomi: "な行")
 Title.create(kyouka: "世界史",yomi: "さ行")
