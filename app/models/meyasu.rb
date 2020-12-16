@@ -5,7 +5,7 @@ class Meyasu < ApplicationRecord
 
 def error_check
 
-    @out = ["fuck you","死ね","アホ","あほ","馬鹿","バカ","キモイ","キモ","デブ","ブス","うざい"]
+    @out = ["fuck you","死ね","アホ","あほ","馬鹿","バカ","キモイ","きもい","キモ","デブ","ブス","うざい"]
     n = 0
 
     if content.blank?
@@ -28,7 +28,7 @@ def error_check
 end
 
 def self.message(content)
-    @out = ["fuck you","死ね","アホ","あほ","馬鹿","バカ","キモイ","キモ","デブ","ブス","うざい"]
+    @out = ["fuck you","死ね","アホ","あほ","馬鹿","バカ","キモイ","きもい","キモ","デブ","ブス","うざい"]
     @a = []
     @out.each do |i|
         if content.include?(i)

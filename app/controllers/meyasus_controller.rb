@@ -26,6 +26,7 @@ class MeyasusController < ApplicationController
   def create
     @meyasu = Meyasu.new
     @meyasu.content = params[:freeans]
+    @meyasu.grate  = params[:gakunen]
 
     respond_to do |format|
       if @meyasu.save
@@ -36,6 +37,7 @@ class MeyasusController < ApplicationController
         format.json { render json: @meyasu.errors, status: :unprocessable_entity }
       end
     end
+   
   end
 
   # PATCH/PUT /meyasus/1
@@ -71,6 +73,6 @@ class MeyasusController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def meyasu_params
-      params.require(:meyasu).permit(:content)
+      params.require(:meyasu).permit(:content, :grate)
     end
 end
