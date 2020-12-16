@@ -24,6 +24,11 @@
   <%= link_to image_tag('/images/huy.png', width: "400px"), '/images/1-3month.pdf' %>
 </div>
 
+<div class = "year">
+  <%= @year.year %>
+</div>
+
+
 <% if session[:login] == true %>
 
 <div class = "yoteipdf" >
@@ -45,7 +50,3 @@
 <% end %>
 
 <% end %>
-
-<div class = "year">
-  <%= @year.year %>
-</div>
