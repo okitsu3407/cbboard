@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <div class="tester">
-  <%= link_to image_tag("/images/test.png",size: "240x190") ,"../plans" %>
+  <%= link_to image_tag("/images/test.png",size: "240x190") ,"../tests" %>
   <div class="tst">
     <img src="/images/testfc.png" width="250px" height="150px">
   </div>
 </div>
 
 <h1>連絡黒板</h1>
-<a href='#hoge'>最下部へ移動</a>
+<button><a href='#hoge'>最下部へ移動</a></button>
 <br>
-<%= link_to 'topに戻る', "/" %>
+<button><%= link_to 'トップに戻る', "/" %></button>
 
 <% if session[:login] == true %>
-<%= link_to '新規作成', new_timetable_path %>
+<button><%= link_to '新規作成', new_timetable_path %></button>
 <%= button_to "全て削除", destroy_all_timetables_path, method: :delete, data: { confirm: '本当に全て削除しますか？(※データ量に応じて時間がかかります）' } %>
 <% end %>
 

@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Title.delete_all
 Title.connection.execute("delete from sqlite_sequence where name='titles'")
+<<<<<<< HEAD
 Title.create(kyouka: "国語表現Ⅰ",yomi: "か行",test: "テスト")
 Title.create(kyouka: "数学Ⅱ",yomi: "さ行",test: "テスト")
 Title.create(kyouka: "日本史 A",yomi: "な行",test: "テスト")
@@ -23,6 +24,24 @@ Title.create(kyouka: "ビジネス情報",yomi: "は行",test: "２年情報処�
 Title.create(kyouka: "ビジネス情報管理",yomi: "は行",test: "３年情報処理科")
 Title.create(kyouka: "総合実践",yomi: "さ行",test: "３年")
 Title.create(kyouka: "電子商取引",yomi: "た行",test: "３年情報処理科")
+=======
+Title.create(kyouka: "国語表現Ⅰ",yomi: "か行")
+Title.create(kyouka: "数学Ⅰ",yomi: "さ行")
+Title.create(kyouka: "数学Ⅱ",yomi: "さ行")
+Title.create(kyouka: "日本史 A",yomi: "な行")
+Title.create(kyouka: "世界史",yomi: "さ行")
+Title.create(kyouka: "科学と人間生活",yomi: "か行")
+Title.create(kyouka: "生物",yomi: "さ行")
+Title.create(kyouka: "現代社会",yomi: "か行")
+Title.create(kyouka: "家庭総合",yomi: "か行")
+Title.create(kyouka: "簿記",yomi: "は行")
+Title.create(kyouka: "ビジネス情報",yomi: "は行")
+Title.create(kyouka: "プログラミング",yomi: "は行")
+Title.create(kyouka: "ビジネス基礎",yomi: "は行")
+Title.create(kyouka: "ビジネス管理",yomi: "は行")
+Title.create(kyouka: "総合実践",yomi: "さ行")
+Title.create(kyouka: "電子商取引",yomi: "た行")
+>>>>>>> 38c5216501899e53b0e358312e2547b44ac4924e
 Title.create(kyouka: "LHR",yomi: "ら行")
 Title.create(kyouka: "体育",yomi: "た行")
 Title.create(kyouka: "保健体育",yomi: "は行",test: "テスト")

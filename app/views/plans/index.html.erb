@@ -24,15 +24,18 @@
   <%= link_to image_tag('/images/huy.png', width: "400px"), '/images/1-3month.pdf' %>
 </div>
 
+<div class = "year">
+  <%= @year.year %>
+</div>
+
+
 <% if session[:login] == true %>
 
 <div class = "yoteipdf" >
 
 <%= form_tag({controller: :plans,action: :upload},{:multipart => true }) do %>
 
-<p>
-月間行事予定のpdfを変更する場合はこちら
-<br>
+<p>月間行事予定のpdfを変更する場合はこちら</p>
 月:<select name="month">
 <option value="1">４～６月</option>
 <option value="2">７～９月</option>
@@ -41,11 +44,6 @@
 <input type="file"  name="images" accept=".pdf">
 <br>
 <input type="submit" value="更新">
-</p>
 <% end %>
 
 <% end %>
-
-<div class = "year">
-  <%= @year.year %>
-</div>
