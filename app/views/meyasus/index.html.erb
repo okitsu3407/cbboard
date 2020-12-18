@@ -3,23 +3,6 @@
   <h1><font face="UD デジタル 教科書体 N-B">目安箱</h1>
   <%= link_to 'トップに戻る', "/" %>
 
-  <div class="put">
-  <h3>入力欄</h3>
-
-  <tbody>
-  <%= form_tag({controller: :meyasus,action: :create}) do %>
-  <textarea name="freeans" rows="6" cols="70"></textarea>
-  <br>
-  学年:<select name="gakunen">
-  <option value="1">１</option>
-  <option value="2">２</option>
-  <option value="3">３</option>
-
-  <input type="submit" value="送信する"><input type="reset" value="リセット">
-  <br>
-  <% end %>
-  </div>
-
 <% if session[:login] == true %>
   <div class="box">
     <table>
@@ -32,6 +15,22 @@
          <% end %>
     </table>
 <% else %>
+  <div class="put">
+  <h3>入力欄</h3>
+  <tbody>
+    <%= form_tag({controller: :meyasus,action: :create}) do %>
+    <textarea name="freeans" rows="6" cols="70"></textarea>
+  <br>
+   学年:<select name="gakunen">
+    <option value="1">１</option>
+    <option value="2">２</option>
+    <option value="3">３</option>
+
+    <input type="submit" value="送信する"><input type="reset" value="リセット">
+  <br>
+  <% end %>
+  </div>
+
     <p class="boxp">
       ・学校生活で改善してほしいこと、意見などをご自由にお書きください。
       <br><br>・不適切な内容が含まれる場合は送信できません。

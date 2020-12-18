@@ -26,7 +26,6 @@ class MeyasusController < ApplicationController
   def create
     @meyasu = Meyasu.new
     @meyasu.content = params[:freeans]
-    Meyasu.order(grate: :DESC)
     @meyasu.grate  = params[:gakunen]
 
     respond_to do |format|
