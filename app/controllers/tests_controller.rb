@@ -29,7 +29,7 @@ class TestsController < ApplicationController
 
     respond_to do |format|
       if @test.save
-        format.html { redirect_to @test, notice: 'Test was successfully created.' }
+        format.html { redirect_to "/tests", notice: '更新しました' }
         format.json { render :show, status: :created, location: @test }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class TestsController < ApplicationController
   def update
     respond_to do |format|
       if @test.update(test_params)
-        format.html { redirect_to @test, notice: 'Test was successfully updated.' }
+        format.html { redirect_to "/tests", notice: '更新しました' }
         format.json { render :show, status: :ok, location: @test }
       else
         format.html { render :edit }
@@ -70,6 +70,6 @@ class TestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def test_params
-      params.require(:test).permit(:range, :submit)
+      params.require(:test).permit(:range, :submit, :title_id)
     end
 end

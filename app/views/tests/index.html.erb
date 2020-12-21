@@ -17,12 +17,12 @@
 
   <% Grate.all.each do |gaku| %>
 
-          <h5><%= gaku.gakunen%>年「商業科」</h5>
+          <h3><%= gaku.gakunen%>年「商業科」</h3>
 
       <% Gclass.all.each do |kumi| %>
 
             <% if count % 4 == 0 %>
-              <h5><%= gaku.gakunen%>年「情報処理科」</h5>
+              <h3><%= gaku.gakunen%>年「情報処理科」</h3>
             <% end %>
 
           <% if count % 2 == 0 %>
@@ -38,38 +38,67 @@
 
                     <% yoso.times do %>
 
-                      <h5><%= title[a].kyouka %></h5>
+                      <% if count % 4 != 0 %>
+                        <h5><%= title[a].kyouka %>・・・<%= gaku.gakunen%>年「商業科」</h5>
+                      <% else %>
+                        <h5><%= title[a].kyouka %>・・・<%= gaku.gakunen%>年「情報処理科」</h5>
+                      <% end %>
+                     
 
-                      <table border="1">
-      
-                      <tr>
-                      <td>テスト範囲</td>
-                      <td>提出課題</td>
-                      </tr>
+                      <% test = Test.find_by(title_id: title[a].id) %>
 
-                          <tr>               
-                            <td>
-                              <div class="FlexTextarea">
-                                <div class="FlexTextarea__dummy" aria-hidden="true"></div>
-                                <textarea id="FlexTextarea" class="FlexTextarea__textarea"></textarea>
-                              </div>
-                            </td>
-                            <td>
-                              <div class="FlexTextarea">
-                                <div class="FlexTextarea__dummy" aria-hidden="true"></div>
-                                <textarea id="FlexTextarea" class="FlexTextarea__textarea"></textarea>
-                              </div>
-                            </td>
-                            <% if session[:login] == true %>
-                            <td><%= link_to '編集', edit_timetable_path(timetable) %></td>
-                            <% end %>
-                          </tr>  
-                          </table>
-                          
-                          
-                          <% a += 1 %>
-                                                            
+                      <% if test.nil? %>
+                        <% test = Test.new(title_id: title[a].id) %>
+                      <% end %>
+
+                      <%= form_with(model: test, local: true) do |form| %>
+
+                  
+                        <table border="1">
+        
+                        <tr>
+                        <td align = "center">テスト範囲</td>
+                        <td align = "center">提出課題</td>
+                        </tr>
+
+                            <tr>               
+                              <td>
+                                <div class="FlexTextarea">
+                                  <div class="FlexTextarea__dummy" aria-hidden="true"></div>
+                                  <% if session[:login] == true %>
+                                  <%= form.text_area :range,{ id:"FlexTextarea", class:"FlexTextarea__textarea",disabled: false } %>
+                                  <% else %>
+                                  <%= form.text_area :range,{ id:"FlexTextarea", class:"FlexTextarea__textarea",disabled: true } %>
+                                  <% end %>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="FlexTextarea">
+                                  <div class="FlexTextarea__dummy" aria-hidden="true"></div>
+                                  <% if session[:login] == true %>
+                                  <%= form.text_area :submit,{ id:"FlexTextarea", class:"FlexTextarea__textarea",disabled: false } %>
+                                  <% else %>
+                                  <%= form.text_area :submit,{ id:"FlexTextarea", class:"FlexTextarea__textarea",disabled: true } %>
+                                  <% end %>
+                                </div>
+                              </td>
+
+                              <% if session[:login] == true %>
+                              <td><%= form.submit "更新" %><%= form.hidden_field :title_id, :value => test.title_id %></td>
+                              <% end %>
+                            </tr>  
+                            </table>
+
+                      <% end %>
+
+                      <% a += 1 %>
+
                     <% end %>
+                            
+                          
+                          
+                                                            
+                   
 
 
                         <% if gaku.gakunen == "1" && check_1 == 0 %>
@@ -113,25 +142,12 @@
       <% end %>
   <% end %>
   
-
-                                  <!-- <th colspan="3"></th>
-                                    
-                                    <% @tests.each do |test| %>
-                                      <tr>
-                                        <td><%= test.range %></td>
-                                        <td><%= test.submit %></td>
-                                        <td><%= link_to '詳細', test %></td>
-                                        <td><%= link_to '編集', edit_test_path(test) %></td>
-                                        <td><%= link_to '削除', test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                                      </tr>
-                                    <% end %> -->
-
   </tbody>
 
 
 <br>
 
-<%= link_to '新規作成', new_test_path %>
+
 
 <script>
 function flexTextarea(el) {
