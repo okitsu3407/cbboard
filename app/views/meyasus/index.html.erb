@@ -5,15 +5,72 @@
 
 <% if session[:login] == true %>
   <div class="box">
-    <table>
-      <h3>送信された意見</h3>
-        <% @meyasus.each do |meyasu| %>
+    <h3>送信された意見</h3>
+    <table border=1>
+      <tr>
+      <td>
+        <table border=1>
+        <thead>
           <tr>
-          <td><%= meyasu.grate %>年：<%= meyasu.content %></td>
-          <td><%= link_to '削除', meyasu, method: :delete, data: { confirm: '本当によろしいですか?' } %></td>
+            <th><h2>１年生</h2></th>
+            <th><h2></h2></th>
           </tr>
-         <% end %>
+        </thead>
+
+        <tbody>
+          <% @meyasus.where(grate: 1).each do |meyasu| %>
+            <tr>
+              <td>１年：<%= meyasu.content %></td>
+              <td><%= link_to '削除', meyasu, method: :delete, data: { confirm: '本当によろしいですか?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+        </table>
+      </td>
+
+      <td>
+      <table border=1>
+      <thead>
+        <tr>
+          <th><h2>２年生</h2></th>
+          <th><h2></h2></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @meyasus.where(grate: 2).each do |meyasu| %>
+          <tr>
+            <td>２年：<%= meyasu.content %></td>
+            <td><%= link_to '削除', meyasu, method: :delete, data: { confirm: '本当によろしいですか?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
     </table>
+    </td>
+    <td>
+    <table border=1>
+      <thead>
+        <tr>
+          <th><h2>３年生</h2></th>
+          <th><h2></h2></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @meyasus.where(grate: 3).each do |meyasu| %>
+          <tr>
+            <td>３年：<%= meyasu.content %></td>
+            <td><%= link_to '削除', meyasu, method: :delete, data: { confirm: '本当によろしいですか?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    </td>
+
+    </tr>
+    </table>
+
+
 <% else %>
   <div class="put">
   <h3>入力欄</h3>
@@ -28,8 +85,8 @@
 
     <input type="submit" value="送信する"><input type="reset" value="リセット">
   <br>
-  <% end %>
   </div>
+<% end %>
 
     <p class="boxp">
       ・学校生活で改善してほしいこと、意見などをご自由にお書きください。
