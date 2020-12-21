@@ -20,7 +20,7 @@
         <tbody>
           <% @meyasus.where(grate: 1).each do |meyasu| %>
             <tr>
-              <td>１年：<%= meyasu.content %></td>
+              <td>・<%= meyasu.content %></td>
               <td><%= link_to '削除', meyasu, method: :delete, data: { confirm: '本当によろしいですか?' } %></td>
             </tr>
           <% end %>
@@ -29,43 +29,45 @@
       </td>
 
       <td>
-      <table border=1>
-      <thead>
-        <tr>
-          <th><h2>２年生</h2></th>
-          <th><h2></h2></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @meyasus.where(grate: 2).each do |meyasu| %>
+        <table border=1>
+        <thead>
           <tr>
-            <td>２年：<%= meyasu.content %></td>
+            <th><h2>２年生</h2></th>
+            <th><h2></h2></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @meyasus.where(grate: 2).each do |meyasu| %>
+          <tr>
+            <td>・<%= meyasu.content %></td>
             <td><%= link_to '削除', meyasu, method: :delete, data: { confirm: '本当によろしいですか?' } %></td>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
-    </td>
-    <td>
-    <table border=1>
-      <thead>
-        <tr>
-          <th><h2>３年生</h2></th>
-          <th><h2></h2></th>
-        </tr>
-      </thead>
+          <% end %>
+        </tbody>
 
-      <tbody>
-        <% @meyasus.where(grate: 3).each do |meyasu| %>
+        </table>
+      </td>
+
+      <td>
+        <table border=1>
+        <thead>
           <tr>
-            <td>３年：<%= meyasu.content %></td>
+            <th><h2>３年生</h2></th>
+            <th><h2></h2></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @meyasus.where(grate: 3).each do |meyasu| %>
+          <tr>
+            <td>・<%= meyasu.content %></td>
             <td><%= link_to '削除', meyasu, method: :delete, data: { confirm: '本当によろしいですか?' } %></td>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
-    </td>
+          <% end %>
+        </tbody>
+        </table>
+      </td>
 
     </tr>
     </table>
