@@ -58,7 +58,7 @@
         -webkit-text-fill-color: white;
         text-shadow:1.5px 1.5px 0 black;
         width: 400px;
-        top:25%;
+        top:26%;
         left:35%;
     }
 
@@ -109,19 +109,15 @@
     .log2{
         padding-top: 10px;
     }
-      
-}
 
-button {
-    -webkit-text-fill-color: #fff; /* 文字色を白にする */
-    background-color: #3a3a3a; /* 背景色をグレー（#3a3a3a）にする */
-    border: 2px solid #000; /* 要素の枠を2pxの太さで、線の種類をsolidに、色を黒にする */
-    text-decoration: none; /* リンクに出てくる下線を無効にする*/
-}
-
-button:hover{
-    -webkit-text-fill-color: #000; /* 文字色を白にする */
-    text-decoration: none; /* リンクに出てくる下線を無効にする*/    
+    .login button {
+        -webkit-text-fill-color: white; /* 文字色を白にする */
+        background-color: #e28000; /* 背景色をグレー（#3a3a3a）にする */
+        border: 2px solid rgb(255, 255, 255); /* 要素の枠を2pxの太さで、線の種類をsolidに、色を黒にする */
+        text-decoration: none; /* リンクに出てくる下線を無効にする*/
+    }
+    
+    
 }
 
 
