@@ -62,6 +62,11 @@ class TestsController < ApplicationController
     end
   end
 
+  def destroy_all
+    Test.destroy_all
+    redirect_to tests_path
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_test
