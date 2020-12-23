@@ -2,7 +2,7 @@
 
 <h1>テスト</h1>
 
-<button><%= link_to '戻る', "../" %></button>
+<button><%= link_to '戻る', "/timetables" %></button>
 
 <% if session[:login] == true %>
 <%= button_to "初期化", destroy_all_tests_path, method: :delete, data: { confirm: '本当に初期化しますか？' } %>

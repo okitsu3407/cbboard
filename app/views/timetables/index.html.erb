@@ -8,10 +8,8 @@
 </div>
 
 <h1>連絡黒板</h1>
-<button><a href='#hoge'>最下部へ移動</a></button>
-<br>
 <button><%= link_to 'トップに戻る', "/" %></button>
-
+<br>
 <% if session[:login] == true %>
 <button><%= link_to '新規作成', new_timetable_path %></button>
 <%= button_to "全て削除", destroy_all_timetables_path, method: :delete, data: { confirm: '本当に全て削除しますか？(※データ量に応じて時間がかかります）' } %>

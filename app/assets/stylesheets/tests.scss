@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.tests{
+  body{
+    background-image: url("/images/b1.png");
+    background-size: cover;
+    background-repeat: no-repeat;    
+}
 
  h3{
   text-align: left;
@@ -69,3 +75,5 @@
    box-shadow: 0 0 0 4px rgba(35, 167, 195, 0.3);
    outline: 0;
  }
+
+}
