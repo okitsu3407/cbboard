@@ -9,17 +9,18 @@
 </div>
 
 <h1>連絡黒板</h1>
+<button><%= link_to 'トップに戻る', "/" %></button>
+
 <a href='#mage' class="upper_btn">
   <img src="/images/ue.png" width="50px" height="50px">
 </a>
 <a href='#hoge' class="low_btn">
   <img src="/images/sita.png" width="50px" height="50px">
 </a>
-<br>
-<%= link_to 'topに戻る', "/" %>
 
+<br>
 <% if session[:login] == true %>
-<%= link_to '新規作成', new_timetable_path %>
+<button><%= link_to '新規作成', new_timetable_path %></button>
 <%= button_to "全て削除", destroy_all_timetables_path, method: :delete, data: { confirm: '本当に全て削除しますか？(※データ量に応じて時間がかかります）' } %>
 <% end %>
 

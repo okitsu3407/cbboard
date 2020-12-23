@@ -1,7 +1,7 @@
 <%= form_with(model: timetable, local: true) do |form| %>
     <% if timetable.errors.any? %>
       <div id="error_explanation_timetable">
-        <h2>※　<%= pluralize(timetable.errors.count,"") %>つの入力ミスがあります</h2>
+        <h2>※　<%= pluralize(timetable.errors.count,"") %>件の入力ミスがあります</h2>
 
         <div class="error">
         <% timetable.errors.full_messages.each do |message| %>
