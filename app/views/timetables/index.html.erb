@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+<div id='mage'></div>
 
 <div class="tester">
   <%= link_to image_tag("/images/test.png",size: "240x190") ,"../tests" %>
@@ -8,10 +9,22 @@
 </div>
 
 <h1>連絡黒板</h1>
+<<<<<<< HEAD
 <button><%= link_to 'トップに戻る', "/" %></button>
 <br>
+=======
+<a href='#mage' class="upper_btn">
+  <img src="/images/ue.png" width="50px" height="50px">
+</a>
+<a href='#hoge' class="low_btn">
+  <img src="/images/sita.png" width="50px" height="50px">
+</a>
+<br>
+<%= link_to 'topに戻る', "/" %>
+
+>>>>>>> 2f7b095e2f96a1bb6207af82f131039472ae43a5
 <% if session[:login] == true %>
-<button><%= link_to '新規作成', new_timetable_path %></button>
+<%= link_to '新規作成', new_timetable_path %>
 <%= button_to "全て削除", destroy_all_timetables_path, method: :delete, data: { confirm: '本当に全て削除しますか？(※データ量に応じて時間がかかります）' } %>
 <% end %>
 

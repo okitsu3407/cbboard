@@ -33,6 +33,26 @@
     z-index: 2;
     display: block;
   }
+
+  .upper_btn {
+    position:fixed; 
+    top:40%;
+    left:93%;
+    opacity: 0.3;
+    &:hover{
+      opacity: 1.0;
+    }
+  }
+
+  .low_btn{
+    position:fixed; 
+    top:55%; 
+    left:93%;
+    opacity: 0.3;
+    &:hover{
+      opacity: 1.0;
+    }
+  }
 }
 
 .field{
