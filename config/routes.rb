@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :tests
+  resources :tests do
+    collection do
+      delete 'destroy_all'
+    end
+  end
   resources :meyasus
   resources :plans
   resources :temples

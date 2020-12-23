@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201214020758) do
+ActiveRecord::Schema.define(version: 20201221000731) do
 
   create_table "classrooms", force: :cascade do |t|
     t.string "kyousitsu"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20201214020758) do
     t.text "submit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "title_id"
   end
 
   create_table "timetables", force: :cascade do |t|
@@ -113,6 +114,7 @@ ActiveRecord::Schema.define(version: 20201214020758) do
     t.datetime "updated_at", null: false
     t.string "yomi"
     t.string "yomitemp"
+    t.string "test"
   end
 
   create_table "users", force: :cascade do |t|
