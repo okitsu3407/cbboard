@@ -84,14 +84,14 @@
   <tbody>
     <%= form_tag({controller: :meyasus,action: :create}) do %>
     <textarea name="freeans" rows="6" cols="70"></textarea>
-  <br>
-   学年:<select name="gakunen">
+  <div>
+  学年:<select name="gakunen">
     <option value="1">１</option>
     <option value="2">２</option>
     <option value="3">３</option>
+  </div>
 
     <input type="submit" value="送信する"><input type="reset" value="リセット">
-  <br>
   </div>
 <% end %>
 

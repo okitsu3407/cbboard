@@ -39,12 +39,20 @@
             -webkit-text-fill-color: honeydew;
             position: absolute;
             font-size: 20px;
-            left: 200px;
-            top: 45%;
+            top: 250px;
         }
     
         table {
             width: 350px;
+        }
+
+        .field p{
+            font-size: 20px;
+        }
+
+        li {
+            -webkit-text-fill-color: honeydew;
+            font-size: 15px;
         }
     }
 }

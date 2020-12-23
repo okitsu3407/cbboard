@@ -3,6 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .tests{
+  body{
+    background-image: url("/images/b1.png");
+    background-size: cover;
+    background-repeat: no-repeat;    
+}
 
  h3{
   text-align: left;
@@ -71,10 +76,4 @@
    outline: 0;
  }
 
-.tests{
-    body{
-        background-image: url("/images/b1.png");
-        background-size: cover;
-        background-repeat: no-repeat;    
-    }
 }
