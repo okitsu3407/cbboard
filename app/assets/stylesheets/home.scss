@@ -110,13 +110,24 @@
         padding-top: 10px;
     }
 
-    .login button {
-        -webkit-text-fill-color: white; /* 文字色を白にする */
-        background-color: #e28000; /* 背景色をグレー（#3a3a3a）にする */
-        border: 2px solid rgb(255, 255, 255); /* 要素の枠を2pxの太さで、線の種類をsolidに、色を黒にする */
-        text-decoration: none; /* リンクに出てくる下線を無効にする*/
+    .btn{
+        position: absolute;
+        list-style: none;
+        top: 85%;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 20px;
+        border: solid 2px blue;
+        background-color: white;
+        .linone{
+            text-decoration: none;
+        }
+
+        &:hover{
+            background-color: rgb(207, 207, 207)
+        }
     }
-    
     
 }
 
