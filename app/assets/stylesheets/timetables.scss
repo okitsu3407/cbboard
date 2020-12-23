@@ -136,9 +136,9 @@ button{
       }
       
       button {
-        -webkit-text-fill-color: white; /* 文字色を白にする */
+        -webkit-text-fill-color: rgb(21, 255, 0); /* 文字色を白にする */
         background-color: #000000; /* 背景色をグレー（#3a3a3a）にする */
-        border: 2px solid rgb(0, 0, 0); /* 要素の枠を2pxの太さで、線の種類をsolidに、色を黒にする */
+        border: 1.5px solid rgb(29, 105, 42); /* 要素の枠を2pxの太さで、線の種類をsolidに、色を黒にする */
         text-decoration: none; /* リンクに出てくる下線を無効にする*/
     }
 

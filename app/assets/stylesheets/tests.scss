@@ -7,15 +7,13 @@
     background-image: url("/images/b1.png");
     background-size: cover;
     background-repeat: no-repeat;    
-<<<<<<< HEAD
-}
-=======
   }
->>>>>>> 2f7b095e2f96a1bb6207af82f131039472ae43a5
 
   h3{
     text-align: left;
-    -webkit-text-fill-color: rgb(91, 226, 29);
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: rgb(4, 65, 7);
+    -webkit-text-fill-color: rgb(75, 199, 17);
     margin-bottom: 0;
     position: relative; left: 50px; 
     position: relative; top: 20px;
@@ -23,8 +21,10 @@
 
   h5{
     text-align: left;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(0, 0, 0);
     -webkit-text-fill-color: rgb(255, 255, 255);
-    font-size: 20px;
+    font-size: 25px;
     margin-bottom: 0;
     position: relative; left: 100px; 
     position: relative; top: 20px;
@@ -79,9 +79,8 @@
    box-shadow: 0 0 0 4px rgba(35, 167, 195, 0.3);
    outline: 0;
  }
-<<<<<<< HEAD
 
+ button{
+   margin-bottom: 10px;
+ }
 }
-=======
-}
->>>>>>> 2f7b095e2f96a1bb6207af82f131039472ae43a5
