@@ -53,11 +53,11 @@
       opacity: 1.0;
     }
   }
+
   .field{
     -webkit-text-fill-color: rgb(255, 255, 255); /* 文字色を白にする */
     padding-bottom: 30px;
   }
-  
   
   #selectkyoka{
     background-color: rgb(65, 156, 4);
@@ -79,6 +79,11 @@
   
   .contenttext{
     -webkit-text-fill-color: rgb(0, 0, 0);
+  }
+
+  .croom{
+    position:fixed;
+    //top: 8%;
   }
   
   
