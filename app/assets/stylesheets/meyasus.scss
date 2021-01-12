@@ -2,51 +2,57 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .meyasus{
-    body {
+    body {        
         background-image: url("/images/b.png");
         background-size: cover;
         background-repeat: no-repeat;
-    }
-    .meyasu_error {
-        -webkit-text-fill-color: rgb(4, 190, 181);
-    }
 
-    h1{
-        padding: 20px;
-    }
+        .meyasu_error {
+            -webkit-text-fill-color: rgb(4, 190, 181);
+        }
     
-    h3{
-        padding-top: 35px;
-    }
+        h1{
+            padding: 20px;
+        }
+        
+        h3{
+            padding-top: 35px;
+        }
+        
+        .put{
+            position: absolute;
+            left: 200px; 
+            top: 15%; 
+        }
+        
+        .box{
+            position: absolute;
+            left: 180px; 
+            top:5%;
+        }
+        
+        .box h2 {
+            -webkit-text-fill-color: rgb(0, 0, 0);
+        }
+        
+        p.boxp {
+            -webkit-text-fill-color: honeydew;
+            position: absolute;
+            font-size: 20px;
+            top: 250px;
+        }
     
-    .put{
-        position: absolute;
-        left: 200px; 
-        top: 15%; 
-    }
-    
-    .box{
-        position: absolute;
-        left: 180px; 
-        top:5%;
-    }
-    
-    .box h2 {
-        -webkit-text-fill-color: rgb(0, 0, 0);
-    }
-    
-    p.boxp {
-        -webkit-text-fill-color: honeydew;
-        position: absolute;
-        font-size: 20px;
-        left: 200px;
-        top: 45%;
-    }
+        table {
+            width: 350px;
+        }
 
-    table {
-        width: 350px;
+        .field p{
+            font-size: 20px;
+        }
+
+        li {
+            -webkit-text-fill-color: honeydew;
+            font-size: 15px;
+        }
     }
-
-
-
 }
