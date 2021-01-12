@@ -186,6 +186,7 @@ function flexTextarea(el) {
 
 
 <% count = 1 %>
+<% top = 20 %>
 
 <% Grate.all.each do |gaku| %>
   
@@ -197,8 +198,8 @@ function flexTextarea(el) {
       <% else %>
         <% target = "#{gaku.gakunen}年「商業科」" %>
       <% end %>
-
-    <a href='#<%= target %>' class="">
+      <% top = top + 4 %>
+    <a href='#<%= target %>' class="gnen" style="top:<%= top %>%">
        <%= target %>
     </a>
     <br>

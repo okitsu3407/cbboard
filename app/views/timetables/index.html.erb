@@ -128,15 +128,16 @@
   <br>
 
 <div id='hoge'></div>
-
+<% top = 20 %>
 <% Grate.all.each do |gaku| %>
   
   <% Gclass.all.each do |kumi| %>
 
     <% target = "#{gaku.gakunen}ー#{kumi.kumi}" %>
+    <% top = top + 4 %>
     
-    <a href=' #<%= target %>' class="">
-     <button><%= target %></button>
+    <a href='#<%= target %>' class="croom" style="top:<%= top %>%">
+      <%= target %>
     </a>
     <br>
 
