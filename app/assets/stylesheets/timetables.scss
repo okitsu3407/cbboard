@@ -61,6 +61,7 @@
 }
 
 .button{
+  -webkit-text-fill-color: rgb(5,0, 0); /* 文字色を白にする */
   margin-top: -40px;
   margin-bottom: 30px;
 }
@@ -205,6 +206,7 @@
         position: relative; top: 20px;
         line-height: 30px;
       }
+      
 
       #tab_radio_A:checked ~ #tab_contains_A,
       #tab_radio_B:checked ~ #tab_contains_B,
