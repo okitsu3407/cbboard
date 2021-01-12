@@ -11,12 +11,15 @@
 <h1>連絡黒板</h1>
 <button><%= link_to 'トップに戻る', "/" %></button>
 
+<!--
 <a href='#mage' class="upper_btn">
   <img src="/images/ue.png" width="50px" height="50px">
 </a>
 <a href='#hoge' class="low_btn">
   <img src="/images/sita.png" width="50px" height="50px">
 </a>
+-->
+
 
 <br>
 <% if session[:login] == true %>
@@ -128,7 +131,7 @@
   <br>
 
 <div id='hoge'></div>
-<% top = 20 %>
+<% top = 25 %>
 <% Grate.all.each do |gaku| %>
   
   <% Gclass.all.each do |kumi| %>
@@ -137,7 +140,7 @@
     <% top = top + 4 %>
     
     <a href='#<%= target %>' class="croom" style="top:<%= top %>%">
-      <%= target %>
+      <button> <%= target %> </button>
     </a>
     <br>
 
