@@ -20,6 +20,35 @@
   <% check_3 = 0 %>
   <% check_4 = 0 %>
 
+
+
+
+  <% Grate.all.each do |gaku| %>
+  
+    <% Gclass.all.each do |kumi| %>
+  
+      <% if count % 2 == 0 %>
+        <% if count % 4 == 0 %>
+          <% target = "#{gaku.gakunen}年「情報処理科」" %>
+        <% else %>
+          <% target = "#{gaku.gakunen}年「商業科」" %>
+        <% end %>
+
+      <a href='#<%= target %>' class="">
+         <%= target %>
+      </a>
+      <br>
+      <% end %>
+  
+      <% count += 1 %>
+
+    <% end %>
+  
+  <% end %>
+
+  <% count = 1 %>
+
+
   <% Grate.all.each do |gaku| %>
 
           <h3><%= gaku.gakunen%>年「商業科」</h3>

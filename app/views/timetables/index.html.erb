@@ -37,7 +37,35 @@
       
    
     <% if gakuhozon != timetable.grate.gakunen or kumihozon != timetable.gclass.kumi %>
+    
       <% count = 1 %>
+
+      <% if timetable.grate.gakunen == "1" && timetable.gclass.kumi == "1" %>
+      <div id='1ー1'></div>
+      <% elsif timetable.grate.gakunen == "1" && timetable.gclass.kumi == "2" %>
+      <div id='1ー2'></div>
+      <% elsif timetable.grate.gakunen == "1" && timetable.gclass.kumi == "3" %>
+      <div id='1ー3'></div>
+      <% elsif timetable.grate.gakunen == "1" && timetable.gclass.kumi == "4" %>
+      <div id='1ー4'></div>
+      <% elsif timetable.grate.gakunen == "2" && timetable.gclass.kumi == "1" %>
+      <div id='2ー1'></div>
+      <% elsif timetable.grate.gakunen == "2" && timetable.gclass.kumi == "2" %>
+      <div id='2ー2'></div>
+      <% elsif timetable.grate.gakunen == "2" && timetable.gclass.kumi == "3" %>
+      <div id='2ー3'></div>
+      <% elsif timetable.grate.gakunen == "2" && timetable.gclass.kumi == "4" %>
+      <div id='2ー4'></div>
+      <% elsif timetable.grate.gakunen == "3" && timetable.gclass.kumi == "1" %>
+      <div id='3ー1'></div>
+      <% elsif timetable.grate.gakunen == "3" && timetable.gclass.kumi == "2" %>
+      <div id='3ー2'></div>
+      <% elsif timetable.grate.gakunen == "3" && timetable.gclass.kumi == "3" %>
+      <div id='3ー3'></div>
+      <% elsif timetable.grate.gakunen == "3" && timetable.gclass.kumi == "4" %>
+      <div id='3ー4'></div>
+      <% end %>
+
     <% end %>
 
     <% if hidukehozon != timetable.hiduke %>
@@ -100,3 +128,20 @@
   <br>
 
 <div id='hoge'></div>
+
+<% Grate.all.each do |gaku| %>
+  
+  <% Gclass.all.each do |kumi| %>
+
+    <% target = "#{gaku.gakunen}ー#{kumi.kumi}" %>
+    
+    <a href='#<%= target %>' class="">
+       <%= target %>
+    </a>
+    <br>
+
+  <% end %>
+
+<% end %>
+
+
