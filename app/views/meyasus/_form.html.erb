@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :内容 %>
+    <h3>内容</h3>
     <%= form.text_area :content, id: :meyasu_content %>
     <p>該当した言葉</p>
     <div class="meyasu_error"><%= Meyasu.message(meyasu.content) %></div>
