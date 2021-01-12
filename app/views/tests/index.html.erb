@@ -21,34 +21,6 @@
   <% check_4 = 0 %>
 
 
-
-
-  <% Grate.all.each do |gaku| %>
-  
-    <% Gclass.all.each do |kumi| %>
-  
-      <% if count % 2 == 0 %>
-        <% if count % 4 == 0 %>
-          <% target = "#{gaku.gakunen}年「情報処理科」" %>
-        <% else %>
-          <% target = "#{gaku.gakunen}年「商業科」" %>
-        <% end %>
-
-      <a href='#<%= target %>' class="">
-         <%= target %>
-      </a>
-      <br>
-      <% end %>
-  
-      <% count += 1 %>
-
-    <% end %>
-  
-  <% end %>
-
-  <% count = 1 %>
-
-
   <% Grate.all.each do |gaku| %>
 
           <h3><%= gaku.gakunen%>年「商業科」</h3>
@@ -60,6 +32,32 @@
             <% end %>
 
           <% if count % 2 == 0 %>
+
+             <% if count % 4 != 0 %>
+
+              <% if gaku.gakunen == "1" %>
+               <div id='1年「商業科」'></div>
+              <% elsif gaku.gakunen == "2" %>
+               <div id='2年「商業科」'></div>
+              <% elsif gaku.gakunen == "3" %>
+               <div id='3年「商業科」'></div>
+              <% end %>
+
+             <% else %>
+
+              
+               <% if gaku.gakunen == "1" %>
+                 <div id='1年「情報処理科」'></div>
+               <% elsif gaku.gakunen == "2" %>
+                 <div id='2年「情報処理科」'></div>
+               <% elsif gaku.gakunen == "3" %>
+                 <div id='3年「情報処理科」'></div>
+               <% end %>
+
+            <% end %>
+
+
+
 
               <% while check == 1 do %>
 
@@ -184,3 +182,30 @@ function flexTextarea(el) {
   
   document.querySelectorAll('.FlexTextarea').forEach(flexTextarea)
 </script>
+
+
+
+<% count = 1 %>
+
+<% Grate.all.each do |gaku| %>
+  
+  <% Gclass.all.each do |kumi| %>
+
+    <% if count % 2 == 0 %>
+      <% if count % 4 == 0 %>
+        <% target = "#{gaku.gakunen}年「情報処理科」" %>
+      <% else %>
+        <% target = "#{gaku.gakunen}年「商業科」" %>
+      <% end %>
+
+    <a href='#<%= target %>' class="">
+       <%= target %>
+    </a>
+    <br>
+    <% end %>
+
+    <% count += 1 %>
+
+  <% end %>
+
+<% end %>
