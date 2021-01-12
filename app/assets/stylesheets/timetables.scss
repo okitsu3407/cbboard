@@ -60,21 +60,27 @@
   }
   
   #selectkyoka{
+    -webkit-text-fill-color: rgb(0, 0, 0); /* 文字色を白にする */
     background-color: rgb(65, 156, 4);
     width: 250px;
     text-align: center;
+    margin-bottom: -40px;
   }
   
   #selectroom{
+    -webkit-text-fill-color: rgb(0, 0, 0); /* 文字色を白にする */
     background-color: rgb(65, 156, 4);
     width: 250px;
     text-align: center;
+    margin-bottom: -40px;
   }
   
   #selectkyosi{
+    -webkit-text-fill-color: rgb(0, 0, 0); /* 文字色を白にする */
     background-color: rgb(65, 156, 4);
     width: 250px;
     text-align: center;
+    margin-bottom: -40px;
   }
   
   .contenttext{
@@ -84,6 +90,17 @@
   .croom{
     position:fixed;
     //top: 8%;
+  }
+
+
+  button{
+    -webkit-text-fill-color: rgb(0, 119, 255);
+    font-weight: bold;
+  }
+
+
+  .bt{
+    margin-bottom: 30px;
   }
   
   

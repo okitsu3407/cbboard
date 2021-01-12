@@ -41,7 +41,7 @@
       </div>
     </div>
  
-    <button type="button" data-toggle="modal" data-target="#sampleModal">教科を選択</button>
+    <div class="bt"><button type="button" data-toggle="modal" data-target="#sampleModal">教科を選択</button></div>
 
     <!-- モーダル・ダイアログ -->
     <div class="modal fade" id="sampleModal" tabindex="-1">
@@ -149,7 +149,10 @@
               
                <input type="radio" value="<%= kyo_id %>" name="timetable[title_id]" id="tabkyo" class="tab_radio_2" >
                <%= form.label :kyouka, "#{kyo}", {style: "display: inline-block;"} %>
-              <br>
+               <% if a == 9 || a == 7 %>
+               <% else %>
+               <br>
+               <% end %>
               <% a += 1 %>
             <% end %>
           </div>
@@ -267,9 +270,9 @@
   </div>
 
   <div class="button">
-  <button type="button" class="" data-toggle="modal" data-target="#sampleModal3">
+  <div class="bt"><button type="button" class="" data-toggle="modal" data-target="#sampleModal3">
 	教室を選択
-  </button>
+  </button></div>
   </div>
 
     <!-- モーダル・ダイアログ -->
@@ -511,11 +514,12 @@
     </div>
   </div>
 
-  <div class="button">
+  
+  <div class="bt">
   <button type="button" class="" data-toggle="modal" data-target="#sampleModal2" >
 	先生を選択
-  </button>
-  </div>
+  </button></div>
+  
 
     <!-- モーダル・ダイアログ -->
     <div class="modal fade" id="sampleModal2" tabindex="-1">
