@@ -38,13 +38,13 @@
 <div class="login">
   <% if session[:login] == true %>
     <li class="btn">
-      <a class="linone" href="../home/logout">LOGOUT</a>
+      <a class="linone" href="../home/logout">ログアウト</a>
     </li>
     <br>
-    <div class="log2"> <%= link_to '時間割テンプレートを表示', "../temples" %> </div>
+    <div class="log2"> <button><%= link_to '時間割テンプレートを表示', "../temples" %></button> </div>
   <% else %>
     <li class="btn">
-      <a class="linone" href="../home/login">LOGIN</a>
+      <a class="linone" href="../home/login">ログイン</a>
     </li>
   <% end %>
 </div>
