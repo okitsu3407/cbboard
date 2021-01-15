@@ -23,6 +23,10 @@
             position: absolute;
             left: 200px; 
             top: 15%; 
+
+            span {
+                -webkit-text-fill-color: rgb(255, 255, 255);
+            }
         }
         
         .box{

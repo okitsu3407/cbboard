@@ -4,15 +4,14 @@
 
   
  <%=  date_field_tag :fromdate, Date.today, use_month_numbers: true %>
-   から
+ <span>から</span>
  <%=  date_field_tag :fromdate_two, Date.today, use_month_numbers: true %>
-   までの時間割を作成
+   <span>までの時間割を作成</span>
    <br>
-   ※この処理には時間がかかります
+   <span>※この処理には時間がかかります</span>
     <div class="actions">
       <%= form.submit %>
     </div>
   <% end %>
   
-
-<%= link_to '戻る', timetables_path %>
+<button><%= link_to '戻る', timetables_path %></button>

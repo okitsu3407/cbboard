@@ -85,7 +85,8 @@
     <%= form_tag({controller: :meyasus,action: :create}) do %>
     <textarea name="freeans" rows="6" cols="70"></textarea>
   <div>
-  学年:<select name="gakunen">
+    <span>学年:</span>
+    <select name="gakunen">
     <option value="1">１</option>
     <option value="2">２</option>
     <option value="3">３</option>
@@ -94,6 +95,8 @@
     <input type="submit" value="送信する"><input type="reset" value="リセット">
   </div>
 <% end %>
+  </tbody>
+
 
     <p class="boxp">
               ・学校生活で改善してほしいこと、意見などをご自由にお書きください。
@@ -101,6 +104,7 @@
       <br><br>・送信された内容はログインユーザーのみが確認できます。
     </p>
   <% end %>
+  <p>　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　</p>
   </div>
 
   
