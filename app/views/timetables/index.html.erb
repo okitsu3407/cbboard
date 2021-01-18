@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 <div id='mage'></div>
 
 <div class="tester">
@@ -25,6 +24,7 @@
 
 <br>
 <% if session[:login] == true %>
+<div class="logme">ログイン中です</div>
 <button><%= link_to '新規作成', new_timetable_path %></button>
 <%= button_to "全て削除", destroy_all_timetables_path, method: :delete, data: { confirm: '本当に全て削除しますか？(※データ量に応じて時間がかかります）' } %>
 <% end %>
@@ -46,29 +46,29 @@
       <% count = 1 %>
 
       <% if timetable.grate.gakunen == "1" && timetable.gclass.kumi == "1" %>
-      <div id='1ー1'></div>
+      <div id='1ー1' style="position:relative; top:-180px;"></div>
       <% elsif timetable.grate.gakunen == "1" && timetable.gclass.kumi == "2" %>
-      <div id='1ー2'></div>
+      <div id='1ー2' style="position:relative; top:350px;"></div>
       <% elsif timetable.grate.gakunen == "1" && timetable.gclass.kumi == "3" %>
-      <div id='1ー3'></div>
+      <div id='1ー3' style="position:relative; top:350px;"></div>
       <% elsif timetable.grate.gakunen == "1" && timetable.gclass.kumi == "4" %>
-      <div id='1ー4'></div>
+      <div id='1ー4' style="position:relative; top:350px;"></div>
       <% elsif timetable.grate.gakunen == "2" && timetable.gclass.kumi == "1" %>
-      <div id='2ー1'></div>
+      <div id='2ー1' style="position:relative; top:350px;"></div>
       <% elsif timetable.grate.gakunen == "2" && timetable.gclass.kumi == "2" %>
-      <div id='2ー2'></div>
+      <div id='2ー2' style="position:relative; top:350px;"></div>
       <% elsif timetable.grate.gakunen == "2" && timetable.gclass.kumi == "3" %>
-      <div id='2ー3'></div>
+      <div id='2ー3' style="position:relative; top:350px;"></div>
       <% elsif timetable.grate.gakunen == "2" && timetable.gclass.kumi == "4" %>
-      <div id='2ー4'></div>
+      <div id='2ー4' style="position:relative; top:350px;"></div>
       <% elsif timetable.grate.gakunen == "3" && timetable.gclass.kumi == "1" %>
-      <div id='3ー1'></div>
+      <div id='3ー1' style="position:relative; top:350px;"></div>
       <% elsif timetable.grate.gakunen == "3" && timetable.gclass.kumi == "2" %>
-      <div id='3ー2'></div>
+      <div id='3ー2' style="position:relative; top:350px;"></div>
       <% elsif timetable.grate.gakunen == "3" && timetable.gclass.kumi == "3" %>
-      <div id='3ー3'></div>
+      <div id='3ー3' style="position:relative; top:350px;"></div>
       <% elsif timetable.grate.gakunen == "3" && timetable.gclass.kumi == "4" %>
-      <div id='3ー4'></div>
+      <div id='3ー4' style="position:relative; top:350px;"></div>
       <% end %>
 
     <% end %>
@@ -106,7 +106,7 @@
                   <% hidukehozon = timetable.hiduke %>
               <% end %>
 
-              <h3 align = "center"><%= timetable.grate.gakunen %>-<%= timetable.gclass.kumi %></h3>
+              <div class="gaku-kumi"><h3 align = "center"><%= timetable.grate.gakunen %>-<%= timetable.gclass.kumi %></h3></div>
               <% count = 0 %>
 
           <% end %>
@@ -114,15 +114,15 @@
           
 
           <tr>  
-            <td><%= timetable.clock.zigen %></td>
+            <td class="mini"><%= timetable.clock.zigen %></td>
             <td class="kyouka"><%= timetable.title.kyouka %></td>
-            <td><%= timetable.content %></td>
-            <td><%= timetable.task %></td>
-            <td><%= timetable.need %></td>
-            <td><%= timetable.classroom.kyousitsu %></td>
-            <td><%= timetable.teacher.sensei %></td>
+            <td class="content"><%= timetable.content %></td>
+            <td class="task"><%= timetable.task %></td>
+            <td class="need"><%= timetable.need %></td>
+            <td class="kyousitsu"><%= timetable.classroom.kyousitsu %></td>
+            <td class="sensei"><%= timetable.teacher.sensei %></td>
             <% if session[:login] == true %>
-            <td><%= link_to '編集', edit_timetable_path(timetable) %></td>
+            <td class="mini"><%= link_to '編集', edit_timetable_path(timetable) %></td>
             <% end %>
             <!-- <td><%= link_to '削除', timetable, method: :delete, data: { confirm: '本当に削除しますか？' } %></td> -->
           </tr>
