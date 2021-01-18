@@ -25,7 +25,7 @@
 </div>
 
 <div class = "year">
-  <%= @year.year %>
+  西暦<%= @year.year %>年
 </div>
 
 
@@ -35,8 +35,8 @@
 
 <%= form_tag({controller: :plans,action: :upload},{:multipart => true }) do %>
 
-<p>月間行事予定のpdfを変更する場合はこちら</p>
-月:<select name="month">
+<span>月間行事予定のpdfを変更する場合はこちら</span><br>
+<span>月:</span><select name="month">
 <option value="1">４～６月</option>
 <option value="2">７～９月</option>
 <option value="3">１０～１２月</option>

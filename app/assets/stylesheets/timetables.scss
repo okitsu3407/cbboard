@@ -12,6 +12,7 @@
     line-height:30px;
   }
 
+<<<<<<< HEAD
   table{
     margin-bottom: 200px;
   }
@@ -53,6 +54,10 @@
   td.sensei{
     min-width: 80px;
     max-width: 80px;
+=======
+  span {
+    -webkit-text-fill-color: rgb(255, 255, 255);
+>>>>>>> 8943910dd19c50d2a8e1f0f61c9e973f8a0e9b57
   }
 
   .tester{
@@ -138,9 +143,12 @@
 
   .croom{
     position:fixed;
-    //top: 8%;
   }
 
+  .coom{
+    position:fixed;
+    top:85%;
+  }
 
   button{
     -webkit-text-fill-color: rgb(0, 119, 255);
