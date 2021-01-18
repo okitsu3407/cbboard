@@ -4,6 +4,12 @@
 
 <button><%= link_to '戻る', "/timetables" %></button>
 <% if session[:login] == true %>
+<div class="attention">※２項目以上の同時更新はできません。<br>
+                       　２項目目に移る前に、<br>
+                       　　　必ず１項目目を更新してください。<br>
+                       　（更新の際、更新対象外の更新前情報は<br>
+                       　　　　　　　　　　　保存されません）
+                         </div>
 <%= button_to "初期化", destroy_all_tests_path, method: :delete, data: { confirm: '本当に初期化しますか？' } %>
 <% end %>
 
@@ -68,16 +74,16 @@
                     <% yoso.times do %>
 
                       <% if count % 4 != 0 %>
-                        <h5>〇<%= title[a].kyouka %>・・・<%= gaku.gakunen%>年「商業科」</h5>
+                        <h5>〇<%= title[a].kyouka %><div class="gakka"><%= gaku.gakunen%>年「商業科」</div></h5>
                       <% else %>
-                        <h5>〇<%= title[a].kyouka %>・・・<%= gaku.gakunen%>年「情報処理科」</h5>
+                        <h5>〇<%= title[a].kyouka %><div class="gakka"><%= gaku.gakunen%>年「情報処理科」</div></h5>
                       <% end %>
                      
 
-                      <% test = Test.find_by(title_id: title[a].id) %>
+                      <% test = Test.find_by(title_id: title[a].id,grate_id: gaku.id,gclass_id: kumi.id) %>
 
                       <% if test.nil? %>
-                        <% test = Test.new(title_id: title[a].id) %>
+                        <% test = Test.new(title_id: title[a].id, grate_id: gaku.id, gclass_id: kumi.id) %>
                       <% end %>
 
                       <%= form_with(model: test, local: true) do |form| %>
@@ -113,7 +119,8 @@
                               </td>
 
                               <% if session[:login] == true %>
-                              <td><%= form.submit "更新" %><%= form.hidden_field :title_id, :value => test.title_id %></td>
+                              <td><%= form.submit "更新" %><%= form.hidden_field :title_id, :value => test.title_id %>
+                              <%= form.hidden_field :grate_id, :value => test.grate_id %><%= form.hidden_field :gclass_id, :value => test.gclass_id %></td>
                               <% end %>
                             </tr>  
                             </table>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201221000731) do
+ActiveRecord::Schema.define(version: 20210115061012) do
 
   create_table "classrooms", force: :cascade do |t|
     t.string "kyousitsu"
@@ -86,6 +86,8 @@ ActiveRecord::Schema.define(version: 20201221000731) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "title_id"
+    t.integer "grate_id"
+    t.integer "gclass_id"
   end
 
   create_table "timetables", force: :cascade do |t|

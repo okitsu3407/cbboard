@@ -9,6 +9,18 @@
     background-repeat: no-repeat;    
   }
 
+  .attention{
+    -webkit-text-fill-color: rgb(255, 49, 49);
+    position: fixed; 
+    left: 77%;
+  }
+
+  .gakka{
+    position: relative; 
+    left: 55%; 
+  }
+
+
   h3{
     text-align: left;
     -webkit-text-stroke-width: 0.5px;
@@ -33,6 +45,7 @@
  table{
     position: relative; left: 100px; 
     position: relative; top: 20px;
+    margin-bottom: 100px;
  }
 
  .FlexTextarea {
