@@ -24,6 +24,7 @@
 
 <br>
 <% if session[:login] == true %>
+<div class="logme">ログイン中です</div>
 <button><%= link_to '新規作成', new_timetable_path %></button>
 <%= button_to "全て削除", destroy_all_timetables_path, method: :delete, data: { confirm: '本当に全て削除しますか？(※データ量に応じて時間がかかります）' } %>
 <% end %>

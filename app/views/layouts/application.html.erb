@@ -10,7 +10,11 @@
 
   <body>
 
-    <div class="logme"><%=  flash[:message] %></div>
+    <!-- <div class="logme"><%=  flash[:message] %></div> -->
+   
+    <% if session[:login] == true %>
+      <div class="logme">ログイン中です</div>
+    <% end %>
 
     <%= yield %>
     
