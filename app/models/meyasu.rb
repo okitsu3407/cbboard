@@ -42,7 +42,7 @@ def error_check
 end
 
 def self.message(content)
-    @out = ["fuck you","死ね","アホ","あほ","馬鹿","バカ","キモイ","きもい","キモ","デブ","ブス","うざい"]
+    @out  = ["fuck you","死ね","アホ","あほ","馬鹿","バカ","キモイ","きもい","キモ","デブ","ブス","うざい","くそ","クソ"]
     @a = []
     @out.each do |i|
         if content.include?(i)
