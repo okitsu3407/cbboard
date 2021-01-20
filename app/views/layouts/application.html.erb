@@ -13,7 +13,9 @@
     <!-- <div class="logme"><%=  flash[:message] %></div> -->
    
     <% if session[:login] == true %>
-      <div class="logme">ログイン中です</div>
+      <div class="logme">※教員としてログイン中です</div>
+    <% elsif session[:login_2] == true %>
+      <div class="logme">※生徒としてログイン中です</div>
     <% end %>
 
     <%= yield %>

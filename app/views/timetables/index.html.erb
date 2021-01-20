@@ -101,7 +101,7 @@
               <tbody align = "center">
 
               <% if hidukecount == 1 %>  
-                  <h3 align = "center"><%= timetable.hiduke %>(<%= week[timetable.hiduke.wday] %>)</h3>
+                 <div class="hiduke"><h3 align = "center"><%= timetable.hiduke %>(<%= week[timetable.hiduke.wday] %>)</h3></div>
                   <% hidukecount = 0 %>
                   <% hidukehozon = timetable.hiduke %>
               <% end %>

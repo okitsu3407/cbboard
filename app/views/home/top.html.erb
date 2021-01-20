@@ -36,12 +36,14 @@
 <p class="ex3">- 生 徒 会 が 行 う 目 安 箱 が な ん と<br><br>　シ ス テ ム 化 ！<br><br>　ど ん な 内 容 で も 書 け る<br><br><span class="text-red">　　　（※不適切な内容は削除します）</span></p>
 
 <div class="login">
-  <% if session[:login] == true %>
+  <% if session[:login] == true || session[:login_2] == true %>
     <li class="btn">
       <a class="linone" href="../home/logout">ログアウト</a>
     </li>
     <br>
+    <% if session[:login] == true %>
     <div class="log2"> <button><%= link_to '時間割テンプレートを表示', "../temples" %></button> </div>
+    <% end %>
   <% else %>
     <li class="btn">
       <a class="linone" href="../home/login">ログイン</a>
