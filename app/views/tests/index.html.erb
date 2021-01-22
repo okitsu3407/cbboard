@@ -2,7 +2,8 @@
 
 <h1>テスト</h1>
 
-<button><%= link_to '戻る', "/timetables" %></button>
+<div class="back"><button><%= link_to '戻る', "/timetables" %></button></div>
+<div class="back_2"><button><%= link_to 'Home', "/" %></button></div>
 <% if session[:login] == true %>
 <div class="attention">※２項目以上の同時更新はできません。<br>
                        　２項目目に移る前に、<br>
@@ -42,22 +43,22 @@
              <% if count % 4 != 0 %>
 
               <% if gaku.gakunen == "1" %>
-               <div id='1年「商業科」'></div>
+               <div id='1年「商業科」' style="position:relative; top:-100px;"></div>
               <% elsif gaku.gakunen == "2" %>
-               <div id='2年「商業科」'></div>
+               <div id='2年「商業科」' style="position:relative; top:-100px;"></div>
               <% elsif gaku.gakunen == "3" %>
-               <div id='3年「商業科」'></div>
+               <div id='3年「商業科」' style="position:relative; top:-100px;"></div>
               <% end %>
 
              <% else %>
 
               
                <% if gaku.gakunen == "1" %>
-                 <div id='1年「情報処理科」'></div>
+                 <div id='1年「情報処理科」' style="position:relative; top:-100px;"></div>
                <% elsif gaku.gakunen == "2" %>
-                 <div id='2年「情報処理科」'></div>
+                 <div id='2年「情報処理科」' style="position:relative; top:-100px;"></div>
                <% elsif gaku.gakunen == "3" %>
-                 <div id='3年「情報処理科」'></div>
+                 <div id='3年「情報処理科」' style="position:relative; top:-100px;"></div>
                <% end %>
 
             <% end %>

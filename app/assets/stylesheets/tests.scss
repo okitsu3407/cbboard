@@ -12,12 +12,25 @@
   .attention{
     -webkit-text-fill-color: rgb(255, 49, 49);
     position: fixed; 
+    top: 27%;
     left: 77%;
   }
 
   .gakka{
     position: relative; 
     left: 55%; 
+  }
+
+  .back{
+    position: fixed;
+    right: 223px;
+    top: 600px;
+  }
+
+  .back_2{
+    position: fixed;
+    right: 210px;
+    top: 640px;
   }
 
 
