@@ -1,5 +1,5 @@
 class AddColumnTest4 < ActiveRecord::Migration[5.1]
   def change
-    remove_column :tests, :grade_id, :integer
+    remove_column :tests, :grate_id, :integer
   end
 end
