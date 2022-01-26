@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       delete 'destroy_all'
     end
   end
+  root 'home#top'
   resources :meyasus
   resources :plans
   resources :temples
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
   resources :teachers
   resources :titles
   resources :classrooms
-  get '/', to: 'home#top'
+  # get '/', to: 'home#top'
   get 'home/login'
   get 'home/logout'
   post 'plans/upload'
