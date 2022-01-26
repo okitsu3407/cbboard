@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Title.delete_all
-Title.connection.execute("delete from sqlite_sequence where name='titles'")
+#Title.connection.execute("delete from sqlite_sequence where name='titles'")
 Title.create(kyouka: "国語表現Ⅰ",yomi: "か行",test: "テスト")
 Title.create(kyouka: "数学Ⅱ",yomi: "さ行",test: "テスト")
 Title.create(kyouka: "日本史 A",yomi: "な行",test: "テスト")
@@ -53,7 +53,7 @@ Title.create(yomitemp: "ら行")
 
 
 Teacher.delete_all
-Teacher.connection.execute("delete from sqlite_sequence where name='teachers'")
+#Teacher.connection.execute("delete from sqlite_sequence where name='teachers'")
 Teacher.create(sensei: "日向信之",busyo: "校長,教頭")
 Teacher.create(sensei: "中澤雅美",busyo: "校長,教頭")
 Teacher.create(sensei: "佐藤魁人",busyo: "教務部")
@@ -120,7 +120,7 @@ Teacher.create(sensei: "通常通り",busyo: "特殊")
 Teacher.create(sensei: "/",busyo: "特殊")
 
 Classroom.delete_all
-Classroom.connection.execute("delete from sqlite_sequence where name='classrooms'")
+#Classroom.connection.execute("delete from sqlite_sequence where name='classrooms'")
 Classroom.create(kyousitsu: "第１演習室",bunbetsu: "演習室")
 Classroom.create(kyousitsu: "第２演習室",bunbetsu: "演習室")
 Classroom.create(kyousitsu: "第３演習室",bunbetsu: "演習室")
@@ -200,21 +200,21 @@ Classroom.create(kyousitsu: "/",bunbetsu: "特殊")
 
 
 Grate.delete_all
-Grate.connection.execute("delete from sqlite_sequence where name='grates'")
+#Grate.connection.execute("delete from sqlite_sequence where name='grates'")
 Grate.create(gakunen: "1")
 Grate.create(gakunen: "2")
 Grate.create(gakunen: "3")
 
 
 Gclass.delete_all
-Gclass.connection.execute("delete from sqlite_sequence where name='gclasses'")
+#Gclass.connection.execute("delete from sqlite_sequence where name='gclasses'")
 Gclass.create(kumi: "1")
 Gclass.create(kumi: "2")
 Gclass.create(kumi: "3")
 Gclass.create(kumi: "4")
 
 Clock.delete_all
-Clock.connection.execute("delete from sqlite_sequence where name='clocks'")
+#Clock.connection.execute("delete from sqlite_sequence where name='clocks'")
 Clock.create(zigen: "１限")
 Clock.create(zigen: "２限")
 Clock.create(zigen: "３限")
@@ -226,7 +226,7 @@ Clock.create(zigen: "７限")
 
 require 'csv'
 Temple.delete_all
-Temple.connection.execute("delete from sqlite_sequence where name='temples'")
+#Temple.connection.execute("delete from sqlite_sequence where name='temples'")
 CSV.foreach('db/temples_11.csv', headers: true) do |row|
     Temple.create(
         gclass_id: row['gclass_id'],
